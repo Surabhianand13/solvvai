@@ -1169,6 +1169,132 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 }
 
 /* ═══════════════════════════════════════════
+   COMPARISON TABLE
+   ═══════════════════════════════════════════ */
+.comparison { background: var(--surface); }
+
+.cmp-wrap {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Header row */
+.cmp-table thead tr {
+  background: rgba(255,255,255,0.03);
+}
+.cmp-table th {
+  padding: 28px 24px;
+  text-align: center;
+  font-family: var(--font-b);
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+}
+.cmp-criteria { width: 28%; text-align: left; }
+
+/* Solvv AI column highlight */
+.cmp-col--solvv {
+  background: linear-gradient(180deg, rgba(124,58,237,0.18) 0%, rgba(124,58,237,0.08) 100%);
+  border-left: 1px solid rgba(124,58,237,0.4);
+  border-right: 1px solid rgba(124,58,237,0.4);
+  position: relative;
+}
+.cmp-brand {
+  font-family: var(--font-h);
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+.cmp-brand span { color: var(--primary); }
+.cmp-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, var(--primary), var(--pink));
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.cmp-col--agency, .cmp-col--freelancer {
+  color: var(--gray);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Body rows */
+.cmp-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.cmp-table tbody tr:last-child { border-bottom: none; }
+.cmp-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+.cmp-table td {
+  padding: 18px 24px;
+  font-size: 0.95rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.cmp-label {
+  text-align: left !important;
+  color: var(--gray-l);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Solvv column cells */
+.cmp-solvv {
+  background: rgba(124,58,237,0.06);
+  border-left: 1px solid rgba(124,58,237,0.2);
+  border-right: 1px solid rgba(124,58,237,0.2);
+  font-weight: 700;
+  color: var(--white);
+}
+.cmp-win { color: var(--primary) !important; font-weight: 800; }
+
+/* Status indicators */
+.cmp-check { color: #10b981; font-weight: 800; margin-right: 4px; }
+.cmp-cross  { color: #ef4444; font-weight: 800; margin-right: 4px; }
+.cmp-mid-dot { color: #f59e0b; font-weight: 800; margin-right: 4px; }
+
+.cmp-bad  { color: var(--gray); }
+.cmp-mid  { color: var(--gray-l); }
+.cmp-check-only { color: var(--gray-l); }
+
+/* CTA below table */
+.cmp-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 36px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(255,0,110,0.06));
+  border-top: 1px solid rgba(124,58,237,0.2);
+}
+.cmp-cta p {
+  font-size: 1.05rem;
+  color: var(--gray-l);
+  margin: 0;
+}
+.cmp-cta strong { color: var(--white); }
+
+@media (max-width: 768px) {
+  .cmp-wrap { border-radius: 16px; overflow-x: auto; }
+  .cmp-table { min-width: 600px; }
+  .cmp-table td, .cmp-table th { padding: 14px 16px; font-size: 0.82rem; }
+  .cmp-cta { flex-direction: column; text-align: center; padding: 24px; }
+}
+
+/* ═══════════════════════════════════════════
    PRICING
    ═══════════════════════════════════════════ */
 .pricing { background: var(--bg); }
