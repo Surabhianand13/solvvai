@@ -1778,6 +1778,24 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 }
 .msb-btn:hover { opacity: 0.9; transform: scale(1.02); }
 
+.msb-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  line-height: 1;
+  transition: color 0.2s;
+  display: none;
+}
+.msb-close:hover { color: var(--white); }
+
+/* Show bar on any screen size when JS adds .timed (10s timer) */
+.mobile-sticky-bar.timed { display: flex; }
+.mobile-sticky-bar.timed .msb-close { display: block; }
+
 @media (max-width: 768px) {
   .mobile-sticky-bar { display: flex; }
   .wa-float { bottom: 90px; }

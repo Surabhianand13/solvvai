@@ -506,9 +506,30 @@ const stickyBar = document.getElementById('mobile-sticky-bar');
 if (stickyBar) {
   const heroSection = document.querySelector('.hero');
   const showThreshold = heroSection ? heroSection.offsetHeight * 0.8 : 400;
+  let dismissed = false;
+
+  // Mobile: scroll-based show/hide
   window.addEventListener('scroll', () => {
+    if (dismissed) return;
     stickyBar.classList.toggle('visible', window.scrollY > showThreshold);
   }, { passive: true });
+
+  // All screens: show after 10s if not already dismissed
+  setTimeout(() => {
+    if (!dismissed) {
+      stickyBar.classList.add('timed', 'visible');
+    }
+  }, 10000);
+
+  // Dismiss button (desktop)
+  const closeBtn = document.getElementById('msb-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      dismissed = true;
+      stickyBar.classList.remove('visible');
+      setTimeout(() => stickyBar.classList.remove('timed'), 400);
+    });
+  }
 }
 
 /* ─── GLITCH HOVER RE-TRIGGER ─── */
