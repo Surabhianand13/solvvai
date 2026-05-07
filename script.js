@@ -238,11 +238,6 @@ if (form) {
   const btns   = toggle.querySelectorAll('.ctoggle-btn');
   const prices = document.querySelectorAll('.plan-price[data-usd]');
 
-  // Book-a-call labels per currency
-  const bookLabels = {
-    usd: ['📞 Book a free call at $999', '📞 Book a free call at $2,499', '📞 Book a free call at $4,999'],
-    inr: ['📞 Book a free call at ₹83,000', '📞 Book a free call at ₹2,09,000', '📞 Book a free call at ₹4,19,000']
-  };
   const bookLinks = document.querySelectorAll('.plan-book-call');
 
   let current = 'usd';
@@ -263,11 +258,6 @@ if (form) {
       }, 175);
     });
 
-    bookLinks.forEach((el, i) => {
-      setTimeout(() => {
-        el.textContent = bookLabels[currency][i];
-      }, 175);
-    });
   }
 
   // Click on either button
