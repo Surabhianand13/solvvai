@@ -999,6 +999,10 @@ body:has(.btn:hover) .cursor { background: var(--green); }
   gap: 24px;
   margin-top: 40px;
 }
+/* Last lone card spans full width and self-centres */
+.testimonial:last-child:nth-child(3n+1) {
+  grid-column: 2 / 3;
+}
 .testimonial {
   background: var(--surface);
   border: 1px solid var(--border);
