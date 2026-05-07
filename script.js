@@ -4,16 +4,46 @@
 
 /* ─── LOADER ─── */
 window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  const bar = document.getElementById('loader-bar');
-  const pct = document.getElementById('loader-pct');
+  const loader   = document.getElementById('loader');
+  const bar      = document.getElementById('loader-bar');
+  const pct      = document.getElementById('loader-pct');
+  const tagline  = document.getElementById('loader-tagline');
+  const letters  = document.querySelectorAll('.ll');
+
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&';
+
+  /* Scramble-then-reveal each letter with staggered delay */
+  letters.forEach((el, i) => {
+    const real = el.dataset.char;
+    const delay = 80 + i * 90;       /* stagger start */
+    const scrambleDuration = 320;    /* ms of random chars before settling */
+    const frameInterval = 40;
+
+    setTimeout(() => {
+      let elapsed = 0;
+      const scramble = setInterval(() => {
+        elapsed += frameInterval;
+        el.textContent = CHARS[Math.floor(Math.random() * CHARS.length)];
+        if (elapsed >= scrambleDuration) {
+          clearInterval(scramble);
+          el.textContent = real;
+          el.classList.add('revealed');
+        }
+      }, frameInterval);
+    }, delay);
+  });
+
+  /* Show tagline after all letters settle */
+  setTimeout(() => tagline.classList.add('visible'), 80 + letters.length * 90 + 320 + 80);
+
+  /* Progress bar */
   let progress = 0;
   const interval = setInterval(() => {
     progress += Math.random() * 18 + 4;
     if (progress >= 100) {
       progress = 100;
       clearInterval(interval);
-      setTimeout(() => loader.classList.add('hidden'), 400);
+      setTimeout(() => loader.classList.add('hidden'), 500);
     }
     bar.style.width = progress + '%';
     pct.textContent = Math.floor(progress) + '%';
