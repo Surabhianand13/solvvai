@@ -854,15 +854,28 @@ body:has(.btn:hover) .cursor { background: var(--green); }
   color: var(--gray-l);
   border: 1px solid var(--border);
 }
-.card-link {
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 13px 22px;
+  border-radius: 12px;
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--primary-l);
   text-decoration: none;
-  margin-top: auto;
-  transition: letter-spacing 0.2s;
+  color: var(--white);
+  background: rgba(124,58,237,0.12);
+  border: 1.5px solid rgba(124,58,237,0.4);
+  transition: background 0.25s, border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+  align-self: flex-start;
 }
-.service-card:hover .card-link { letter-spacing: 0.03em; }
+.card-cta:hover {
+  background: rgba(124,58,237,0.28);
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(124,58,237,0.3);
+  transform: translateY(-2px);
+}
 
 /* ═══════════════════════════════════════════
    GRADIENT BANNER
