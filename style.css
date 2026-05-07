@@ -1414,46 +1414,102 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 .check { color: var(--green); font-size: 0.9rem; flex-shrink: 0; }
 .cross { color: var(--gray); font-size: 0.9rem; flex-shrink: 0; }
 
-.plan-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.plan-actions { display: flex; flex-direction: column; gap: 12px; }
+
+/* Per-plan primary buttons */
+.btn-plan-launch {
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px 24px; border-radius: 14px; font-family: var(--font-b);
+  font-size: 1rem; font-weight: 700; text-decoration: none; text-align: center;
+  background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(124,58,237,0.05));
+  border: 1.5px solid rgba(124,58,237,0.5);
+  color: var(--white);
+  transition: background 0.3s, border-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
+.btn-plan-launch:hover {
+  background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(124,58,237,0.15));
+  border-color: var(--primary);
+  box-shadow: 0 0 24px rgba(124,58,237,0.3);
+  transform: translateY(-2px);
+}
+
+.btn-plan-scale {
+  display: flex; align-items: center; justify-content: center;
+  padding: 18px 24px; border-radius: 14px; font-family: var(--font-b);
+  font-size: 1.05rem; font-weight: 800; text-decoration: none; text-align: center;
+  background: linear-gradient(135deg, var(--primary), var(--pink));
+  border: none; color: var(--white);
+  box-shadow: 0 8px 32px rgba(124,58,237,0.45);
+  transition: transform 0.2s, box-shadow 0.3s, filter 0.2s;
+}
+.btn-plan-scale:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(124,58,237,0.6);
+  filter: brightness(1.1);
+}
+
+.btn-plan-dominate {
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px 24px; border-radius: 14px; font-family: var(--font-b);
+  font-size: 1rem; font-weight: 700; text-decoration: none; text-align: center;
+  background: linear-gradient(135deg, rgba(255,165,0,0.12), rgba(255,100,0,0.06));
+  border: 1.5px solid rgba(255,165,0,0.45);
+  color: var(--white);
+  transition: background 0.3s, border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+.btn-plan-dominate:hover {
+  background: linear-gradient(135deg, rgba(255,165,0,0.28), rgba(255,100,0,0.15));
+  border-color: rgba(255,165,0,0.8);
+  box-shadow: 0 0 24px rgba(255,165,0,0.25);
+  transform: translateY(-2px);
+}
+
 .plan-book-call {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 12px;
-  border-radius: 12px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--primary-l);
-  background: rgba(124,58,237,0.07);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 13px; border-radius: 12px;
+  font-size: 0.88rem; font-weight: 600; color: var(--primary-l);
+  background: rgba(124,58,237,0.06);
   border: 1px dashed rgba(124,58,237,0.3);
   transition: background 0.25s, border-color 0.25s, color 0.25s;
   text-align: center;
 }
 .plan-book-call:hover {
-  background: rgba(124,58,237,0.15);
+  background: rgba(124,58,237,0.14);
   border-color: rgba(124,58,237,0.6);
   color: var(--white);
 }
 
-.pricing-note {
-  text-align: center;
-  margin-top: 48px;
-  font-size: 0.9rem;
-  color: var(--gray);
+/* "Not sure" banner */
+.pricing-unsure {
+  margin-top: 56px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(255,0,110,0.05));
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: 24px;
+  padding: 40px 48px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 40px;
   flex-wrap: wrap;
 }
-.pricing-note a { color: var(--primary-l); font-weight: 600; }
-.pricing-note a:hover { text-decoration: underline; }
+.pu-left { display: flex; align-items: flex-start; gap: 20px; flex: 1; min-width: 260px; }
+.pu-emoji { font-size: 2.8rem; flex-shrink: 0; line-height: 1; margin-top: 4px; }
+.pu-left h3 {
+  font-family: var(--font-h);
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+.pu-left p { font-size: 1rem; color: var(--gray-l); line-height: 1.7; margin: 0; }
+.pu-actions { display: flex; gap: 14px; flex-shrink: 0; flex-wrap: wrap; align-items: center; }
+
+@media (max-width: 768px) {
+  .pricing-unsure { padding: 28px 24px; flex-direction: column; }
+  .pu-actions { width: 100%; }
+  .pu-actions .btn { flex: 1; text-align: center; justify-content: center; }
+}
 
 /* ═══════════════════════════════════════════
    CONTACT
