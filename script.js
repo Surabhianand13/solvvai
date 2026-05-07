@@ -269,6 +269,20 @@ if (form) {
   track.addEventListener('click', () => switchTo(current === 'usd' ? 'inr' : 'usd'));
 })();
 
+/* ─── CALENDLY POPUP ─── */
+const CALENDLY_URL = 'https://calendly.com/biz-solvvai/30min';
+
+document.querySelectorAll('.calendly-trigger').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      window.open(CALENDLY_URL, '_blank');
+    }
+  });
+});
+
 /* ─── SMOOTH SCROLL FOR ANCHORS ─── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
