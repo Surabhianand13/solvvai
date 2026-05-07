@@ -1212,6 +1212,58 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 .form-group textarea::placeholder { color: var(--gray); }
 .form-group select option { background: var(--surface); }
 
+/* ─── CONTACT BOOK A CALL ─── */
+.contact-or {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+  color: var(--gray);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.contact-or::before,
+.contact-or::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.contact-book-call {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: rgba(124,58,237,0.06);
+  border: 1px dashed rgba(124,58,237,0.35);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--white);
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+}
+.contact-book-call:hover {
+  background: rgba(124,58,237,0.14);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+.cbc-icon { font-size: 1.6rem; flex-shrink: 0; }
+.cbc-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+.cbc-text strong { font-size: 1rem; font-weight: 700; color: var(--white); }
+.cbc-text span { font-size: 0.8rem; color: var(--gray-l); }
+.cbc-arrow {
+  font-size: 1.2rem;
+  color: var(--primary);
+  transition: transform 0.3s;
+}
+.contact-book-call:hover .cbc-arrow { transform: translateX(4px); }
+
 /* ═══════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════ */
