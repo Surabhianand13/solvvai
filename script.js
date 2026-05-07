@@ -228,6 +228,47 @@ if (form) {
   });
 }
 
+/* ─── CURRENCY TOGGLE ─── */
+(function initCurrencyToggle() {
+  const toggle = document.getElementById('currency-toggle');
+  if (!toggle) return;
+
+  const thumb  = document.getElementById('ctoggle-thumb');
+  const track  = toggle.querySelector('.ctoggle-track');
+  const btns   = toggle.querySelectorAll('.ctoggle-btn');
+  const prices = document.querySelectorAll('.plan-price[data-usd]');
+  let current  = 'usd';
+
+  function switchTo(currency) {
+    if (currency === current) return;
+    current = currency;
+
+    // Toggle button active states
+    btns.forEach(b => b.classList.toggle('active', b.dataset.currency === currency));
+
+    // Move thumb + track color
+    thumb.classList.toggle('inr', currency === 'inr');
+    track.classList.toggle('inr', currency === 'inr');
+
+    // Flip each price
+    prices.forEach(el => {
+      el.classList.add('flipping');
+      setTimeout(() => {
+        el.textContent = currency === 'inr' ? el.dataset.inr : el.dataset.usd;
+        el.classList.remove('flipping');
+      }, 175);
+    });
+  }
+
+  // Click on either button
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => switchTo(btn.dataset.currency));
+  });
+
+  // Click on the track itself also toggles
+  track.addEventListener('click', () => switchTo(current === 'usd' ? 'inr' : 'usd'));
+})();
+
 /* ─── SMOOTH SCROLL FOR ANCHORS ─── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

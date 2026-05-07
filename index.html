@@ -379,6 +379,21 @@
         <span class="section-tag">Pricing</span>
         <h2 class="section-title">Pick Your <span class="gradient-text">Level</span></h2>
         <p class="section-sub">No hidden fees. No BS. Just straight up value.</p>
+
+        <!-- Currency Toggle -->
+        <div class="currency-toggle" id="currency-toggle">
+          <button class="ctoggle-btn active" data-currency="usd">
+            <span class="ctoggle-flag">🇺🇸</span>
+            <span>USD</span>
+          </button>
+          <div class="ctoggle-track">
+            <div class="ctoggle-thumb" id="ctoggle-thumb"></div>
+          </div>
+          <button class="ctoggle-btn" data-currency="inr">
+            <span class="ctoggle-flag">🇮🇳</span>
+            <span>INR</span>
+          </button>
+        </div>
       </div>
 
       <div class="pricing-grid">
@@ -390,7 +405,7 @@
             <div class="plan-tagline">Perfect for getting started</div>
           </div>
           <div class="plan-price-wrap">
-            <div class="plan-price">$999</div>
+            <div class="plan-price" data-usd="$999" data-inr="₹83,000">$999</div>
             <div class="plan-delivery">7-day delivery</div>
           </div>
           <ul class="plan-features">
@@ -415,7 +430,7 @@
             <div class="plan-tagline">For brands that mean business</div>
           </div>
           <div class="plan-price-wrap">
-            <div class="plan-price">$2,499</div>
+            <div class="plan-price" data-usd="$2,499" data-inr="₹2,09,000">$2,499</div>
             <div class="plan-delivery">7-day delivery</div>
           </div>
           <ul class="plan-features">
@@ -439,7 +454,7 @@
             <div class="plan-tagline">Full brand domination</div>
           </div>
           <div class="plan-price-wrap">
-            <div class="plan-price">$4,999</div>
+            <div class="plan-price" data-usd="$4,999" data-inr="₹4,19,000">$4,999</div>
             <div class="plan-delivery">7-day delivery</div>
           </div>
           <ul class="plan-features">
