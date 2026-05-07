@@ -1545,15 +1545,21 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 
 .contact-socials { display: flex; gap: 12px; }
 .social-pill {
-  padding: 10px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
   background: rgba(255,255,255,0.05);
   border: 1px solid var(--border);
   border-radius: 100px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  transition: border-color 0.2s, background 0.2s;
+  color: var(--gray-l);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
 }
-.social-pill:hover { border-color: var(--primary); background: rgba(124,58,237,0.1); }
+.social-pill svg { flex-shrink: 0; }
+.social-pill:hover { border-color: var(--primary); background: rgba(124,58,237,0.1); color: var(--white); }
 
 .contact-form { display: flex; flex-direction: column; gap: 20px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
