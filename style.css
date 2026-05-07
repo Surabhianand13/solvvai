@@ -146,9 +146,9 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 }
 .nav-logo {
   font-family: var(--font-h);
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: var(--white);
   flex-shrink: 0;
 }
@@ -160,8 +160,8 @@ body:has(.btn:hover) .cursor { background: var(--green); }
   margin-left: auto;
 }
 .nav-links a {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 800;
   color: var(--white);
   transition: color 0.2s;
   position: relative;
