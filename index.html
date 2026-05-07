@@ -806,19 +806,23 @@
 
         <div class="contact-right reveal" data-delay="100">
           <form class="contact-form" id="contact-form">
+            <input type="hidden" name="access_key" value="d3b96783-18c1-48ce-ba2f-9c36e7847933">
+            <input type="hidden" name="subject" value="New enquiry from Solvv AI website">
+            <input type="hidden" name="from_name" value="Solvv AI Contact Form">
+            <input type="checkbox" name="botcheck" style="display:none">
             <div class="form-row">
               <div class="form-group">
                 <label>Your Name</label>
-                <input type="text" placeholder="Alex Johnson" required>
+                <input type="text" name="name" placeholder="Alex Johnson" required>
               </div>
               <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" placeholder="alex@brand.com" required>
+                <input type="email" name="email" placeholder="alex@brand.com" required>
               </div>
             </div>
             <div class="form-group">
               <label>Select Package</label>
-              <select>
+              <select name="package">
                 <option value="">Choose your plan...</option>
                 <option>Launch — $999</option>
                 <option>Scale — $2,499</option>
@@ -828,12 +832,13 @@
             </div>
             <div class="form-group">
               <label>Tell us about your project</label>
-              <textarea placeholder="What are you building? What's your vision? The more detail the better..." rows="5" required></textarea>
+              <textarea name="message" placeholder="What are you building? What's your vision? The more detail the better..." rows="5" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary full-width btn-lg magnetic" id="submit-btn">
               <span class="btn-text">Send It 🚀</span>
               <span class="btn-success" style="display:none">Message Sent! We'll be in touch ✓</span>
             </button>
+            <p class="form-error" id="form-error" style="display:none;color:#ef4444;font-size:0.9rem;margin-top:12px;text-align:center;"></p>
           </form>
           <div class="contact-or">
             <span>or</span>
