@@ -350,6 +350,35 @@ window.addEventListener('scroll', () => {
   });
 });
 
+/* ─── FAQ ACCORDION ─── */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    /* Close all others */
+    document.querySelectorAll('.faq-q[aria-expanded="true"]').forEach(other => {
+      if (other !== btn) {
+        other.setAttribute('aria-expanded', 'false');
+        other.nextElementSibling.classList.remove('open');
+      }
+    });
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    answer.classList.toggle('open', !isOpen);
+  });
+});
+
+/* ─── MOBILE STICKY BAR ─── */
+const stickyBar = document.getElementById('mobile-sticky-bar');
+if (stickyBar) {
+  const heroSection = document.querySelector('.hero');
+  const showThreshold = heroSection ? heroSection.offsetHeight * 0.8 : 400;
+  window.addEventListener('scroll', () => {
+    stickyBar.classList.toggle('visible', window.scrollY > showThreshold);
+  }, { passive: true });
+}
+
 /* ─── GLITCH HOVER RE-TRIGGER ─── */
 const glitchEl = document.querySelector('.glitch');
 if (glitchEl) {
