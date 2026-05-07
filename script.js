@@ -4,16 +4,46 @@
 
 /* ─── LOADER ─── */
 window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  const bar = document.getElementById('loader-bar');
-  const pct = document.getElementById('loader-pct');
+  const loader   = document.getElementById('loader');
+  const bar      = document.getElementById('loader-bar');
+  const pct      = document.getElementById('loader-pct');
+  const tagline  = document.getElementById('loader-tagline');
+  const letters  = document.querySelectorAll('.ll');
+
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&';
+
+  /* Scramble-then-reveal each letter with staggered delay */
+  letters.forEach((el, i) => {
+    const real = el.dataset.char;
+    const delay = 80 + i * 90;       /* stagger start */
+    const scrambleDuration = 320;    /* ms of random chars before settling */
+    const frameInterval = 40;
+
+    setTimeout(() => {
+      let elapsed = 0;
+      const scramble = setInterval(() => {
+        elapsed += frameInterval;
+        el.textContent = CHARS[Math.floor(Math.random() * CHARS.length)];
+        if (elapsed >= scrambleDuration) {
+          clearInterval(scramble);
+          el.textContent = real;
+          el.classList.add('revealed');
+        }
+      }, frameInterval);
+    }, delay);
+  });
+
+  /* Show tagline after all letters settle */
+  setTimeout(() => tagline.classList.add('visible'), 80 + letters.length * 90 + 320 + 80);
+
+  /* Progress bar */
   let progress = 0;
   const interval = setInterval(() => {
     progress += Math.random() * 18 + 4;
     if (progress >= 100) {
       progress = 100;
       clearInterval(interval);
-      setTimeout(() => loader.classList.add('hidden'), 400);
+      setTimeout(() => loader.classList.add('hidden'), 500);
     }
     bar.style.width = progress + '%';
     pct.textContent = Math.floor(progress) + '%';
@@ -237,20 +267,19 @@ if (form) {
   const track  = toggle.querySelector('.ctoggle-track');
   const btns   = toggle.querySelectorAll('.ctoggle-btn');
   const prices = document.querySelectorAll('.plan-price[data-usd]');
-  let current  = 'usd';
+
+  const bookLinks = document.querySelectorAll('.plan-book-call');
+
+  let current = 'usd';
 
   function switchTo(currency) {
     if (currency === current) return;
     current = currency;
 
-    // Toggle button active states
     btns.forEach(b => b.classList.toggle('active', b.dataset.currency === currency));
-
-    // Move thumb + track color
     thumb.classList.toggle('inr', currency === 'inr');
     track.classList.toggle('inr', currency === 'inr');
 
-    // Flip each price
     prices.forEach(el => {
       el.classList.add('flipping');
       setTimeout(() => {
@@ -258,6 +287,7 @@ if (form) {
         el.classList.remove('flipping');
       }, 175);
     });
+
   }
 
   // Click on either button
@@ -268,6 +298,20 @@ if (form) {
   // Click on the track itself also toggles
   track.addEventListener('click', () => switchTo(current === 'usd' ? 'inr' : 'usd'));
 })();
+
+/* ─── CALENDLY POPUP ─── */
+const CALENDLY_URL = 'https://calendly.com/biz-solvvai/30min';
+
+document.querySelectorAll('.calendly-trigger').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      window.open(CALENDLY_URL, '_blank');
+    }
+  });
+});
 
 /* ─── SMOOTH SCROLL FOR ANCHORS ─── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {

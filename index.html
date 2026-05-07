@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
 
@@ -17,10 +18,16 @@
 
   <!-- Loader -->
   <div class="loader" id="loader">
+    <div class="loader-scanline"></div>
     <div class="loader-inner">
-      <div class="loader-logo">SOLVV<span>AI</span></div>
-      <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
-      <div class="loader-pct" id="loader-pct">0%</div>
+      <div class="loader-word" id="loader-word">
+        <span class="ll" data-char="S">S</span><span class="ll" data-char="O">O</span><span class="ll" data-char="L">L</span><span class="ll" data-char="V">V</span><span class="ll" data-char="V">V</span><span class="ll-gap"></span><span class="ll ll-ai" data-char="A">A</span><span class="ll ll-ai" data-char="I">I</span>
+      </div>
+      <div class="loader-tagline" id="loader-tagline">Building the internet's next chapter.</div>
+      <div class="loader-progress-row">
+        <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+        <div class="loader-pct" id="loader-pct">0%</div>
+      </div>
     </div>
   </div>
 
@@ -35,7 +42,7 @@
         <li><a href="#clients">Clients</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="btn btn-primary nav-cta">Get Started →</a>
+      <a href="#" class="btn btn-primary nav-cta calendly-trigger">📞 Book a Call</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -334,38 +341,88 @@
 
     <!-- Testimonials -->
     <div class="container">
-      <div class="testimonials">
-        <div class="testimonial reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p>"Solvv AI delivered our entire brand and website in 6 days. The animations are insane. Our conversion rate jumped 3x on launch week."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">MK</div>
-            <div>
-              <strong>Marcus Kim</strong>
-              <span>CEO, TechFlow</span>
-            </div>
+      <!-- Row 1 scrolls left -->
+      <div class="testi-marquee-wrap">
+        <div class="testi-track testi-track--left">
+          <!-- set A -->
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Solvv AI delivered our entire brand and website in just 6 days. The animations are insane. Our conversion rate jumped 3x on launch week."</p>
+            <div class="testi-author"><div class="testi-avatar">MO</div><div><strong>Mohan</strong><span>Founder, OrganiQ</span></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Legitimately thought a 7-day website was a gimmick. Then I saw the final product. These guys are on another level. No cap. Already 1k+ impressions in just 2 days of launch."</p>
+            <div class="testi-author"><div class="testi-avatar">SA</div><div><strong>Sachin A</strong><span>Cofounder, Krispie's</span></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"The AI integration they built is a game-changer. Our support load dropped 60% in the first month. Worth every penny of the Dominate package."</p>
+            <div class="testi-author"><div class="testi-avatar">SW</div><div><strong>Shwetha</strong><span>Director, WIS</span></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"We were building in stealth and needed a site that could hold its own at launch. Solvv AI nailed the brief — clean, fast, and sharp. Exactly what a stealth brand needs."</p>
+            <div class="testi-author"><div class="testi-avatar">NA</div><div><strong>Narayan</strong><span>Founder, Stealth</span></div></div>
+          </div>
+          <!-- set B (duplicate for seamless loop) -->
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Solvv AI delivered our entire brand and website in just 6 days. The animations are insane. Our conversion rate jumped 3x on launch week."</p>
+            <div class="testi-author"><div class="testi-avatar">MO</div><div><strong>Mohan</strong><span>Founder, OrganiQ</span></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Legitimately thought a 7-day website was a gimmick. Then I saw the final product. These guys are on another level. No cap. Already 1k+ impressions in just 2 days of launch."</p>
+            <div class="testi-author"><div class="testi-avatar">SA</div><div><strong>Sachin A</strong><span>Cofounder, Krispie's</span></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"The AI integration they built is a game-changer. Our support load dropped 60% in the first month. Worth every penny of the Dominate package."</p>
+            <div class="testi-author"><div class="testi-avatar">SW</div><div><strong>Shwetha</strong><span>Director, WIS</span></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"We were building in stealth and needed a site that could hold its own at launch. Solvv AI nailed the brief — clean, fast, and sharp. Exactly what a stealth brand needs."</p>
+            <div class="testi-author"><div class="testi-avatar">NA</div><div><strong>Narayan</strong><span>Founder, Stealth</span></div></div>
           </div>
         </div>
-        <div class="testimonial reveal" data-delay="100">
-          <div class="testi-stars">★★★★★</div>
-          <p>"Legitimately thought a 7-day website was a gimmick. Then I saw the final product. These guys are on another level. No cap."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">SL</div>
-            <div>
-              <strong>Sarah Lin</strong>
-              <span>Founder, NovaCorp</span>
-            </div>
+      </div>
+
+      <!-- Row 2 scrolls right -->
+      <div class="testi-marquee-wrap" style="margin-top:24px">
+        <div class="testi-track testi-track--right">
+          <!-- set A -->
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Women in Style needed a website that felt as premium as our brand. Solvv AI got it in one shot — the design, the vibe, the flow. Our community loved it from day one."</p>
+            <div class="testi-author"><div class="testi-avatar">GP</div><div><strong>Gurpreet</strong><span>CEO, Women in Style</span></div></div>
           </div>
-        </div>
-        <div class="testimonial reveal" data-delay="200">
-          <div class="testi-stars">★★★★★</div>
-          <p>"The AI integration they built is a game-changer. Our support load dropped 60% in the first month. Worth every penny of the Dominate package."</p>
-          <div class="testi-author">
-            <div class="testi-avatar">JR</div>
-            <div>
-              <strong>Jordan Reed</strong>
-              <span>CTO, DataSync</span>
-            </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Naari Sarees has been around for decades but our online presence was zero. Solvv AI changed that in a week. The site is beautiful and orders started coming in within days."</p>
+            <div class="testi-author"><div class="testi-avatar">ML</div><div><strong>Milana</strong><span>Director, Naari Sarees</span></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"We've been a trusted name locally for years but had no digital presence. Solvv AI built us a site that tells our story properly. Inquiries from outside the city started within the first week."</p>
+            <div class="testi-author"><div class="testi-avatar">AN</div><div><strong>Anand</strong><span>CEO, Anand Dairy</span></div></div>
+          </div>
+          <!-- set B (duplicate) -->
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Women in Style needed a website that felt as premium as our brand. Solvv AI got it in one shot — the design, the vibe, the flow. Our community loved it from day one."</p>
+            <div class="testi-author"><div class="testi-avatar">GP</div><div><strong>Gurpreet</strong><span>CEO, Women in Style</span></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Naari Sarees has been around for decades but our online presence was zero. Solvv AI changed that in a week. The site is beautiful and orders started coming in within days."</p>
+            <div class="testi-author"><div class="testi-avatar">ML</div><div><strong>Milana</strong><span>Director, Naari Sarees</span></div></div>
+          </div>
+          <div class="testimonial">
+            <div class="testi-stars">★★★★★</div>
+            <p>"We've been a trusted name locally for years but had no digital presence. Solvv AI built us a site that tells our story properly. Inquiries from outside the city started within the first week."</p>
+            <div class="testi-author"><div class="testi-avatar">AN</div><div><strong>Anand</strong><span>CEO, Anand Dairy</span></div></div>
           </div>
         </div>
       </div>
@@ -418,7 +475,10 @@
             <li class="muted"><span class="cross">✗</span> Custom Animations</li>
             <li class="muted"><span class="cross">✗</span> AI Features</li>
           </ul>
-          <a href="#contact" class="btn btn-outline full-width">Get Started →</a>
+          <div class="plan-actions">
+            <a href="#contact" class="btn btn-outline full-width">Get Started →</a>
+            <a href="#" class="plan-book-call calendly-trigger">🔒 Book a call · Unlock a secret deal</a>
+          </div>
         </div>
 
         <!-- Scale (Featured) -->
@@ -443,7 +503,10 @@
             <li><span class="check">✓</span> Analytics Dashboard</li>
             <li><span class="check">✓</span> Performance Optimized</li>
           </ul>
-          <a href="#contact" class="btn btn-primary full-width magnetic">Get Started →</a>
+          <div class="plan-actions">
+            <a href="#contact" class="btn btn-primary full-width magnetic">Get Started →</a>
+            <a href="#" class="plan-book-call calendly-trigger">🔒 Book a call · Unlock a secret deal</a>
+          </div>
         </div>
 
         <!-- Dominate -->
@@ -467,7 +530,10 @@
             <li><span class="check">✓</span> 30-Day Maintenance</li>
             <li><span class="check">✓</span> Custom Integrations</li>
           </ul>
-          <a href="#contact" class="btn btn-outline full-width">Get Started →</a>
+          <div class="plan-actions">
+            <a href="#contact" class="btn btn-outline full-width">Get Started →</a>
+            <a href="#" class="plan-book-call calendly-trigger">🔒 Book a call · Unlock a secret deal</a>
+          </div>
         </div>
       </div>
 
@@ -508,7 +574,7 @@
               <span class="c-icon">📧</span>
               <div>
                 <div class="c-label">Email</div>
-                <div class="c-value">hello@solvvai.com</div>
+                <div class="c-value">biz@solvvai.com</div>
               </div>
             </div>
             <div class="contact-item">
@@ -565,6 +631,17 @@
               <span class="btn-success" style="display:none">Message Sent! We'll be in touch ✓</span>
             </button>
           </form>
+          <div class="contact-or">
+            <span>or</span>
+          </div>
+          <a href="#" class="contact-book-call calendly-trigger">
+            <span class="cbc-icon">📅</span>
+            <div class="cbc-text">
+              <strong>Book a 30-min call</strong>
+              <span>Pick a time that works for you — no forms, no waiting</span>
+            </div>
+            <span class="cbc-arrow">→</span>
+          </a>
         </div>
       </div>
     </div>
@@ -605,7 +682,7 @@
         <div class="footer-col">
           <h4>Start Today</h4>
           <p class="footer-cta-text">Your next website, delivered in 7 days.</p>
-          <a href="#contact" class="btn btn-primary">Book a Call →</a>
+          <a href="#" class="btn btn-primary calendly-trigger">Book a Call →</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -619,5 +696,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
