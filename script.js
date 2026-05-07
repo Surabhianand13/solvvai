@@ -97,7 +97,8 @@ mobileMenu.querySelectorAll('a').forEach(a => {
 (function initCanvas() {
   const canvas = document.getElementById('hero-canvas');
   const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
+  let W, H, particles = [], shootingStars = [], t = 0;
+  let mouseX = -9999, mouseY = -9999;
 
   function resize() {
     W = canvas.width  = canvas.offsetWidth;
@@ -105,50 +106,147 @@ mobileMenu.querySelectorAll('a').forEach(a => {
   }
   resize();
   window.addEventListener('resize', resize);
+  canvas.parentElement.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+  });
+  canvas.parentElement.addEventListener('mouseleave', () => { mouseX = -9999; mouseY = -9999; });
 
-  const COLORS = ['rgba(124,58,237,', 'rgba(255,0,110,', 'rgba(0,212,255,', 'rgba(0,255,136,'];
+  /* Palette: [r,g,b] for glow colours */
+  const PALETTE = [
+    [124, 58,  237],   /* purple  */
+    [255,  0,  110],   /* pink    */
+    [  0, 212, 255],   /* cyan    */
+    [  0, 255, 136],   /* green   */
+    [200, 150, 255],   /* lavender*/
+  ];
 
-  class Particle {
-    constructor() { this.reset(); }
-    reset() {
+  /* ── Star particles ── */
+  class Star {
+    constructor(big) {
+      this.big = big;
+      this.reset(true);
+    }
+    reset(init) {
       this.x  = Math.random() * W;
       this.y  = Math.random() * H;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
-      this.r  = Math.random() * 1.5 + 0.5;
-      this.a  = Math.random() * 0.5 + 0.1;
-      this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
-      this.life = 0;
-      this.maxLife = Math.random() * 300 + 200;
+      this.vx = (Math.random() - 0.5) * (this.big ? 0.2 : 0.35);
+      this.vy = (Math.random() - 0.5) * (this.big ? 0.2 : 0.35);
+      this.r  = this.big ? Math.random() * 2 + 2.5 : Math.random() * 1.5 + 0.8;
+      this.baseAlpha = this.big ? Math.random() * 0.4 + 0.6 : Math.random() * 0.5 + 0.3;
+      this.col = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+      this.twinkleSpeed = Math.random() * 0.04 + 0.01;
+      this.twinkleOffset = Math.random() * Math.PI * 2;
+      this.life = init ? Math.random() * 400 : 0;
+      this.maxLife = Math.random() * 400 + 300;
     }
     update() {
+      /* Gentle mouse repulsion */
+      const dx = this.x - mouseX, dy = this.y - mouseY;
+      const d2 = dx*dx + dy*dy;
+      if (d2 < 14400) {
+        const d = Math.sqrt(d2);
+        this.x += (dx / d) * 0.8;
+        this.y += (dy / d) * 0.8;
+      }
       this.x += this.vx; this.y += this.vy;
       this.life++;
-      if (this.life > this.maxLife || this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+      if (this.life > this.maxLife || this.x < -5 || this.x > W+5 || this.y < -5 || this.y > H+5) this.reset(false);
     }
     draw() {
-      const fade = Math.sin((this.life / this.maxLife) * Math.PI);
+      const lifeFade  = Math.sin((this.life / this.maxLife) * Math.PI);
+      const twinkle   = 0.6 + 0.4 * Math.sin(t * this.twinkleSpeed + this.twinkleOffset);
+      const alpha     = this.baseAlpha * lifeFade * twinkle;
+      const [r,g,b]   = this.col;
+
+      ctx.save();
+      ctx.shadowBlur  = this.big ? 18 : 10;
+      ctx.shadowColor = `rgba(${r},${g},${b},${alpha})`;
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = this.color + (this.a * fade) + ')';
+      ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
       ctx.fill();
+
+      /* Inner bright core */
+      if (this.big) {
+        ctx.shadowBlur = 6;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${alpha * 0.9})`;
+        ctx.fill();
+      }
+      ctx.restore();
     }
   }
 
-  for (let i = 0; i < 120; i++) particles.push(new Particle());
+  /* ── Shooting stars ── */
+  class ShootingStar {
+    constructor() { this.active = false; }
+    spawn() {
+      this.x  = Math.random() * W * 0.6;
+      this.y  = Math.random() * H * 0.4;
+      const angle = (Math.PI / 4) + (Math.random() - 0.5) * 0.4;
+      const spd   = Math.random() * 10 + 14;
+      this.vx     = Math.cos(angle) * spd;
+      this.vy     = Math.sin(angle) * spd;
+      this.len    = Math.random() * 180 + 80;
+      this.life   = 0;
+      this.maxLife = 50;
+      this.active  = true;
+      this.col     = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+    }
+    update() {
+      if (!this.active) return;
+      this.x += this.vx; this.y += this.vy;
+      this.life++;
+      if (this.life > this.maxLife || this.x > W || this.y > H) this.active = false;
+    }
+    draw() {
+      if (!this.active) return;
+      const fade  = 1 - this.life / this.maxLife;
+      const [r,g,b] = this.col;
+      const tailX = this.x - this.vx * (this.len / 14);
+      const tailY = this.y - this.vy * (this.len / 14);
+      const grad  = ctx.createLinearGradient(tailX, tailY, this.x, this.y);
+      grad.addColorStop(0, `rgba(${r},${g},${b},0)`);
+      grad.addColorStop(1, `rgba(255,255,255,${fade * 0.95})`);
+      ctx.save();
+      ctx.shadowBlur  = 12;
+      ctx.shadowColor = `rgba(${r},${g},${b},${fade})`;
+      ctx.beginPath();
+      ctx.moveTo(tailX, tailY);
+      ctx.lineTo(this.x, this.y);
+      ctx.strokeStyle = grad;
+      ctx.lineWidth   = 1.5;
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
 
-  /* Draw connecting lines */
+  /* Populate */
+  const BIG_COUNT = 30, SMALL_COUNT = 160;
+  for (let i = 0; i < BIG_COUNT; i++)   particles.push(new Star(true));
+  for (let i = 0; i < SMALL_COUNT; i++) particles.push(new Star(false));
+  for (let i = 0; i < 4; i++) shootingStars.push(new ShootingStar());
+
+  /* Shooting star scheduler */
+  let nextShoot = 120;
+
+  /* Connection lines (only small nearby stars) */
   function drawLines() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 100) {
+    const small = particles.slice(BIG_COUNT);
+    for (let i = 0; i < small.length; i++) {
+      for (let j = i + 1; j < small.length; j++) {
+        const dx = small[i].x - small[j].x;
+        const dy = small[i].y - small[j].y;
+        const dist = dx*dx + dy*dy;
+        if (dist < 8100) { /* 90px */
+          const alpha = (1 - Math.sqrt(dist) / 90) * 0.18;
           ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(124,58,237,${(1 - dist/100) * 0.12})`;
+          ctx.moveTo(small[i].x, small[i].y);
+          ctx.lineTo(small[j].x, small[j].y);
+          ctx.strokeStyle = `rgba(124,58,237,${alpha})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -158,8 +256,17 @@ mobileMenu.querySelectorAll('a').forEach(a => {
 
   function animate() {
     ctx.clearRect(0, 0, W, H);
+    t++;
+
+    /* Shooting stars */
+    if (t >= nextShoot) {
+      const ss = shootingStars.find(s => !s.active);
+      if (ss) { ss.spawn(); nextShoot = t + Math.floor(Math.random() * 200 + 150); }
+    }
+
     drawLines();
     particles.forEach(p => { p.update(); p.draw(); });
+    shootingStars.forEach(s => { s.update(); s.draw(); });
     requestAnimationFrame(animate);
   }
   animate();
