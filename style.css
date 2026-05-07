@@ -1280,20 +1280,20 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 }
 .footer-logo {
   font-family: var(--font-h);
-  font-size: 2rem;
+  font-size: 2.8rem;
   font-weight: 400;
   letter-spacing: 0.08em;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 .footer-logo span { color: var(--primary); }
-.footer-brand p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; margin-bottom: 28px; }
-.footer-socials { display: flex; gap: 10px; }
+.footer-brand p { font-size: 1.05rem; color: var(--gray); line-height: 1.7; margin-bottom: 28px; }
+.footer-socials { display: flex; gap: 12px; }
 .footer-socials a {
-  width: 40px; height: 40px;
+  width: 50px; height: 50px;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--gray-l);
@@ -1302,17 +1302,17 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 .footer-socials a:hover { border-color: var(--primary); color: var(--white); background: rgba(124,58,237,0.1); }
 .footer-col h4 {
   font-family: var(--font-h);
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--white);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
-.footer-col ul { display: flex; flex-direction: column; gap: 12px; }
-.footer-col ul a { font-size: 0.88rem; color: var(--gray); transition: color 0.2s; }
+.footer-col ul { display: flex; flex-direction: column; gap: 14px; }
+.footer-col ul a { font-size: 1.05rem; color: var(--gray); transition: color 0.2s; }
 .footer-col ul a:hover { color: var(--white); }
-.footer-col .footer-cta-text { font-size: 0.88rem; color: var(--gray); line-height: 1.6; margin-bottom: 20px; }
+.footer-col .footer-cta-text { font-size: 1.05rem; color: var(--gray); line-height: 1.6; margin-bottom: 22px; }
 
 .footer-bottom {
   border-top: 1px solid var(--border);
@@ -1321,9 +1321,9 @@ body:has(.btn:hover) .cursor { background: var(--green); }
   align-items: center;
   justify-content: space-between;
 }
-.footer-bottom p { font-size: 0.82rem; color: var(--gray); }
+.footer-bottom p { font-size: 1rem; color: var(--gray); }
 .footer-links-bottom { display: flex; gap: 24px; }
-.footer-links-bottom a { font-size: 0.82rem; color: var(--gray); transition: color 0.2s; }
+.footer-links-bottom a { font-size: 1rem; color: var(--gray); transition: color 0.2s; }
 .footer-links-bottom a:hover { color: var(--white); }
 
 /* ═══════════════════════════════════════════
