@@ -346,22 +346,47 @@ document.querySelectorAll('.service-card, .pricing-card, .testimonial').forEach(
 /* ─── CONTACT FORM ─── */
 const form = document.getElementById('contact-form');
 if (form) {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    const btnText = btn.querySelector('.btn-text');
+    const btn       = document.getElementById('submit-btn');
+    const btnText   = btn.querySelector('.btn-text');
     const btnSuccess = btn.querySelector('.btn-success');
+    const errEl     = document.getElementById('form-error');
+
     btn.disabled = true;
-    btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
-    btnText.style.display = 'none';
-    btnSuccess.style.display = 'block';
-    setTimeout(() => {
+    btnText.textContent = 'Sending…';
+    errEl.style.display = 'none';
+
+    try {
+      const data = Object.fromEntries(new FormData(form));
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(data),
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+        btnText.style.display  = 'none';
+        btnSuccess.style.display = 'block';
+        form.reset();
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.style.background = '';
+          btnText.textContent  = 'Send It 🚀';
+          btnText.style.display = 'block';
+          btnSuccess.style.display = 'none';
+        }, 4000);
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch (err) {
       btn.disabled = false;
-      btn.style.background = '';
-      btnText.style.display = 'block';
-      btnSuccess.style.display = 'none';
-      form.reset();
-    }, 4000);
+      btnText.textContent = 'Send It 🚀';
+      errEl.textContent   = 'Something went wrong. Please email us at biz@solvvai.com';
+      errEl.style.display = 'block';
+    }
   });
 }
 
