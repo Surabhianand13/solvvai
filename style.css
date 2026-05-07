@@ -146,23 +146,23 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 }
 .nav-logo {
   font-family: var(--font-h);
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 400;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--white);
   flex-shrink: 0;
 }
 .nav-logo span { color: var(--primary); }
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: 40px;
   align-items: center;
   margin-left: auto;
 }
 .nav-links a {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--gray-l);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
   transition: color 0.2s;
   position: relative;
 }
