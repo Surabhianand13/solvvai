@@ -1,11 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#7C3AED"/>
-      <stop offset="100%" stop-color="#A855F7"/>
+    <linearGradient id="blueGrad" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5B6EF5"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="20" fill="#0a0a12"/>
-  <polyline points="12,28 28,72 44,28" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <polyline points="44,28 60,72 76,28" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Top dark arc (backwards-C, opens right) -->
+  <path d="M 26,57 C 20,37 36,18 58,19 C 74,19 85,32 82,48"
+        fill="none" stroke="#1E1C2E" stroke-width="13" stroke-linecap="round"/>
+
+  <!-- Bottom gradient arc (C shape, opens left) -->
+  <path d="M 18,52 C 15,68 26,85 48,85 C 66,85 80,73 80,58"
+        fill="none" stroke="url(#blueGrad)" stroke-width="13" stroke-linecap="round"/>
+
+  <!-- 4-point sparkle at center junction -->
+  <path d="M 50,43 L 52,48.5 L 57.5,50.5 L 52,52.5 L 50,58 L 48,52.5 L 42.5,50.5 L 48,48.5 Z"
+        fill="url(#blueGrad)"/>
 </svg>
