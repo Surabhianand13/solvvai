@@ -198,14 +198,14 @@ body:has(.btn:hover) .cursor { background: var(--green); }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 10px 0;
   transition: background 0.4s, padding 0.4s, backdrop-filter 0.4s;
 }
 .nav.scrolled {
   background: rgba(8,8,8,0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  padding: 14px 0;
+  padding: 8px 0;
 }
 .nav-inner {
   max-width: 1280px;
@@ -228,9 +228,9 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 }
 .nav-logo span { color: var(--primary); }
 .nav-logo-img {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
   flex-shrink: 0;
 }
 .nav-links {
