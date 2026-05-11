@@ -228,8 +228,8 @@ body:has(.btn:hover) .cursor { background: var(--green); }
 }
 .nav-logo span { color: var(--primary); }
 .nav-logo-img {
-  width: 48px;
-  height: 48px;
+  width: 80px;
+  height: 80px;
   border-radius: 8px;
   flex-shrink: 0;
 }
