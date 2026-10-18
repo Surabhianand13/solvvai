@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Salary Slip Generator — Payslip Format with PF, ESI &amp; PDF | Solvv AI</title>
+  <meta name="description" content="Generate a salary slip online for free. Indian payslip format with Basic, HRA, allowances, PF, ESI, professional tax, TDS and loss-of-pay days. Download as PDF. No sign-up.">
+  <link rel="canonical" href="https://solvvai.com/salary-slip-generator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Salary Slip Generator — Download Payslip PDF | Solvv AI">
+  <meta property="og:description" content="Indian payslip with PF, ESI, PT and TDS worked out for you. Free PDF download.">
+  <meta property="og:url" content="https://solvvai.com/salary-slip-generator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication","name":"Salary Slip Generator","url":"https://solvvai.com/salary-slip-generator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"Solvv AI","url":"https://solvvai.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How is PF calculated on a salary slip?","acceptedAnswer":{"@type":"Answer","text":"Employee PF is 12% of Basic + DA. Most employers apply it on wages up to ₹15,000 a month, so the usual maximum deduction is ₹1,800."}},
+      {"@type":"Question","name":"When is ESI deducted?","acceptedAnswer":{"@type":"Answer","text":"ESI applies when an employee's gross monthly wages are ₹21,000 or less. The employee pays 0.75% and the employer pays 3.25%."}},
+      {"@type":"Question","name":"What is LOP on a payslip?","acceptedAnswer":{"@type":"Answer","text":"LOP (loss of pay) days are unpaid absences. Salary is paid for paid days only: monthly salary × paid days ÷ total days in the month."}}
+    ]}
+  ]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="salary-slip-generator">
+  <div id="t-nav"></div>
+
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Salary slip generator</div>
+      <h1>Free <em>Salary Slip</em> Generator</h1>
+      <p class="lead">Make a payslip in the standard Indian format. PF, ESI and loss-of-pay are worked out for you, and you can download it as a PDF.</p>
+      <div class="t-badges"><span class="t-badge">✓ PF &amp; ESI auto-calculated</span><span class="t-badge">✓ LOP days</span><span class="t-badge">✓ Nothing stored</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="seg seg-block t-tabs" id="view-tabs"><button data-v="edit" class="on">1. Fill details</button><button data-v="preview">2. Preview &amp; download</button></div>
+      <div class="t-grid" id="doc-grid" data-view="edit" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+        <form class="edit-pane" id="slip-form" autocomplete="off" onsubmit="return false">
+          <div class="card">
+            <h2>Company</h2>
+            <div class="f">
+              <span class="f-label">Logo (optional)</span>
+              <div class="logo-drop">
+                <img id="logo-prev" alt="Logo preview" style="display:none">
+                <input type="file" id="logo-in" accept="image/png,image/jpeg,image/webp,image/svg+xml" style="max-width:240px">
+                <button type="button" class="btn btn-ghost" id="logo-clear" style="padding:8px 14px;display:none">Remove</button>
+              </div>
+            </div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Company name</label><input data-k="company" placeholder="Sharma Traders Pvt Ltd"></div>
+              <div class="f"><label>Pay month</label><input data-k="month" type="month"></div>
+            </div>
+            <div class="f" style="margin-top:16px"><label>Company address</label><input data-k="address" placeholder="MG Road, Pune 411001"></div>
+          </div>
+
+          <div class="card">
+            <h2>Employee</h2>
+            <div class="f-row">
+              <div class="f"><label>Employee name</label><input data-k="emp.name" placeholder="Priya Verma"></div>
+              <div class="f"><label>Employee ID</label><input data-k="emp.id" placeholder="EMP-014"></div>
+            </div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Designation</label><input data-k="emp.designation" placeholder="Sales Executive"></div>
+              <div class="f"><label>Department</label><input data-k="emp.dept" placeholder="Sales"></div>
+            </div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Date of joining</label><input data-k="emp.doj" type="date"></div>
+              <div class="f"><label>PAN</label><input data-k="emp.pan" maxlength="10" style="text-transform:uppercase" placeholder="ABCDE1234F"></div>
+            </div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>UAN (PF)</label><input data-k="emp.uan" placeholder="1001 2345 6789"></div>
+              <div class="f"><label>Bank account</label><input data-k="emp.bank" placeholder="HDFC ••••6789"></div>
+            </div>
+            <div class="f-row f-row--keep" style="margin-top:16px">
+              <div class="f"><label>Days in month</label><input data-k="days" inputmode="numeric"></div>
+              <div class="f"><label>LOP days (unpaid leave)</label><input data-k="lop" inputmode="decimal" placeholder="0"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Earnings (full month)</h2>
+            <p class="card-sub">Enter the full monthly amounts. They are reduced automatically for LOP days.</p>
+            <table class="t-table"><tbody id="earn-body"></tbody></table>
+            <button type="button" class="btn btn-soft add-row" data-add="earn">+ Add earning</button>
+          </div>
+
+          <div class="card">
+            <h2>Deductions</h2>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:0.92rem;margin-bottom:14px">
+              <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-k="autoPF"> Auto PF: 12% of Basic + DA, on wages up to ₹15,000</label>
+              <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-k="autoESI"> Auto ESI: 0.75% of gross when gross ≤ ₹21,000</label>
+            </div>
+            <table class="t-table"><tbody id="ded-body"></tbody></table>
+            <button type="button" class="btn btn-soft add-row" data-add="ded">+ Add deduction</button>
+          </div>
+        </form>
+
+        <div class="doc-pane" style="position:sticky;top:90px">
+          <div class="r-actions" style="margin:0 0 14px">
+            <button class="btn btn-primary" id="btn-pdf">⬇ Download PDF</button>
+          </div>
+          <div class="doc-wrap"><div class="doc" id="doc"></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How the salary slip is calculated</h2>
+        <span class="formula">Paid days     = Days in month − LOP days
+Earned amount = Monthly amount × Paid days ÷ Days in month
+Employee PF   = 12% × min(Earned Basic + DA, ₹15,000)
+Employee ESI  = 0.75% × Gross earnings   (only if gross ≤ ₹21,000)
+Net pay       = Gross earnings − Total deductions</span>
+
+        <h2>Common salary components in India</h2>
+        <table>
+          <thead><tr><th>Component</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td>Basic</td><td>Usually 40–50% of CTC. PF and gratuity are calculated on it.</td></tr>
+            <tr><td>HRA</td><td>House Rent Allowance, often 40–50% of Basic. Partly tax-free under the old regime if you pay rent.</td></tr>
+            <tr><td>Special allowance</td><td>The balancing figure that makes up the rest of the salary. Fully taxable.</td></tr>
+            <tr><td>Conveyance / LTA</td><td>Travel-related allowances, depending on company policy.</td></tr>
+            <tr><td>Professional tax</td><td>State tax on employment, up to ₹2,500 a year (₹200 a month in Karnataka, Maharashtra and others; varies by state).</td></tr>
+            <tr><td>TDS</td><td>Income tax deducted each month based on the employee's projected yearly income and chosen regime.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>Is a salary slip mandatory?</summary><p>Under the Code on Wages and state shops-and-establishments rules, employers must give employees wage slips. Payslips are also needed for loans, visas and rental applications.</p></details>
+          <details><summary>Is PF mandatory for my business?</summary><p>EPF registration is required once you have 20 or more employees. Employees earning above ₹15,000 Basic + DA can opt out at joining. Untick "Auto PF" to remove it.</p></details>
+          <details><summary>Is the data I enter stored anywhere?</summary><p>No. Salary details stay on your screen only and disappear once you download the payslip. Your first payslip PDF is free.</p></details>
+          <details><summary>Can I generate payslips for my whole team automatically?</summary><p>Yes. We build simple payroll automations that create every employee's payslip from a sheet and send it to them on WhatsApp or email. <a href="#get-website">Ask us about it</a>.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, $ = function (id) { return document.getElementById(id); };
+    function curMonth(off) { var d = new Date(); d.setDate(1); d.setMonth(d.getMonth() + (off || 0)); return d.toISOString().slice(0, 7); }
+    function daysIn(ym) { var p = ym.split('-'); return new Date(+p[0], +p[1], 0).getDate(); }
+    function blank() {
+      var m = curMonth(-1);
+      return { logo: '', company: '', address: '', month: m, days: daysIn(m), lop: '',
+        emp: { name: '', id: '', designation: '', dept: '', doj: '', pan: '', uan: '', bank: '' },
+        autoPF: true, autoESI: true,
+        earn: [{ n: 'Basic', a: '' }, { n: 'HRA', a: '' }, { n: 'Conveyance allowance', a: '' }, { n: 'Special allowance', a: '' }],
+        ded: [{ n: 'Professional tax', a: '200' }, { n: 'TDS (income tax)', a: '' }] };
+    }
+    var grid = $('doc-grid');
+    if (S.freeUsed('payslip')) { S.lockDoc(grid, 'salary slip'); return; }
+    /* Kept in memory only: never saved to the browser or any server */
+    var d = blank();
+    var form = $('slip-form');
+
+    function getPath(o, p) { return p.split('.').reduce(function (a, k) { return a == null ? a : a[k]; }, o); }
+    function setPath(o, p, v) { var ks = p.split('.'), last = ks.pop(); ks.reduce(function (a, k) { return a[k]; }, o)[last] = v; }
+    function fill() {
+      form.querySelectorAll('[data-k]').forEach(function (el) {
+        var v = getPath(d, el.dataset.k);
+        if (el.type === 'checkbox') el.checked = !!v; else el.value = v == null ? '' : v;
+      });
+    }
+    function rowHTML(list, r, i) {
+      return '<tr data-list="' + list + '" data-i="' + i + '"><td><input data-f="n" value="' + S.esc(r.n) + '" placeholder="Component"></td>' +
+        '<td style="width:150px"><div class="f-affix"><span class="pre">₹</span><input class="has-pre" data-f="a" inputmode="decimal" value="' + S.esc(r.a) + '" placeholder="0"></div></td>' +
+        '<td style="width:32px"><button type="button" class="row-del" aria-label="Remove">×</button></td></tr>';
+    }
+    function renderRows() {
+      $('earn-body').innerHTML = d.earn.map(function (r, i) { return rowHTML('earn', r, i); }).join('');
+      $('ded-body').innerHTML = d.ded.map(function (r, i) { return rowHTML('ded', r, i); }).join('');
+    }
+
+    function compute() {
+      var days = Math.max(1, S.num(d.days)), lop = Math.min(days, Math.max(0, S.num(d.lop)));
+      var paid = days - lop, f = paid / days;
+      var earn = d.earn.filter(function (r) { return r.n || S.num(r.a); }).map(function (r) { return { n: r.n, a: S.num(r.a) * f }; });
+      var gross = earn.reduce(function (s, r) { return s + r.a; }, 0);
+      var pfWage = earn.filter(function (r) { return /basic|\bda\b|dearness/i.test(r.n); }).reduce(function (s, r) { return s + r.a; }, 0);
+      var ded = [];
+      if (d.autoPF && pfWage > 0) ded.push({ n: 'Provident fund (12%)', a: Math.round(Math.min(pfWage, 15000) * 0.12) });
+      if (d.autoESI && gross > 0 && gross <= 21000) ded.push({ n: 'ESI (0.75%)', a: Math.ceil(gross * 0.0075) });
+      d.ded.forEach(function (r) { if (r.n || S.num(r.a)) ded.push({ n: r.n, a: S.num(r.a) }); });
+      var totalDed = ded.reduce(function (s, r) { return s + r.a; }, 0);
+      return { days: days, lop: lop, paid: paid, earn: earn, ded: ded, gross: gross, totalDed: totalDed, net: gross - totalDed };
+    }
+
+    function monthLabel(ym) {
+      if (!ym) return '';
+      var p = ym.split('-');
+      return new Date(+p[0], +p[1] - 1, 1).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
+    }
+    function fmtDate(iso) { if (!iso) return ''; var p = iso.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
+
+    function render() {
+      var c = compute(), e = S.esc, emp = d.emp;
+      var h = '<div class="doc-top" style="align-items:center"><div>';
+      if (d.logo) h += '<img class="doc-logo" src="' + d.logo + '" alt="">';
+      h += '<div style="font-size:16px;font-weight:800">' + (e(d.company) || '<span class="muted">Company name</span>') + '</div>';
+      if (d.address) h += '<div class="muted">' + e(d.address) + '</div>';
+      h += '</div><div class="doc-meta"><h1>PAYSLIP</h1><div>' + e(monthLabel(d.month)) + '</div></div></div>';
+      var info = [['Employee name', emp.name], ['Employee ID', emp.id], ['Designation', emp.designation], ['Department', emp.dept],
+        ['Date of joining', fmtDate(emp.doj)], ['PAN', (emp.pan || '').toUpperCase()], ['UAN', emp.uan], ['Bank account', emp.bank],
+        ['Days in month', S.fmt(c.days, 1)], ['Paid days', S.fmt(c.paid, 1)]].filter(function (x, i) { return x[1] || i < 2 || i >= 8; });
+      h += '<table><tbody>';
+      for (var i = 0; i < info.length; i += 2) {
+        h += '<tr><td class="muted" style="width:22%">' + info[i][0] + '</td><td style="width:28%"><b>' + e(info[i][1]) + '</b></td>';
+        h += info[i + 1] ? '<td class="muted" style="width:22%">' + info[i + 1][0] + '</td><td style="width:28%"><b>' + e(info[i + 1][1]) + '</b></td></tr>' : '<td></td><td></td></tr>';
+      }
+      h += '</tbody></table>';
+      var n = Math.max(c.earn.length, c.ded.length);
+      h += '<table><thead><tr><th>Earnings</th><th class="num">Amount</th><th>Deductions</th><th class="num">Amount</th></tr></thead><tbody>';
+      for (var j = 0; j < n; j++) {
+        var a = c.earn[j], b = c.ded[j];
+        h += '<tr><td>' + (a ? e(a.n) : '') + '</td><td class="num">' + (a ? S.fmt(a.a, 2) : '') + '</td><td>' + (b ? e(b.n) : '') + '</td><td class="num">' + (b ? S.fmt(b.a, 2) : '') + '</td></tr>';
+      }
+      h += '<tr style="font-weight:800"><td>Gross earnings</td><td class="num">' + S.fmt(c.gross, 2) + '</td><td>Total deductions</td><td class="num">' + S.fmt(c.totalDed, 2) + '</td></tr>';
+      h += '</tbody></table>';
+      h += '<table class="doc-sum"><tbody><tr class="grand"><td>Net pay</td><td class="num">' + S.inr(Math.round(c.net), 0) + '</td></tr></tbody></table>';
+      h += '<div style="margin-top:6px"><b>In words:</b> ' + S.words(Math.round(c.net)) + '</div>';
+      h += '<div class="muted" style="margin-top:22px;font-size:11px">This is a computer-generated payslip and does not need a signature.</div>';
+      h += '<div class="doc-credit">Made free with <b>solvvai.com/tools</b> · Payroll &amp; workflow automation for growing businesses</div>';
+      $('doc').innerHTML = h;
+    }
+
+    form.addEventListener('input', function (ev) {
+      var el = ev.target;
+      if (el.dataset.k) {
+        setPath(d, el.dataset.k, el.type === 'checkbox' ? el.checked : el.value);
+        if (el.dataset.k === 'month' && el.value) { d.days = daysIn(el.value); form.querySelector('[data-k="days"]').value = d.days; }
+      } else if (el.dataset.f) {
+        var tr = el.closest('tr'); d[tr.dataset.list][+tr.dataset.i][el.dataset.f] = el.value;
+      }
+      render();
+    });
+    form.addEventListener('click', function (ev) {
+      var del = ev.target.closest('.row-del');
+      if (del) { var tr = del.closest('tr'); d[tr.dataset.list].splice(+tr.dataset.i, 1); renderRows(); render(); return; }
+      var add = ev.target.closest('[data-add]');
+      if (add) { d[add.dataset.add].push({ n: '', a: '' }); renderRows(); render(); var rows = $(add.dataset.add + '-body').querySelectorAll('tr'); rows[rows.length - 1].querySelector('input').focus(); }
+    });
+
+    var logoIn = $('logo-in'), logoPrev = $('logo-prev'), logoClear = $('logo-clear');
+    function showLogo() { logoPrev.src = d.logo || ''; logoPrev.style.display = d.logo ? '' : 'none'; logoClear.style.display = d.logo ? '' : 'none'; }
+    logoIn.addEventListener('change', function () {
+      var file = logoIn.files && logoIn.files[0]; if (!file) return;
+      if (file.size > 1.5 * 1024 * 1024) { S.toast('Please use a logo under 1.5 MB'); logoIn.value = ''; return; }
+      var rd = new FileReader(), img = new Image();
+      rd.onload = function () {
+        img.onload = function () {
+          var sc = Math.min(1, 360 / Math.max(img.width, img.height)), cv = document.createElement('canvas');
+          cv.width = Math.round(img.width * sc); cv.height = Math.round(img.height * sc);
+          cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height);
+          d.logo = cv.toDataURL('image/png'); showLogo(); render();
+        };
+        img.src = rd.result;
+      };
+      rd.readAsDataURL(file);
+    });
+    logoClear.addEventListener('click', function () { d.logo = ''; logoIn.value = ''; showLogo(); render(); });
+
+    $('btn-pdf').addEventListener('click', function () {
+      if (!d.company.trim() || !d.emp.name.trim() || compute().gross <= 0) { S.toast('Add company name, employee name and earnings first'); return; }
+      render();
+      S.printOnce('payslip', 'salary slip', grid, function () { d = blank(); });
+    });
+    S.seg($('view-tabs'), function (v) { grid.dataset.view = v; window.scrollTo({ top: grid.getBoundingClientRect().top + window.scrollY - 90 }); });
+
+    fill(); renderRows(); showLogo(); render();
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

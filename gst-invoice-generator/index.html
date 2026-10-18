@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free GST Invoice Generator Online — Download PDF Bill | Solvv AI</title>
+  <meta name="description" content="Create a GST invoice online for free. Add your logo, GSTIN, HSN/SAC codes and items, get the CGST/SGST or IGST split automatically, and download a PDF bill. No sign-up.">
+  <link rel="canonical" href="https://solvvai.com/gst-invoice-generator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free GST Invoice Generator — Download PDF | Solvv AI">
+  <meta property="og:description" content="Make a professional GST invoice with your logo in 2 minutes. Free, no sign-up.">
+  <meta property="og:url" content="https://solvvai.com/gst-invoice-generator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication","name":"GST Invoice Generator","url":"https://solvvai.com/gst-invoice-generator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"Solvv AI","url":"https://solvvai.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What must a GST invoice include?","acceptedAnswer":{"@type":"Answer","text":"Supplier name, address and GSTIN; a unique invoice number and date; customer name and address (and GSTIN if registered); place of supply; HSN or SAC code; description, quantity and value of goods or services; taxable value; GST rate and amount split into CGST/SGST or IGST; and a signature."}},
+      {"@type":"Question","name":"Is this GST invoice generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your first GST invoice PDF is free. Nothing you type into the invoice is stored; it disappears once you download it."}},
+      {"@type":"Question","name":"How do I download the invoice as a PDF?","acceptedAnswer":{"@type":"Answer","text":"Click Download PDF and choose Save as PDF in the print window. On a phone, use the Share or Print option and pick Save as PDF."}}
+    ]}
+  ]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="gst-invoice-generator">
+  <div id="t-nav"></div>
+
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / GST invoice generator</div>
+      <h1>Free GST <em>Invoice Generator</em></h1>
+      <p class="lead">Fill in your details and items. The CGST/SGST or IGST split, totals and amount in words are worked out for you. Download it as a PDF.</p>
+      <div class="t-badges"><span class="t-badge">✓ 1 free PDF</span><span class="t-badge">✓ Your logo</span><span class="t-badge">✓ Nothing stored. Download and done</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="seg seg-block t-tabs" id="view-tabs"><button data-v="edit" class="on">1. Fill details</button><button data-v="preview">2. Preview &amp; download</button></div>
+      <div class="t-grid" id="doc-grid" data-view="edit" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+        <form class="edit-pane" id="doc-form" autocomplete="off" onsubmit="return false">
+          <div class="card">
+            <h2>Your business</h2>
+            <div class="f">
+              <span class="f-label">Logo (optional)</span>
+              <div class="logo-drop">
+                <img id="logo-prev" alt="Logo preview" style="display:none">
+                <input type="file" id="logo-in" accept="image/png,image/jpeg,image/webp,image/svg+xml" style="max-width:240px">
+                <button type="button" class="btn btn-ghost" id="logo-clear" style="padding:8px 14px;display:none">Remove</button>
+              </div>
+            </div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Business name</label><input data-k="from.name" placeholder="Sharma Traders"></div>
+              <div class="f"><label>GSTIN</label><input data-k="from.gstin" placeholder="27ABCDE1234F1Z5" maxlength="15" style="text-transform:uppercase"></div>
+            </div>
+            <div class="f" style="margin-top:16px"><label>Address</label><textarea data-k="from.address" rows="2" placeholder="Shop 4, MG Road, Pune 411001"></textarea></div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Phone</label><input data-k="from.phone" type="tel" placeholder="98765 43210"></div>
+              <div class="f"><label>Email</label><input data-k="from.email" type="email" placeholder="accounts@business.in"></div>
+            </div>
+            <div class="f" style="margin-top:16px"><label for="from-state">Your state</label><select id="from-state" data-k="from.state"></select></div>
+          </div>
+
+          <div class="card">
+            <h2>Customer</h2>
+            <div class="f-row">
+              <div class="f"><label>Customer name</label><input data-k="to.name" placeholder="Customer or company name"></div>
+              <div class="f"><label>Customer GSTIN (if registered)</label><input data-k="to.gstin" maxlength="15" style="text-transform:uppercase" placeholder="Optional"></div>
+            </div>
+            <div class="f" style="margin-top:16px"><label>Billing address</label><textarea data-k="to.address" rows="2"></textarea></div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Phone</label><input data-k="to.phone" type="tel"></div>
+              <div class="f"><label for="to-state">Place of supply</label><select id="to-state" data-k="to.state"></select></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Invoice details</h2>
+            <div class="f-row f-row--3">
+              <div class="f"><label>Invoice no.</label><input data-k="no"></div>
+              <div class="f"><label>Invoice date</label><input data-k="date" type="date"></div>
+              <div class="f"><label>Due date</label><input data-k="date2" type="date"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Items</h2>
+            <p class="card-sub" id="tax-mode"></p>
+            <table class="t-table stack">
+              <thead><tr><th>Item</th><th>HSN/SAC</th><th>Qty</th><th>Rate ₹</th><th>Disc %</th><th class="gst-col">GST</th><th></th></tr></thead>
+              <tbody id="items-body"></tbody>
+            </table>
+            <button type="button" class="btn btn-soft add-row" id="add-item">+ Add item</button>
+            <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:18px;font-size:0.92rem">
+              <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-k="gst"> Charge GST</label>
+              <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-k="roundOff"> Round off total</label>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Payment &amp; terms</h2>
+            <div class="f"><label>Bank / UPI details</label><textarea data-k="bank" rows="3" placeholder="Bank: HDFC Bank, A/c 50100123456789, IFSC HDFC0001234&#10;UPI: business@okhdfc"></textarea></div>
+            <div class="f" style="margin-top:16px"><label>Terms &amp; conditions</label><textarea data-k="terms" rows="3"></textarea></div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Note to customer</label><input data-k="notes"></div>
+              <div class="f"><label>Signatory name</label><input data-k="sign" placeholder="Authorised signatory"></div>
+            </div>
+          </div>
+        </form>
+
+        <div class="doc-pane" style="position:sticky;top:90px">
+          <div class="r-actions" style="margin:0 0 14px">
+            <button class="btn btn-primary" id="btn-pdf">⬇ Download PDF</button>
+          </div>
+          <div class="doc-wrap"><div class="doc" id="doc"></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>What a GST invoice must include</h2>
+        <p>Under Rule 46 of the CGST Rules, a tax invoice needs:</p>
+        <ul>
+          <li>Your name, address and <strong>GSTIN</strong></li>
+          <li>A <strong>unique invoice number</strong> (up to 16 characters, one series per financial year) and the date</li>
+          <li>Customer name and address, and their GSTIN if they are registered</li>
+          <li><strong>Place of supply</strong> (state name and code) for inter-state sales</li>
+          <li><strong>HSN code</strong> for goods or <strong>SAC code</strong> for services</li>
+          <li>Description, quantity, unit and value of each item, and any discount</li>
+          <li>Taxable value, GST rate, and tax amount split into CGST + SGST or IGST</li>
+          <li>Signature or digital signature of the supplier</li>
+        </ul>
+        <p>This generator fills in the tax split for you. If your state and the place of supply match, it charges CGST + SGST. If they differ, it charges IGST. Type a GSTIN and the state is picked up from its first two digits.</p>
+
+        <h2>Tax invoice or bill of supply?</h2>
+        <p>Registered businesses charging GST issue a <strong>tax invoice</strong>. Businesses under the composition scheme, or selling only exempt goods, issue a <strong>bill of supply</strong> without GST. Untick "Charge GST" above to make one.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>Is this invoice generator free?</summary><p>Yes. Your first invoice PDF is free. Share your contact details once to download it. Need invoices every day? We can set up automated billing for your business.</p></details>
+          <details><summary>Where is my data stored?</summary><p>Nowhere. The invoice is built in your browser and disappears once you download it. Nothing you type into the invoice is saved or sent to our servers.</p></details>
+          <details><summary>How do I save the invoice as a PDF?</summary><p>Click <strong>Download PDF</strong> and choose <strong>Save as PDF</strong> as the printer. On Android or iPhone, use Print → Save as PDF, or share it straight to WhatsApp.</p></details>
+          <details><summary>Do I need an e-invoice (IRN)?</summary><p>E-invoicing on the government IRP portal applies to businesses with aggregate turnover above ₹5 crore in any year since 2017-18. Smaller businesses can use a regular tax invoice like this one.</p></details>
+          <details><summary>Can I make a quotation instead?</summary><p>Yes. Use our free <a href="/quotation-maker/">quotation maker</a>. It has the same layout with validity dates and quotation terms.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script src="/tools/doc-builder.js"></script>
+  <script>SolvvDoc.init({ kind: 'invoice' });</script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

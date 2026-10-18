@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Quotation Maker Online — Create a Quotation PDF | Solvv AI</title>
+  <meta name="description" content="Make a professional quotation online for free. Add your logo, items, GST and terms, then download it as a PDF or share it on WhatsApp. Made for contractors, agencies, traders and service businesses.">
+  <link rel="canonical" href="https://solvvai.com/quotation-maker/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Quotation Maker — Download PDF | Solvv AI">
+  <meta property="og:description" content="Create a professional quotation with GST and your logo in 2 minutes. Free, no sign-up.">
+  <meta property="og:url" content="https://solvvai.com/quotation-maker/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication","name":"Quotation Maker","url":"https://solvvai.com/quotation-maker/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"Solvv AI","url":"https://solvvai.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What should a quotation include?","acceptedAnswer":{"@type":"Answer","text":"Your business details, the customer's name, a quotation number and date, how long the quote is valid, an itemised list with quantities and rates, taxes, the total, and your payment and delivery terms."}},
+      {"@type":"Question","name":"Is a quotation the same as an invoice?","acceptedAnswer":{"@type":"Answer","text":"No. A quotation is an offer sent before the sale. It is not a tax document and does not need to be reported in GST returns. Once the customer accepts, you issue a tax invoice."}},
+      {"@type":"Question","name":"Should I include GST in a quotation?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you are GST-registered. Showing GST separately avoids surprises and makes it easy for business customers to check their input tax credit."}}
+    ]}
+  ]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="quotation-maker">
+  <div id="t-nav"></div>
+
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Quotation maker</div>
+      <h1>Free <em>Quotation Maker</em></h1>
+      <p class="lead">Send a clear, professional quote in two minutes. Add your items, GST and terms, then download a PDF or share it with your customer on WhatsApp.</p>
+      <div class="t-badges"><span class="t-badge">✓ 1 free PDF</span><span class="t-badge">✓ Your logo</span><span class="t-badge">✓ Nothing stored. Download and done</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="seg seg-block t-tabs" id="view-tabs"><button data-v="edit" class="on">1. Fill details</button><button data-v="preview">2. Preview &amp; download</button></div>
+      <div class="t-grid" id="doc-grid" data-view="edit" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+        <form class="edit-pane" id="doc-form" autocomplete="off" onsubmit="return false">
+          <div class="card">
+            <h2>Your business</h2>
+            <div class="f">
+              <span class="f-label">Logo (optional)</span>
+              <div class="logo-drop">
+                <img id="logo-prev" alt="Logo preview" style="display:none">
+                <input type="file" id="logo-in" accept="image/png,image/jpeg,image/webp,image/svg+xml" style="max-width:240px">
+                <button type="button" class="btn btn-ghost" id="logo-clear" style="padding:8px 14px;display:none">Remove</button>
+              </div>
+            </div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Business name</label><input data-k="from.name" placeholder="Sharma Traders"></div>
+              <div class="f"><label>GSTIN</label><input data-k="from.gstin" placeholder="27ABCDE1234F1Z5" maxlength="15" style="text-transform:uppercase"></div>
+            </div>
+            <div class="f" style="margin-top:16px"><label>Address</label><textarea data-k="from.address" rows="2" placeholder="Shop 4, MG Road, Pune 411001"></textarea></div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Phone</label><input data-k="from.phone" type="tel" placeholder="98765 43210"></div>
+              <div class="f"><label>Email</label><input data-k="from.email" type="email" placeholder="accounts@business.in"></div>
+            </div>
+            <div class="f" style="margin-top:16px"><label for="from-state">Your state</label><select id="from-state" data-k="from.state"></select></div>
+          </div>
+
+          <div class="card">
+            <h2>Customer</h2>
+            <div class="f-row">
+              <div class="f"><label>Customer name</label><input data-k="to.name" placeholder="Customer or company name"></div>
+              <div class="f"><label>Customer GSTIN (if registered)</label><input data-k="to.gstin" maxlength="15" style="text-transform:uppercase" placeholder="Optional"></div>
+            </div>
+            <div class="f" style="margin-top:16px"><label>Address</label><textarea data-k="to.address" rows="2"></textarea></div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Phone</label><input data-k="to.phone" type="tel"></div>
+              <div class="f"><label for="to-state">Customer state</label><select id="to-state" data-k="to.state"></select></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Quotation details</h2>
+            <div class="f-row f-row--3">
+              <div class="f"><label>Quotation no.</label><input data-k="no"></div>
+              <div class="f"><label>Date</label><input data-k="date" type="date"></div>
+              <div class="f"><label>Valid until</label><input data-k="date2" type="date"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Items</h2>
+            <p class="card-sub" id="tax-mode"></p>
+            <table class="t-table stack">
+              <thead><tr><th>Item</th><th>HSN/SAC</th><th>Qty</th><th>Rate ₹</th><th>Disc %</th><th class="gst-col">GST</th><th></th></tr></thead>
+              <tbody id="items-body"></tbody>
+            </table>
+            <button type="button" class="btn btn-soft add-row" id="add-item">+ Add item</button>
+            <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:18px;font-size:0.92rem">
+              <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-k="gst"> Charge GST</label>
+              <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-k="roundOff"> Round off total</label>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Payment &amp; terms</h2>
+            <div class="f"><label>Bank / UPI details</label><textarea data-k="bank" rows="3" placeholder="Bank: HDFC Bank, A/c 50100123456789, IFSC HDFC0001234&#10;UPI: business@okhdfc"></textarea></div>
+            <div class="f" style="margin-top:16px"><label>Terms &amp; conditions</label><textarea data-k="terms" rows="3"></textarea></div>
+            <div class="f-row" style="margin-top:16px">
+              <div class="f"><label>Note to customer</label><input data-k="notes"></div>
+              <div class="f"><label>Signatory name</label><input data-k="sign" placeholder="Authorised signatory"></div>
+            </div>
+          </div>
+        </form>
+
+        <div class="doc-pane" style="position:sticky;top:90px">
+          <div class="r-actions" style="margin:0 0 14px">
+            <button class="btn btn-primary" id="btn-pdf">⬇ Download PDF</button>
+          </div>
+          <div class="doc-wrap"><div class="doc" id="doc"></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How to write a quotation that wins the job</h2>
+        <ol>
+          <li><strong>Itemise everything.</strong> Break the work into clear lines (material, labour, delivery, installation) so the customer can see where the money goes.</li>
+          <li><strong>Show GST separately.</strong> Business customers want to see the tax they can claim back. Use the right HSN or SAC code.</li>
+          <li><strong>Set a validity date.</strong> Material prices change. 15–30 days is common.</li>
+          <li><strong>Spell out payment terms.</strong> For example, 50% advance and the balance on delivery, with your bank or UPI details.</li>
+          <li><strong>Follow up within 48 hours.</strong> Most quotes are lost to silence, not price.</li>
+        </ol>
+
+        <h2>Quotation vs estimate vs proforma invoice</h2>
+        <table>
+          <thead><tr><th>Document</th><th>What it is</th><th>Binding?</th></tr></thead>
+          <tbody>
+            <tr><td>Estimate</td><td>A rough idea of cost; the final price may change</td><td>No</td></tr>
+            <tr><td>Quotation</td><td>A fixed-price offer valid until a date</td><td>Yes, once accepted</td></tr>
+            <tr><td>Proforma invoice</td><td>A preview of the final invoice, often used to collect an advance</td><td>No tax entry</td></tr>
+            <tr><td>Tax invoice</td><td>The final bill that records the sale and GST</td><td>Yes, reported in GST returns</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>Is this quotation maker free?</summary><p>Yes. Your first quotation PDF is free. Nothing you type is stored; the quotation disappears once you download it.</p></details>
+          <details><summary>Can I convert the quotation into an invoice?</summary><p>Once the customer accepts, open our free <a href="/gst-invoice-generator/">GST invoice generator</a> to raise the tax invoice with the same items.</p></details>
+          <details><summary>Should a quotation have GST?</summary><p>If you are GST-registered, yes. Show the rate and amount separately. If you are not registered, untick "Charge GST".</p></details>
+          <details><summary>How do I send the quotation on WhatsApp?</summary><p>Download the PDF, then attach it in WhatsApp. On a phone, choose Print → Save as PDF, then Share → WhatsApp.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script src="/tools/doc-builder.js"></script>
+  <script>SolvvDoc.init({ kind: 'quote' });</script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

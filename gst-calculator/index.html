@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Calculator Online Free — Add or Remove GST (CGST, SGST, IGST) | Solvv AI</title>
+  <meta name="description" content="Free GST calculator for India. Add GST to a price or remove GST from an inclusive amount, with CGST, SGST and IGST split. Covers 5%, 18%, 40% and older 12% and 28% rates.">
+  <link rel="canonical" href="https://solvvai.com/gst-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free GST Calculator — Add or Remove GST | Solvv AI">
+  <meta property="og:description" content="Add or remove GST in one click, with CGST/SGST/IGST split. Free, no sign-up.">
+  <meta property="og:url" content="https://solvvai.com/gst-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication","name":"GST Calculator","url":"https://solvvai.com/gst-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"Solvv AI","url":"https://solvvai.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How do I remove GST from an inclusive price?","acceptedAnswer":{"@type":"Answer","text":"Divide the inclusive price by (1 + GST rate/100). For ₹1,180 at 18%, the price before GST is 1180 ÷ 1.18 = ₹1,000 and the GST is ₹180."}},
+      {"@type":"Question","name":"When do I charge CGST + SGST and when IGST?","acceptedAnswer":{"@type":"Answer","text":"If the supplier and the place of supply are in the same state, charge CGST and SGST (half the rate each). If they are in different states, charge IGST at the full rate."}},
+      {"@type":"Question","name":"What are the GST rates in India now?","acceptedAnswer":{"@type":"Answer","text":"From 22 September 2025 most goods and services fall under 5% or 18%, with 40% for luxury and sin goods. Special rates of 0.25% and 3% apply to diamonds, gold and jewellery, and some items are exempt (0%)."}}
+    ]}
+  ]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="gst-calculator">
+  <div id="t-nav"></div>
+
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / GST calculator</div>
+      <h1>Free GST <em>Calculator</em> Online</h1>
+      <p class="lead">Add GST to a price or take it out of a GST-inclusive amount, with the CGST, SGST and IGST split ready for your invoice.</p>
+      <div class="t-badges"><span class="t-badge">✓ Free, no sign-up</span><span class="t-badge">✓ GST 2.0 rates</span><span class="t-badge">✓ CGST / SGST / IGST</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+          <div class="f">
+            <span class="f-label">What do you want to do?</span>
+            <div class="seg seg-block" id="mode">
+              <button data-v="add" class="on">Add GST</button>
+              <button data-v="remove">Remove GST</button>
+            </div>
+          </div>
+
+          <div class="f" style="margin-top:20px">
+            <label for="amount" id="amount-label">Amount before GST</label>
+            <div class="f-affix"><span class="pre">₹</span><input id="amount" class="has-pre" type="text" inputmode="decimal" placeholder="10,000" autocomplete="off"></div>
+          </div>
+
+          <div class="f" style="margin-top:20px">
+            <span class="f-label">GST rate</span>
+            <div class="chips" id="rates">
+              <button class="chip" data-v="0.25">0.25%</button>
+              <button class="chip" data-v="3">3%</button>
+              <button class="chip" data-v="5">5%</button>
+              <button class="chip" data-v="12">12%</button>
+              <button class="chip on" data-v="18">18%</button>
+              <button class="chip" data-v="28">28%</button>
+              <button class="chip" data-v="40">40%</button>
+            </div>
+            <div class="f-affix" style="margin-top:10px;max-width:180px">
+              <input id="custom-rate" class="has-suf" type="text" inputmode="decimal" placeholder="Other rate" aria-label="Custom GST rate">
+              <span class="suf">%</span>
+            </div>
+            <p class="f-hint">Since 22 Sep 2025 most items are 5% or 18%. 12% and 28% are kept here for older bills.</p>
+          </div>
+
+          <div class="f" style="margin-top:20px">
+            <span class="f-label">Type of sale</span>
+            <div class="seg seg-block" id="supply">
+              <button data-v="intra" class="on">Same state (CGST + SGST)</button>
+              <button data-v="inter">Other state (IGST)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="r-hero-label">Total incl. GST</div>
+            <div class="r-value" id="r-total">₹0</div>
+            <div class="r-note" id="r-note">Enter an amount to calculate</div>
+          </div>
+          <div class="gated">
+            <div class="r-lines" id="r-lines"></div>
+            <div class="r-words" id="r-words"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy breakdown</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+            <a class="btn btn-outline" href="/gst-invoice-generator/">Make a GST invoice →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How GST is calculated</h2>
+        <p><strong>Adding GST</strong> to a price before tax:</p>
+        <span class="formula">GST amount = Price × GST rate ÷ 100
+Total price = Price + GST amount</span>
+        <p><strong>Removing GST</strong> from a price that already includes it:</p>
+        <span class="formula">Price before GST = Inclusive price ÷ (1 + GST rate ÷ 100)
+GST amount = Inclusive price − Price before GST</span>
+        <p>Example: an item sold for ₹1,180 including 18% GST has a base price of 1180 ÷ 1.18 = <strong>₹1,000</strong> and GST of <strong>₹180</strong>. In the same state that is ₹90 CGST + ₹90 SGST. Across states it is ₹180 IGST.</p>
+
+        <h2>CGST, SGST or IGST?</h2>
+        <table>
+          <thead><tr><th>Sale</th><th>Tax charged</th><th>Example at 18%</th></tr></thead>
+          <tbody>
+            <tr><td>Within the same state (intra-state)</td><td>CGST + SGST, half each</td><td>9% CGST + 9% SGST</td></tr>
+            <tr><td>To another state (inter-state)</td><td>IGST, full rate</td><td>18% IGST</td></tr>
+            <tr><td>Within a Union Territory without a legislature</td><td>CGST + UTGST</td><td>9% CGST + 9% UTGST</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Current GST rates (GST 2.0)</h2>
+        <p>The GST Council cut the main slabs to two from <strong>22 September 2025</strong>. Always confirm the rate for your HSN/SAC code before you file.</p>
+        <table>
+          <thead><tr><th>Rate</th><th>Typically applies to</th></tr></thead>
+          <tbody>
+            <tr><td>0%</td><td>Exempt essentials such as fresh produce, milk, and some health and education services</td></tr>
+            <tr><td>0.25% / 3%</td><td>Rough diamonds / gold, silver and jewellery</td></tr>
+            <tr><td>5%</td><td>Daily-use goods, many food items, restaurant services (without ITC)</td></tr>
+            <tr><td>18%</td><td>Most goods and services: electronics, most professional services, software</td></tr>
+            <tr><td>40%</td><td>Luxury and sin goods such as aerated drinks and high-end cars</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>How do I remove GST from an inclusive price?</summary><p>Divide the inclusive price by (1 + rate ÷ 100). For ₹1,180 at 18%: 1180 ÷ 1.18 = ₹1,000 before GST, so the GST is ₹180. Choose "Remove GST" above and the calculator does it for you.</p></details>
+          <details><summary>Is GST charged on the discounted price?</summary><p>Yes. If the discount is shown on the invoice at the time of sale, GST is charged on the price after the discount.</p></details>
+          <details><summary>Do I need to register for GST?</summary><p>You generally need to register once your yearly turnover crosses ₹40 lakh for goods or ₹20 lakh for services (lower limits apply in some special-category states), or if you sell across states or through e-commerce marketplaces. Check with your CA for your case.</p></details>
+          <details><summary>Can I use this for a GST invoice?</summary><p>Yes. Use our free <a href="/gst-invoice-generator/">GST invoice generator</a> to create a printable invoice with HSN codes, tax split and amount in words.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script>
+  (function () {
+    var S = window.Solvv;
+    var $ = function (id) { return document.getElementById(id); };
+    var amountEl = $('amount'), customEl = $('custom-rate'), ratesEl = $('rates');
+    var rate = 18;
+    var mode = S.seg($('mode'), function (v) {
+      $('amount-label').textContent = v === 'add' ? 'Amount before GST' : 'Amount including GST';
+      calc();
+    });
+    var supply = S.seg($('supply'), calc);
+
+    ratesEl.addEventListener('click', function (e) {
+      var b = e.target.closest('.chip'); if (!b) return;
+      ratesEl.querySelectorAll('.chip').forEach(function (c) { c.classList.toggle('on', c === b); });
+      rate = parseFloat(b.dataset.v); customEl.value = ''; calc();
+    });
+    customEl.addEventListener('input', function () {
+      var v = S.num(customEl);
+      if (customEl.value.trim() !== '') {
+        ratesEl.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('on'); });
+        rate = v;
+      }
+      calc();
+    });
+    amountEl.addEventListener('input', calc);
+
+    var last = null;
+    function calc() {
+      var amt = S.num(amountEl), r = rate;
+      if (amt <= 0) {
+        $('r-total').textContent = '₹0';
+        $('r-note').textContent = 'Enter an amount to calculate';
+        $('r-lines').innerHTML = ''; $('r-words').textContent = ''; last = null; return;
+      }
+      var base, gst, total;
+      if (mode.get() === 'add') { base = amt; gst = amt * r / 100; total = base + gst; }
+      else { total = amt; base = amt / (1 + r / 100); gst = total - base; }
+      var intra = supply.get() === 'intra';
+      var lines = [['Amount before GST', S.inr(base)]];
+      if (intra) {
+        lines.push(['CGST @ ' + S.pct(r / 2, 3), S.inr(gst / 2)]);
+        lines.push(['SGST @ ' + S.pct(r / 2, 3), S.inr(gst / 2)]);
+      } else {
+        lines.push(['IGST @ ' + S.pct(r, 3), S.inr(gst)]);
+      }
+      lines.push(['Total GST', S.inr(gst)]);
+      lines.push(['Total incl. GST', S.inr(total)]);
+      $('r-hero-label').textContent = mode.get() === 'add' ? 'Total incl. GST' : 'Price before GST';
+      $('r-total').textContent = mode.get() === 'add' ? S.inr(total) : S.inr(base);
+      $('r-note').textContent = 'GST @ ' + S.pct(r, 3) + ' = ' + S.inr(gst);
+      $('r-lines').innerHTML = lines.map(function (l, i) {
+        return '<div class="r-line' + (i === lines.length - 1 ? ' r-total' : '') + '"><span>' + l[0] + '</span><span>' + l[1] + '</span></div>';
+      }).join('');
+      $('r-words').textContent = S.words(total);
+      last = lines;
+    }
+
+    function text() {
+      if (!last) return '';
+      return 'GST calculation\n' + last.map(function (l) { return l[0] + ': ' + l[1]; }).join('\n');
+    }
+    $('copy').addEventListener('click', function () { if (last) S.copy(text()); else amountEl.focus(); });
+    $('share').addEventListener('click', function () { if (last) S.shareWA(text()); else amountEl.focus(); });
+    calc();
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>
