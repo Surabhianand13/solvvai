@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Import Duty Calculator India — Customs Duty, SWS &amp; IGST | Solvv AI</title>
+  <meta name="description" content="Free customs import duty calculator for India. Calculate assessable value, Basic Customs Duty, Social Welfare Surcharge, AIDC and IGST on imported goods, and your landed cost per unit.">
+  <link rel="canonical" href="https://solvvai.com/import-duty-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Import Duty Calculator for India | Solvv AI">
+  <meta property="og:description" content="Free customs import duty calculator for India. Calculate assessable value, Basic Customs Duty, Social Welfare Surcharge, AIDC and IGST on imported goods, and your landed cost per unit.">
+  <meta property="og:url" content="https://solvvai.com/import-duty-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Import Duty Calculator", "url": "https://solvvai.com/import-duty-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is import duty calculated in India?", "acceptedAnswer": {"@type": "Answer", "text": "Assessable value = (FOB + freight + insurance) × exchange rate. Basic Customs Duty (BCD) is charged on this, Social Welfare Surcharge is 10% of BCD, and IGST is charged on the assessable value plus BCD and SWS."}}, {"@type": "Question", "name": "What if I don't know the freight and insurance cost?", "acceptedAnswer": {"@type": "Answer", "text": "Under the Customs Valuation Rules, freight is taken as 20% of FOB and insurance as 1.125% of FOB when the actual amounts are not known."}}, {"@type": "Question", "name": "Can I claim IGST paid on imports?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. IGST paid at customs can be claimed as input tax credit by GST-registered importers. BCD and SWS cannot be claimed."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="import-duty-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Import duty calculator</div>
+      <h1>Import <em>Duty</em> Calculator</h1>
+      <p class="lead">Estimate the customs duty and IGST on goods you import into India, and the landed cost per unit, before you place the order.</p>
+      <div class="t-badges"><span class="t-badge">✓ BCD + SWS + IGST</span><span class="t-badge">✓ Any currency</span><span class="t-badge">✓ Landed cost per unit</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+          <h2>Shipment value</h2>
+          <div class="f-row">
+            <div class="f"><label for="fob">Invoice value (FOB)</label><input id="fob" inputmode="decimal" placeholder="10,000"></div>
+            <div class="f-row f-row--keep" style="gap:10px">
+              <div class="f"><label for="cur">Currency</label><select id="cur"><option>USD</option><option>EUR</option><option>GBP</option><option>CNY</option><option>AED</option><option>JPY</option><option value="INR">INR</option></select></div>
+              <div class="f"><label for="fx">₹ per unit</label><input id="fx" inputmode="decimal" placeholder="88.00"></div>
+            </div>
+          </div>
+          <p class="f-hint">Use the customs exchange rate notified by CBIC for the date of import.</p>
+          <div class="f-row" style="margin-top:16px">
+            <div class="f"><label for="frt">Freight</label><input id="frt" inputmode="decimal" placeholder="Leave blank for 20% of FOB"></div>
+            <div class="f"><label for="ins">Insurance</label><input id="ins" inputmode="decimal" placeholder="Leave blank for 1.125% of FOB"></div>
+          </div>
+          <p class="f-hint">In the invoice currency. For CIF invoices, enter the CIF value above and 0 here.</p>
+
+          <h2 style="margin-top:26px">Duty rates for your HS code</h2>
+          <div class="f-row f-row--3">
+            <div class="f"><label for="bcd">Basic Customs Duty</label><div class="f-affix"><input id="bcd" class="has-suf" inputmode="decimal" value="10"><span class="suf">%</span></div></div>
+            <div class="f"><label for="aidc">AIDC / other cess</label><div class="f-affix"><input id="aidc" class="has-suf" inputmode="decimal" placeholder="0"><span class="suf">%</span></div></div>
+            <div class="f"><label for="igst">IGST</label><select id="igst"><option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option><option value="40">40%</option></select></div>
+          </div>
+          <label style="display:flex;gap:8px;align-items:center;margin-top:14px;font-size:0.92rem"><input type="checkbox" id="sws" checked> Social Welfare Surcharge (10% of BCD)</label>
+          <div class="f-row" style="margin-top:16px">
+            <div class="f"><label for="units">Quantity (units)</label><input id="units" inputmode="numeric" placeholder="500"></div>
+            <div class="f"><label for="clear">Clearing, CHA &amp; local transport</label><div class="f-affix"><span class="pre">₹</span><input id="clear" class="has-pre" inputmode="decimal" placeholder="15,000"></div></div>
+          </div>
+        </div>
+
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label">Total customs duty + IGST</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Enter invoice value and exchange rate</div>
+          </div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy breakdown</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How customs duty is calculated in India</h2>
+        <span class="formula">Assessable value (AV) = (FOB + Freight + Insurance) × exchange rate
+BCD   = AV × BCD rate
+SWS   = BCD × 10%
+AIDC  = AV × AIDC rate              (only for some goods)
+IGST  = (AV + BCD + SWS + AIDC) × IGST rate
+Total = BCD + SWS + AIDC + IGST</span>
+        <p>Example: USD 10,000 FOB at ₹88, with 20% freight and 1.125% insurance, gives an AV of ₹10,65,900. At 10% BCD and 18% IGST the duty is ₹1,06,590 BCD + ₹10,659 SWS + ₹2,12,967 IGST = <strong>₹3,30,216</strong>.</p>
+
+        <h2>Find your duty rate</h2>
+        <p>Rates depend on the 8-digit HS (ITC-HS) code of your product. Look it up in the <strong>CBIC Customs Tariff</strong> or the ICEGATE duty calculator. Also check for anti-dumping duty, BIS certification and any FTA concession (with a certificate of origin) that may apply.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>Is IGST on imports a cost?</summary><p>Not if you are GST-registered and use the goods for business: you can claim it as input tax credit. BCD, SWS and AIDC are real costs that go into your landed price.</p></details>
+          <details><summary>Are landing charges still added?</summary><p>No. The 1% landing charge was removed from the valuation rules in 2017. AV is now FOB + freight + insurance.</p></details>
+          <details><summary>Which exchange rate should I use?</summary><p>CBIC notifies customs exchange rates every fortnight. The rate on the date the bill of entry is filed applies.</p></details>
+          <details><summary>Is SWS charged on all goods?</summary><p>SWS at 10% of BCD applies to most goods, but some items are exempt. Untick the box if your goods are exempt.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, $ = function (id) { return document.getElementById(id); };
+    ['fob', 'cur', 'fx', 'frt', 'ins', 'bcd', 'aidc', 'igst', 'sws', 'units', 'clear'].forEach(function (id) { $(id).addEventListener('input', calc); $(id).addEventListener('change', calc); });
+    $('cur').addEventListener('change', function () { if ($('cur').value === 'INR') $('fx').value = '1'; });
+    var last = null;
+    function calc() {
+      var fob = S.num($('fob')), fx = $('cur').value === 'INR' ? 1 : S.num($('fx'));
+      if (fob <= 0 || fx <= 0) {
+        $('hero').textContent = '₹0'; $('hero-note').textContent = 'Enter invoice value and exchange rate';
+        $('lines').innerHTML = ''; $('note').textContent = ''; last = null; return;
+      }
+      var frtBlank = $('frt').value.trim() === '', insBlank = $('ins').value.trim() === '';
+      var frt = frtBlank ? fob * 0.20 : S.num($('frt'));
+      var ins = insBlank ? fob * 0.01125 : S.num($('ins'));
+      var av = (fob + frt + ins) * fx;
+      var bcd = av * S.num($('bcd')) / 100;
+      var sws = $('sws').checked ? bcd * 0.10 : 0;
+      var aidc = av * S.num($('aidc')) / 100;
+      var igst = (av + bcd + sws + aidc) * S.num($('igst')) / 100;
+      var duty = bcd + sws + aidc + igst;
+      var clear = S.num($('clear')), units = S.num($('units'));
+      var landed = av + duty + clear, landedNet = landed - igst;
+      $('hero').textContent = S.inr(Math.round(duty), 0);
+      $('hero-note').textContent = 'Effective rate ' + S.pct(duty / av * 100, 2) + ' of assessable value';
+      var lines = [
+        ['Freight' + (frtBlank ? ' (20% of FOB)' : ''), S.inr(frt * fx)],
+        ['Insurance' + (insBlank ? ' (1.125% of FOB)' : ''), S.inr(ins * fx)],
+        ['Assessable value', S.inr(av)],
+        ['Basic Customs Duty @ ' + S.pct(S.num($('bcd')), 2), S.inr(bcd)]
+      ];
+      if (sws) lines.push(['Social Welfare Surcharge', S.inr(sws)]);
+      if (aidc) lines.push(['AIDC / cess @ ' + S.pct(S.num($('aidc')), 2), S.inr(aidc)]);
+      lines.push(['IGST @ ' + S.pct(S.num($('igst')), 0), S.inr(igst)]);
+      lines.push(['Total duty + IGST', S.inr(duty)]);
+      if (clear) lines.push(['Clearing & transport', S.inr(clear)]);
+      lines.push(['Landed cost', S.inr(landed)]);
+      if (units) {
+        lines.push(['Landed cost per unit', S.inr(landed / units)]);
+        lines.push(['Per unit after IGST credit', S.inr(landedNet / units)]);
+      }
+      $('lines').innerHTML = lines.map(function (x) {
+        var t = x[0] === 'Total duty + IGST' || x[0] === 'Landed cost';
+        return '<div class="r-line' + (t ? ' r-total' : '') + '"><span>' + x[0] + '</span><span>' + x[1] + '</span></div>';
+      }).join('');
+      $('note').textContent = igst ? 'GST-registered? You can claim the ' + S.inr(igst, 0) + ' IGST back as input tax credit.' : '';
+      last = lines;
+    }
+    function text() { return 'Import duty estimate\n' + last.map(function (l) { return l[0] + ': ' + l[1]; }).join('\n'); }
+    $('copy').addEventListener('click', function () { if (last) S.copy(text()); });
+    $('share').addEventListener('click', function () { if (last) S.shareWA(text()); });
+    calc();
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

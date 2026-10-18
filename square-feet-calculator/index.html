@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square Feet Calculator — Area in Sq Ft, Sq M, Gaj, Cents, Acres | Solvv AI</title>
+  <meta name="description" content="Free square feet calculator. Enter length and width in feet and inches, metres or yards to get the area in sq ft, and convert to square metres, square yards (gaj), cents, guntha, ground, marla, kanal, acres and hectares.">
+  <link rel="canonical" href="https://solvvai.com/square-feet-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Square Feet &amp; Land Area Calculator | Solvv AI">
+  <meta property="og:description" content="Free square feet calculator. Enter length and width in feet and inches, metres or yards to get the area in sq ft, and convert to square metres, square yards (gaj), cents, guntha, ground, marla, kanal, acres and hectares.">
+  <meta property="og:url" content="https://solvvai.com/square-feet-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Square Feet Calculator", "url": "https://solvvai.com/square-feet-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate square feet?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply length by width in feet. A room 12 ft × 10 ft is 120 sq ft. For feet and inches, convert inches to feet first (6 inches = 0.5 ft)."}}, {"@type": "Question", "name": "How many square feet are in one gaj?", "acceptedAnswer": {"@type": "Answer", "text": "One gaj (square yard) is 9 square feet. A 200 gaj plot is 1,800 sq ft."}}, {"@type": "Question", "name": "How many square feet are in a cent and an acre?", "acceptedAnswer": {"@type": "Answer", "text": "One cent is 435.6 sq ft and one acre (100 cents) is 43,560 sq ft."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="square-feet-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Square feet calculator</div>
+      <h1>Square Feet <em>Calculator</em></h1>
+      <p class="lead">Work out the area of a room, flat or plot in square feet, then convert it to square metres, gaj, cents, guntha, acres and other Indian land units.</p>
+      <div class="t-badges"><span class="t-badge">✓ Feet + inches</span><span class="t-badge">✓ Multiple rooms</span><span class="t-badge">✓ Indian land units</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+          <div class="f">
+            <span class="f-label">Measured in</span>
+            <div class="seg" id="unit">
+              <button data-v="ftin" class="on">Feet + inches</button><button data-v="m">Metres</button><button data-v="yd">Yards</button>
+            </div>
+          </div>
+          <table class="t-table stack" style="margin-top:16px">
+            <thead id="head"></thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <button type="button" class="btn btn-soft add-row" id="add">+ Add room / area</button>
+
+          <div style="border-top:1px solid var(--border);margin-top:22px;padding-top:18px">
+            <span class="f-label" style="font-size:0.84rem;font-weight:600;color:var(--gray-l)">Or convert an area you already know</span>
+            <div class="f-row f-row--keep" style="margin-top:8px">
+              <div class="f"><input id="cv" inputmode="decimal" placeholder="e.g. 200" aria-label="Area value"></div>
+              <div class="f"><select id="cu" aria-label="Area unit"></select></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label">Total area</div>
+            <div class="r-value" id="hero">0 sq ft</div>
+            <div class="r-note" id="hero-note">Enter length and width</div>
+          </div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+            <a class="btn btn-outline" href="/construction-cost-calculator/">Estimate building cost →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How to calculate square feet</h2>
+        <span class="formula">Area (sq ft) = Length (ft) × Width (ft)
+Feet + inches: 12 ft 6 in = 12 + 6 ÷ 12 = 12.5 ft
+From metres:  sq m × 10.764 = sq ft</span>
+        <p>Example: a room 12 ft 6 in × 10 ft is 12.5 × 10 = <strong>125 sq ft</strong>. For L-shaped rooms, split them into rectangles, add each as a separate row, and the total is added up for you.</p>
+
+        <h2>Land area conversion table</h2>
+        <table>
+          <thead><tr><th>Unit</th><th>Square feet</th><th>Used mostly in</th></tr></thead>
+          <tbody>
+            <tr><td>1 square metre</td><td>10.764</td><td>All India (official)</td></tr>
+            <tr><td>1 square yard / gaj</td><td>9</td><td>North India, Hyderabad</td></tr>
+            <tr><td>1 marla</td><td>272.25</td><td>Punjab, Haryana, J&amp;K</td></tr>
+            <tr><td>1 cent</td><td>435.6</td><td>Kerala, Tamil Nadu, Karnataka, AP</td></tr>
+            <tr><td>1 guntha</td><td>1,089</td><td>Maharashtra, Karnataka, Telangana</td></tr>
+            <tr><td>1 ground</td><td>2,400</td><td>Tamil Nadu (Chennai)</td></tr>
+            <tr><td>1 kanal</td><td>5,445</td><td>Punjab, Haryana, Himachal</td></tr>
+            <tr><td>1 acre</td><td>43,560</td><td>All India</td></tr>
+            <tr><td>1 hectare</td><td>1,07,639</td><td>All India (official)</td></tr>
+          </tbody>
+        </table>
+        <p>Bigha and biswa vary widely from state to state (a bigha can be anything from about 14,400 to 27,000 sq ft), so check the local value with your land records office.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>What is the difference between carpet, built-up and super built-up area?</summary><p>Carpet area is the usable floor inside the walls. Built-up area adds the wall thickness and balconies (usually 10–15% more). Super built-up adds a share of common areas like lobbies and lifts (often 25–35% more than carpet). Under RERA, flats must be sold on carpet area.</p></details>
+          <details><summary>How many tiles do I need for a room?</summary><p>Divide the floor area by the area of one tile, then add 5–10% for cutting and breakage. A 2 ft × 2 ft tile covers 4 sq ft, so a 125 sq ft room needs about 32 + 10% ≈ 35 tiles.</p></details>
+          <details><summary>How do I measure an irregular plot?</summary><p>Split it into rectangles and triangles. Add the rectangles here; a triangle's area is half of base × height. For legal use, rely on a licensed surveyor.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, $ = function (id) { return document.getElementById(id); };
+    var UNITS = [['sqft', 'Square feet', 1, 2], ['sqm', 'Square metres', 10.7639104, 2], ['sqyd', 'Square yards (gaj)', 9, 2], ['marla', 'Marla', 272.25, 3],
+      ['cent', 'Cents', 435.6, 3], ['guntha', 'Guntha', 1089, 3], ['ground', 'Ground', 2400, 3], ['kanal', 'Kanal', 5445, 4], ['acre', 'Acres', 43560, 4], ['ha', 'Hectares', 107639.104, 4]];
+    $('cu').innerHTML = UNITS.map(function (u) { return '<option value="' + u[0] + '">' + u[1] + '</option>'; }).join('');
+    var rows = [{}];
+    var unit = S.seg($('unit'), function () { rows = rows.map(function () { return {}; }); draw(); calc(); });
+    function draw() {
+      var fi = unit.get() === 'ftin', u = unit.get() === 'm' ? 'm' : 'yd';
+      $('head').innerHTML = fi ? '<tr><th>Name</th><th>Length ft</th><th>in</th><th>Width ft</th><th>in</th><th></th></tr>'
+        : '<tr><th>Name</th><th>Length ' + u + '</th><th>Width ' + u + '</th><th></th></tr>';
+      $('rows').innerHTML = rows.map(function (r, i) {
+        function c(k, label, ph) { return '<td data-label="' + label + '"><input data-f="' + k + '" inputmode="decimal" value="' + S.esc(r[k] || '') + '" placeholder="' + ph + '"></td>'; }
+        return '<tr data-i="' + i + '"><td class="wide" data-label="Name"><input data-f="n" value="' + S.esc(r.n || '') + '" placeholder="' + (i ? 'Room ' + (i + 1) : 'Living room') + '"></td>' +
+          (fi ? c('lf', 'Length ft', '12') + c('li', 'in', '0') + c('wf', 'Width ft', '10') + c('wi', 'in', '0')
+              : c('l', 'Length ' + u, u === 'm' ? '4' : '5') + c('w', 'Width ' + u, u === 'm' ? '3' : '4')) +
+          '<td class="del"><button type="button" class="row-del" aria-label="Remove">×</button></td></tr>';
+      }).join('');
+    }
+    $('rows').addEventListener('input', function (e) { rows[+e.target.closest('tr').dataset.i][e.target.dataset.f] = e.target.value; $('cv').value = ''; calc(); });
+    $('rows').addEventListener('click', function (e) {
+      if (!e.target.closest('.row-del')) return;
+      rows.splice(+e.target.closest('tr').dataset.i, 1); if (!rows.length) rows.push({}); draw(); calc();
+    });
+    $('add').addEventListener('click', function () { rows.push({}); draw(); $('rows').lastElementChild.querySelector('input').focus(); });
+    $('cv').addEventListener('input', calc); $('cu').addEventListener('change', calc);
+
+    var last = null;
+    function rowSqft(r) {
+      var t = unit.get();
+      if (t === 'ftin') return (S.num(r.lf) + S.num(r.li) / 12) * (S.num(r.wf) + S.num(r.wi) / 12);
+      var f = t === 'm' ? 10.7639104 : 9;
+      return S.num(r.l) * S.num(r.w) * f;
+    }
+    function calc() {
+      var total, note;
+      var cv = S.num($('cv'));
+      if (cv > 0) {
+        var u = UNITS.filter(function (x) { return x[0] === $('cu').value; })[0];
+        total = cv * u[2]; note = S.fmt(cv, 4) + ' ' + u[1].toLowerCase() + ' converted';
+      } else {
+        var parts = rows.map(rowSqft).filter(function (a) { return a > 0; });
+        total = parts.reduce(function (s, a) { return s + a; }, 0);
+        note = parts.length > 1 ? parts.length + ' areas added together' : 'Enter length and width';
+        if (parts.length === 1) note = '1 area';
+      }
+      if (!(total > 0)) {
+        $('hero').textContent = '0 sq ft'; $('hero-note').textContent = 'Enter length and width'; $('lines').innerHTML = ''; last = null; return;
+      }
+      $('hero').textContent = S.fmt(total, 2) + ' sq ft';
+      $('hero-note').textContent = note;
+      var lines = UNITS.map(function (u) { return [u[1], S.fmt(total / u[2], u[3])]; });
+      $('lines').innerHTML = lines.map(function (x) { return '<div class="r-line"><span>' + x[0] + '</span><span>' + x[1] + '</span></div>'; }).join('');
+      last = lines;
+    }
+    function text() { return 'Area\n' + last.map(function (l) { return l[0] + ': ' + l[1]; }).join('\n'); }
+    $('copy').addEventListener('click', function () { if (last) S.copy(text()); });
+    $('share').addEventListener('click', function () { if (last) S.shareWA(text()); });
+    draw(); calc();
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

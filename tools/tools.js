@@ -185,6 +185,16 @@
     window.print();
   };
 
+  /* Scale the A4-width document preview down to fit small screens */
+  S.fitDoc = function () {
+    var doc = document.getElementById('doc');
+    if (!doc) return;
+    var wrap = doc.parentElement;
+    var avail = wrap.clientWidth - 20;
+    doc.style.zoom = avail > 0 && avail < 760 ? (avail / 760).toFixed(3) : '';
+  };
+  window.addEventListener('resize', function () { S.fitDoc(); });
+
   /* Segmented controls / chips: <div class="seg" data-name="mode"><button data-v="add" class="on"> */
   S.seg = function (el, onChange) {
     el.addEventListener('click', function (e) {

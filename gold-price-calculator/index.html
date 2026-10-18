@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Price Calculator — Jewellery Price with Making Charges &amp; GST | Solvv AI</title>
+  <meta name="description" content="Free gold jewellery price calculator for India. Enter weight, purity (24K, 22K, 18K, 14K), today&#x27;s gold rate, making charges and wastage to get the final price with 3% GST and old-gold exchange.">
+  <link rel="canonical" href="https://solvvai.com/gold-price-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gold Jewellery Price Calculator with Making Charges | Solvv AI">
+  <meta property="og:description" content="Free gold jewellery price calculator for India. Enter weight, purity (24K, 22K, 18K, 14K), today&#x27;s gold rate, making charges and wastage to get the final price with 3% GST and old-gold exchange.">
+  <meta property="og:url" content="https://solvvai.com/gold-price-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Gold Price Calculator", "url": "https://solvvai.com/gold-price-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is gold jewellery price calculated in India?", "acceptedAnswer": {"@type": "Answer", "text": "Price = (gold rate per gram for the purity × weight) + making charges + wastage + stone charges, plus 3% GST on the total."}}, {"@type": "Question", "name": "What is the GST on gold jewellery?", "acceptedAnswer": {"@type": "Answer", "text": "GST on gold jewellery is 3% on the value of gold plus making charges. Old gold exchanged is not taxed."}}, {"@type": "Question", "name": "What is the difference between 22K and 24K gold?", "acceptedAnswer": {"@type": "Answer", "text": "24K gold is 99.9% pure and is used for coins and bars. 22K (91.6% pure, hallmark 916) is the standard for jewellery because it is harder."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="gold-price-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Gold price calculator</div>
+      <h1>Gold Jewellery <em>Price Calculator</em></h1>
+      <p class="lead">Work out the final price of gold jewellery from today's rate, purity, making charges and wastage, including 3% GST and any old-gold exchange.</p>
+      <div class="t-badges"><span class="t-badge">✓ 24K / 22K / 18K / 14K</span><span class="t-badge">✓ Making &amp; wastage</span><span class="t-badge">✓ Old-gold exchange</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+          <div class="f-row">
+            <div class="f"><label for="rate">Today's gold rate</label><div class="f-affix"><span class="pre">₹</span><input id="rate" class="has-pre" inputmode="decimal" placeholder="1,20,000"></div></div>
+            <div class="f-row f-row--keep" style="gap:10px">
+              <div class="f"><label for="rate-per">Per</label><select id="rate-per"><option value="10" selected>10 grams</option><option value="1">1 gram</option></select></div>
+              <div class="f"><label for="rate-k">Rate is for</label><select id="rate-k"><option value="999" selected>24K</option><option value="916">22K</option><option value="750">18K</option></select></div>
+            </div>
+          </div>
+          <div class="f" style="margin-top:20px">
+            <span class="f-label">Jewellery purity</span>
+            <div class="seg" id="purity">
+              <button data-v="999">24K (999)</button>
+              <button data-v="916" class="on">22K (916)</button>
+              <button data-v="750">18K (750)</button>
+              <button data-v="585">14K (585)</button>
+            </div>
+          </div>
+          <div class="f-row" style="margin-top:20px">
+            <div class="f"><label for="wt">Weight</label><div class="f-affix"><input id="wt" class="has-suf" inputmode="decimal" placeholder="10"><span class="suf">g</span></div></div>
+            <div class="f"><label for="waste">Wastage / VA</label><div class="f-affix"><input id="waste" class="has-suf" inputmode="decimal" placeholder="0"><span class="suf">%</span></div><p class="f-hint">Added to gold weight</p></div>
+          </div>
+          <div class="f-row" style="margin-top:16px">
+            <div class="f"><label for="mk">Making charges</label><input id="mk" inputmode="decimal" placeholder="12"></div>
+            <div class="f"><label for="mk-type">Charged as</label><select id="mk-type"><option value="pct" selected>% of gold value</option><option value="pg">₹ per gram</option><option value="flat">Flat ₹ amount</option></select></div>
+          </div>
+          <div class="f-row" style="margin-top:16px">
+            <div class="f"><label for="stone">Stones / other charges</label><div class="f-affix"><span class="pre">₹</span><input id="stone" class="has-pre" inputmode="decimal" placeholder="0"></div></div>
+            <div class="f"><label for="hm">Hallmarking (HUID)</label><div class="f-affix"><span class="pre">₹</span><input id="hm" class="has-pre" inputmode="decimal" placeholder="45"></div></div>
+          </div>
+          <details style="margin-top:20px">
+            <summary style="cursor:pointer;font-weight:700;color:var(--primary)">+ Exchanging old gold?</summary>
+            <div class="f-row" style="margin-top:14px">
+              <div class="f"><label for="old-wt">Old gold weight</label><div class="f-affix"><input id="old-wt" class="has-suf" inputmode="decimal" placeholder="0"><span class="suf">g</span></div></div>
+              <div class="f"><label for="old-k">Old gold purity</label><select id="old-k"><option value="916" selected>22K</option><option value="750">18K</option><option value="999">24K</option><option value="585">14K</option></select></div>
+            </div>
+            <div class="f" style="margin-top:14px"><label for="old-ded">Deduction by jeweller</label><div class="f-affix" style="max-width:200px"><input id="old-ded" class="has-suf" inputmode="decimal" placeholder="2"><span class="suf">%</span></div></div>
+          </details>
+        </div>
+
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Final price</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Enter today's rate and weight</div>
+          </div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="words"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy estimate</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How gold jewellery price is calculated</h2>
+        <span class="formula">Rate per gram (purity) = 24K rate per gram × purity ÷ 999
+Gold value            = Rate per gram × weight
+Wastage               = Gold value × wastage %
+Making charges        = % of gold value, or ₹ per gram, or flat
+GST                   = 3% × (gold + wastage + making + stones + hallmark)
+Final price           = Subtotal + GST − old gold value</span>
+        <p>Example: at a 24K rate of ₹1,20,000 per 10g, 22K gold costs about ₹11,003 per gram. A 10g chain with 12% making charges comes to ₹1,10,030 + ₹13,204 making = ₹1,23,234, plus 3% GST = <strong>₹1,26,931</strong>.</p>
+
+        <h2>Gold purity chart</h2>
+        <table>
+          <thead><tr><th>Karat</th><th>Purity</th><th>Hallmark</th><th>Used for</th></tr></thead>
+          <tbody>
+            <tr><td>24K</td><td>99.9%</td><td>999</td><td>Coins, bars</td></tr>
+            <tr><td>22K</td><td>91.6%</td><td>916</td><td>Most Indian jewellery</td></tr>
+            <tr><td>18K</td><td>75%</td><td>750</td><td>Diamond and studded jewellery</td></tr>
+            <tr><td>14K</td><td>58.5%</td><td>585</td><td>Lightweight and daily wear</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>What are typical making charges?</summary><p>Usually 6–25% of the gold value, depending on design. Machine-made chains sit at the low end; intricate handmade and temple jewellery at the high end. Some jewellers charge a fixed ₹ per gram instead.</p></details>
+          <details><summary>Is hallmarking mandatory?</summary><p>Yes. BIS hallmarking with a 6-digit HUID is mandatory for gold jewellery sold in India (with small exemptions such as items under 2 grams). The hallmarking charge is about ₹45 per piece.</p></details>
+          <details><summary>Is GST charged on old gold exchange?</summary><p>No. GST applies to the new jewellery you buy. The old gold value is deducted from the final bill.</p></details>
+          <details><summary>Where do I find today's gold rate?</summary><p>Check the IBJA rate or your local jeweller's board. Rates change daily and vary slightly by city.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, $ = function (id) { return document.getElementById(id); };
+    var purity = S.seg($('purity'), calc);
+    ['rate', 'rate-per', 'rate-k', 'wt', 'waste', 'mk', 'mk-type', 'stone', 'hm', 'old-wt', 'old-k', 'old-ded'].forEach(function (id) {
+      $(id).addEventListener('input', calc); $(id).addEventListener('change', calc);
+    });
+    var last = null;
+    function calc() {
+      var rate = S.num($('rate')), per = S.num($('rate-per')), rk = S.num($('rate-k')), wt = S.num($('wt'));
+      if (rate <= 0 || wt <= 0) {
+        $('hero').textContent = '₹0'; $('hero-note').textContent = "Enter today's rate and weight";
+        $('lines').innerHTML = ''; $('words').textContent = ''; last = null; return;
+      }
+      var pk = S.num(purity.get());
+      var perGram = rate / per * pk / rk;
+      var gold = perGram * wt;
+      var waste = gold * S.num($('waste')) / 100;
+      var mkv = S.num($('mk')), mt = $('mk-type').value;
+      var making = mt === 'pct' ? gold * mkv / 100 : mt === 'pg' ? mkv * wt : mkv;
+      var stone = S.num($('stone')), hm = S.num($('hm'));
+      var sub = gold + waste + making + stone + hm;
+      var gst = sub * 0.03;
+      var total = sub + gst;
+      var oldWt = S.num($('old-wt'));
+      var oldVal = oldWt ? (rate / per * S.num($('old-k')) / rk) * oldWt * (1 - S.num($('old-ded')) / 100) : 0;
+      var pay = total - oldVal;
+      var kLabel = { 999: '24K', 916: '22K', 750: '18K', 585: '14K' }[pk];
+      var lines = [
+        [kLabel + ' rate per gram', S.inr(perGram)],
+        ['Gold value (' + S.fmt(wt, 3) + ' g)', S.inr(gold)]
+      ];
+      if (waste) lines.push(['Wastage (' + S.pct(S.num($('waste')), 2) + ')', S.inr(waste)]);
+      if (making) lines.push(['Making charges', S.inr(making)]);
+      if (stone) lines.push(['Stones / other', S.inr(stone)]);
+      if (hm) lines.push(['Hallmarking', S.inr(hm)]);
+      lines.push(['Subtotal', S.inr(sub)]);
+      lines.push(['GST @ 3%', S.inr(gst)]);
+      lines.push(['Price incl. GST', S.inr(total)]);
+      if (oldVal) { lines.push(['Less: old gold (' + S.fmt(oldWt, 3) + ' g)', '−' + S.inr(oldVal)]); lines.push(['Amount to pay', S.inr(pay)]); }
+      $('hero-label').textContent = oldVal ? 'Amount to pay' : 'Final price incl. GST';
+      $('hero').textContent = S.inr(Math.round(pay), 0);
+      $('hero-note').textContent = S.fmt(wt, 3) + ' g ' + kLabel + ' · effective ' + S.inr(total / wt, 0) + ' per gram';
+      $('lines').innerHTML = lines.map(function (l, i) {
+        return '<div class="r-line' + (i === lines.length - 1 ? ' r-total' : '') + '"><span>' + l[0] + '</span><span>' + l[1] + '</span></div>';
+      }).join('');
+      $('words').textContent = S.words(Math.round(Math.max(pay, 0)));
+      last = lines;
+    }
+    function text() { return 'Gold jewellery price estimate\n' + last.map(function (l) { return l[0] + ': ' + l[1]; }).join('\n'); }
+    $('copy').addEventListener('click', function () { if (last) S.copy(text()); });
+    $('share').addEventListener('click', function () { if (last) S.shareWA(text()); });
+    calc();
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

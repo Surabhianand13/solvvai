@@ -257,6 +257,12 @@ body:has(.btn:hover) .cursor { background: var(--green); }
   transition: width 0.3s var(--ease);
 }
 .nav-links a:hover { color: var(--text); }
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1440px) {
+  .nav-inner { gap: 32px; }
+  .nav-links { gap: 26px; }
+  .nav-links a { font-size: 1.2rem; }
+}
 .nav-links a:hover::after { width: 100%; }
 .nav-cta { margin-left: 16px; flex-shrink: 0; }
 .hamburger {

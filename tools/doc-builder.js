@@ -178,6 +178,7 @@
     function update() {
       var c = compute(d);
       preview.innerHTML = renderDoc(d, kind, c);
+      S.fitDoc();
       var tag = $('tax-mode');
       if (tag) tag.textContent = !d.gst ? 'No GST on this document' : (c.intra ? 'Same state → CGST + SGST' : 'Different states → IGST');
     }
@@ -247,7 +248,7 @@
     });
     /* Mobile edit/preview tabs */
     var tabs = $('view-tabs');
-    if (tabs) S.seg(tabs, function (v) { grid.dataset.view = v; window.scrollTo({ top: grid.getBoundingClientRect().top + window.scrollY - 90 }); });
+    if (tabs) S.seg(tabs, function (v) { grid.dataset.view = v; S.fitDoc(); window.scrollTo({ top: grid.getBoundingClientRect().top + window.scrollY - 90 }); });
 
     renderItems(); showLogo(); update();
   }

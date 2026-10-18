@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBM Calculator — Cubic Meter &amp; Container Loading Calculator | Solvv AI</title>
+  <meta name="description" content="Free CBM calculator for export and import shipments. Get CBM and CFT for your cartons in cm, inches or feet, see how many fit in a 20ft, 40ft or 40ft HC container, and get LCL and air chargeable weight.">
+  <link rel="canonical" href="https://solvvai.com/cbm-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free CBM Calculator for Shipping &amp; Containers | Solvv AI">
+  <meta property="og:description" content="Free CBM calculator for export and import shipments. Get CBM and CFT for your cartons in cm, inches or feet, see how many fit in a 20ft, 40ft or 40ft HC container, and get LCL and air chargeable weight.">
+  <meta property="og:url" content="https://solvvai.com/cbm-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "CBM Calculator", "url": "https://solvvai.com/cbm-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do you calculate CBM?", "acceptedAnswer": {"@type": "Answer", "text": "CBM = length × width × height in metres. A 50 × 40 × 30 cm carton is 0.5 × 0.4 × 0.3 = 0.06 CBM. Multiply by the number of cartons for the total."}}, {"@type": "Question", "name": "How many CBM fit in a 20ft container?", "acceptedAnswer": {"@type": "Answer", "text": "A 20ft container has about 33 CBM of internal space, but around 25–28 CBM is usable with cartons. A 40ft holds about 58 CBM usable and a 40ft high cube about 68 CBM."}}, {"@type": "Question", "name": "How is LCL freight charged?", "acceptedAnswer": {"@type": "Answer", "text": "LCL is charged per revenue ton (W/M): the higher of total CBM or gross weight in tonnes (1 CBM = 1,000 kg)."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="cbm-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / CBM calculator</div>
+      <h1>CBM <em>Calculator</em></h1>
+      <p class="lead">Enter your carton size and quantity to get total CBM and CFT, how many cartons fit in each container size, and the chargeable weight for LCL and air freight.</p>
+      <div class="t-badges"><span class="t-badge">✓ cm, inch, mm, m, ft</span><span class="t-badge">✓ 20ft / 40ft / 40HC</span><span class="t-badge">✓ LCL &amp; air weight</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+          <div class="f">
+            <span class="f-label">Measured in</span>
+            <div class="seg" id="unit">
+              <button data-v="cm" class="on">cm</button><button data-v="in">inch</button><button data-v="mm">mm</button><button data-v="m">metre</button><button data-v="ft">feet</button>
+            </div>
+          </div>
+          <div class="f-row f-row--3 f-row--keep" style="margin-top:20px">
+            <div class="f"><label for="l">Length</label><input id="l" inputmode="decimal" placeholder="50"></div>
+            <div class="f"><label for="w">Width</label><input id="w" inputmode="decimal" placeholder="40"></div>
+            <div class="f"><label for="h">Height</label><input id="h" inputmode="decimal" placeholder="30"></div>
+          </div>
+          <div class="f-row" style="margin-top:16px">
+            <div class="f"><label for="qty">Number of cartons</label><input id="qty" inputmode="numeric" placeholder="100" value="1"></div>
+            <div class="f"><label for="kg">Gross weight per carton <span style="font-weight:400">(optional)</span></label><div class="f-affix"><input id="kg" class="has-suf" inputmode="decimal" placeholder="12"><span class="suf">kg</span></div></div>
+          </div>
+          <p class="f-hint" style="margin-top:14px">Container figures use typical usable space for cartons (allowing for gaps and pallet loss): 20ft ≈ 28 CBM, 40ft ≈ 58 CBM, 40ft HC ≈ 68 CBM.</p>
+        </div>
+
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label">Total volume</div>
+            <div class="r-value" id="hero">0 CBM</div>
+            <div class="r-note" id="hero-note">Enter carton dimensions</div>
+          </div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div id="containers" style="margin-top:16px"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How to calculate CBM</h2>
+        <span class="formula">CBM per carton = Length × Width × Height (in metres)
+From cm:   L × W × H ÷ 1,000,000
+From inch: L × W × H ÷ 61,024
+Total CBM = CBM per carton × number of cartons
+CFT       = CBM × 35.315</span>
+        <p>Example: 100 cartons of 50 × 40 × 30 cm = 0.06 CBM each = <strong>6 CBM</strong> in total (211.9 CFT). That fits comfortably in LCL or a 20ft container.</p>
+
+        <h2>Container sizes</h2>
+        <table>
+          <thead><tr><th>Container</th><th>Inside (L × W × H)</th><th>Capacity</th><th>Usable for cartons</th><th>Max payload</th></tr></thead>
+          <tbody>
+            <tr><td>20ft standard</td><td>5.90 × 2.35 × 2.39 m</td><td>33 CBM</td><td>25–28 CBM</td><td>~28,000 kg</td></tr>
+            <tr><td>40ft standard</td><td>12.03 × 2.35 × 2.39 m</td><td>67 CBM</td><td>55–58 CBM</td><td>~26,500 kg</td></tr>
+            <tr><td>40ft high cube</td><td>12.03 × 2.35 × 2.69 m</td><td>76 CBM</td><td>65–68 CBM</td><td>~26,500 kg</td></tr>
+          </tbody>
+        </table>
+        <p>Rule of thumb: under 15 CBM, LCL is usually cheaper. Above that, compare against a full 20ft container (FCL).</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>What is the difference between CBM and CFT?</summary><p>Both measure volume. CBM is cubic metres and CFT is cubic feet. 1 CBM = 35.315 CFT. Indian transporters often quote in CFT; international freight uses CBM.</p></details>
+          <details><summary>What is W/M or revenue ton in LCL?</summary><p>Sea LCL is billed on whichever is higher: volume in CBM or weight in tonnes. 3 CBM weighing 1,800 kg is billed as 3 revenue tons; 3 CBM weighing 4,000 kg is billed as 4.</p></details>
+          <details><summary>How is air freight chargeable weight calculated?</summary><p>Air cargo uses volumetric weight = L × W × H (cm) ÷ 6,000, and couriers usually ÷ 5,000. You pay on the higher of actual or volumetric weight. Try our <a href="/volumetric-weight-calculator/">volumetric weight calculator</a>.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, $ = function (id) { return document.getElementById(id); };
+    var TO_M = { cm: 0.01, in: 0.0254, mm: 0.001, m: 1, ft: 0.3048 };
+    var CONT = [['20ft', 28], ['40ft', 58], ['40ft HC', 68]];
+    var unit = S.seg($('unit'), calc);
+    ['l', 'w', 'h', 'qty', 'kg'].forEach(function (id) { $(id).addEventListener('input', calc); });
+    var last = null;
+    function calc() {
+      var f = TO_M[unit.get()];
+      var l = S.num($('l')) * f, w = S.num($('w')) * f, h = S.num($('h')) * f;
+      var qty = Math.max(1, Math.floor(S.num($('qty')) || 1)), kg = S.num($('kg'));
+      if (l <= 0 || w <= 0 || h <= 0) {
+        $('hero').textContent = '0 CBM'; $('hero-note').textContent = 'Enter carton dimensions';
+        $('lines').innerHTML = ''; $('containers').innerHTML = ''; last = null; return;
+      }
+      var one = l * w * h, total = one * qty, totalKg = kg * qty;
+      var cmL = l * 100, cmW = w * 100, cmH = h * 100;
+      var airOne = cmL * cmW * cmH / 6000, courierOne = cmL * cmW * cmH / 5000;
+      $('hero').textContent = S.fmt(total, 3) + ' CBM';
+      $('hero-note').textContent = S.fmt(total * 35.3147, 2) + ' CFT · ' + S.fmt(qty, 0) + ' carton' + (qty > 1 ? 's' : '');
+      var lines = [
+        ['CBM per carton', S.fmt(one, 4)],
+        ['Total CBM', S.fmt(total, 3)],
+        ['Total CFT', S.fmt(total * 35.3147, 2)]
+      ];
+      if (kg) {
+        lines.push(['Total gross weight', S.fmt(totalKg, 2) + ' kg']);
+        lines.push(['LCL chargeable (W/M)', S.fmt(Math.max(total, totalKg / 1000), 3) + ' revenue tons']);
+        lines.push(['Air chargeable weight', S.fmt(Math.max(airOne * qty, totalKg), 2) + ' kg']);
+      } else {
+        lines.push(['Air volumetric weight (÷6000)', S.fmt(airOne * qty, 2) + ' kg']);
+      }
+      lines.push(['Courier volumetric weight (÷5000)', S.fmt(courierOne * qty, 2) + ' kg']);
+      $('lines').innerHTML = lines.map(function (x) { return '<div class="r-line"><span>' + x[0] + '</span><span>' + x[1] + '</span></div>'; }).join('');
+      $('containers').innerHTML = '<div class="r-label" style="font-size:0.82rem;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px">Container fit (by volume)</div>' +
+        CONT.map(function (c) {
+          var fits = Math.floor(c[1] / one), need = Math.ceil(total / c[1]), fill = Math.min(100, total / c[1] * 100);
+          return '<div style="margin-top:10px"><div style="display:flex;justify-content:space-between;font-size:0.9rem"><b>' + c[0] + '</b><span>' +
+            (total <= c[1] ? S.fmt(fill, 0) + '% full' : need + ' containers') + ' · up to ' + S.fmt(fits, 0) + ' cartons each</span></div>' +
+            '<div class="meter"><i style="width:' + fill + '%;background:linear-gradient(90deg,var(--primary),var(--pink))"></i></div></div>';
+        }).join('');
+      last = lines;
+    }
+    function text() { return 'CBM calculation\n' + last.map(function (l) { return l[0] + ': ' + l[1]; }).join('\n'); }
+    $('copy').addEventListener('click', function () { if (last) S.copy(text()); });
+    $('share').addEventListener('click', function () { if (last) S.shareWA(text()); });
+    calc();
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

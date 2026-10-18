@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volumetric Weight Calculator — Courier &amp; Air Chargeable Weight | Solvv AI</title>
+  <meta name="description" content="Free volumetric weight calculator for Indian courier, e-commerce and air shipments. Enter box size and actual weight to get the chargeable weight for Delhivery, Blue Dart, DTDC, Shiprocket, DHL, FedEx and air cargo.">
+  <link rel="canonical" href="https://solvvai.com/volumetric-weight-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Volumetric Weight Calculator for Courier &amp; Air | Solvv AI">
+  <meta property="og:description" content="Free volumetric weight calculator for Indian courier, e-commerce and air shipments. Enter box size and actual weight to get the chargeable weight for Delhivery, Blue Dart, DTDC, Shiprocket, DHL, FedEx and air cargo.">
+  <meta property="og:url" content="https://solvvai.com/volumetric-weight-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Volumetric Weight Calculator", "url": "https://solvvai.com/volumetric-weight-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I calculate volumetric weight?", "acceptedAnswer": {"@type": "Answer", "text": "Volumetric weight (kg) = Length × Width × Height in cm ÷ 5,000 for most couriers, or ÷ 6,000 for air cargo. You are charged on the higher of volumetric and actual weight."}}, {"@type": "Question", "name": "What divisor do Indian couriers use?", "acceptedAnswer": {"@type": "Answer", "text": "Most Indian couriers and aggregators such as Delhivery, Blue Dart, DTDC and Shiprocket use 5,000 for air and express. Some surface services use 4,000 or 4,500. Check your rate card."}}, {"@type": "Question", "name": "How can I reduce volumetric weight?", "acceptedAnswer": {"@type": "Answer", "text": "Use the smallest box that fits, avoid extra void fill, use poly mailers for soft goods, and ship flat-packed where possible."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="volumetric-weight-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Volumetric weight calculator</div>
+      <h1>Volumetric <em>Weight</em> Calculator</h1>
+      <p class="lead">Find the weight your courier will actually charge you for. Add one or more boxes and compare volumetric against actual weight.</p>
+      <div class="t-badges"><span class="t-badge">✓ Courier ÷5000</span><span class="t-badge">✓ Air cargo ÷6000</span><span class="t-badge">✓ Multiple boxes</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+          <div class="f-row">
+            <div class="f"><label for="div">Shipping type</label>
+              <select id="div">
+                <option value="5000" selected>Courier / e-commerce (÷5000)</option>
+                <option value="6000">Air cargo, IATA (÷6000)</option>
+                <option value="4000">Surface / road, some couriers (÷4000)</option>
+                <option value="4500">Surface, some couriers (÷4500)</option>
+                <option value="custom">Custom divisor</option>
+              </select></div>
+            <div class="f" id="custom-wrap" style="display:none"><label for="custom">Custom divisor</label><input id="custom" inputmode="numeric" placeholder="5000"></div>
+            <div class="f"><label for="slab">Round up to</label><select id="slab"><option value="0.5" selected>Next 0.5 kg</option><option value="1">Next 1 kg</option><option value="0">No rounding</option></select></div>
+          </div>
+          <p class="f-hint" style="margin-top:8px">Enter dimensions in cm. Need inches? Multiply by 2.54.</p>
+          <table class="t-table stack" style="margin-top:14px">
+            <thead><tr><th>Length cm</th><th>Width cm</th><th>Height cm</th><th>Actual kg</th><th>Boxes</th><th></th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <button type="button" class="btn btn-soft add-row" id="add">+ Add another box size</button>
+        </div>
+
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label">Chargeable weight</div>
+            <div class="r-value" id="hero">0 kg</div>
+            <div class="r-note" id="hero-note">Enter box dimensions</div>
+          </div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="tip"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>Volumetric weight formula</h2>
+        <span class="formula">Volumetric weight (kg) = L × W × H (cm) ÷ divisor
+Chargeable weight      = higher of (actual weight, volumetric weight)
+Then rounded up to the courier's slab, usually 0.5 kg</span>
+        <p>Example: a 40 × 30 × 20 cm box weighing 3 kg has a volumetric weight of 24,000 ÷ 5,000 = <strong>4.8 kg</strong>. You pay for 5 kg, not 3.</p>
+
+        <h2>Divisors used by common carriers</h2>
+        <table>
+          <thead><tr><th>Carrier / service</th><th>Typical divisor</th></tr></thead>
+          <tbody>
+            <tr><td>Delhivery, Blue Dart, DTDC, Ecom Express (air/express)</td><td>5,000</td></tr>
+            <tr><td>Shiprocket, NimbusPost, other aggregators</td><td>5,000</td></tr>
+            <tr><td>DHL, FedEx, UPS international express</td><td>5,000</td></tr>
+            <tr><td>Air cargo (IATA)</td><td>6,000</td></tr>
+            <tr><td>Some surface / road services</td><td>4,000–4,500</td></tr>
+          </tbody>
+        </table>
+        <p>Divisors can change and vary by contract. Always check your current rate card.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>Why is my courier charging more than the actual weight?</summary><p>Light but bulky parcels take up space in the vehicle or aircraft, so carriers charge on volume. If your box is too big for its contents, you pay for air.</p></details>
+          <details><summary>Does Amazon or Flipkart use volumetric weight?</summary><p>Yes. Marketplace shipping fees use the higher of actual and volumetric weight (usually ÷5000), so packaging size directly affects your fees.</p></details>
+          <details><summary>How do I measure a parcel?</summary><p>Measure the longest side as length, then width and height, at the widest points including any bulges. Round each up to the next whole centimetre.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, $ = function (id) { return document.getElementById(id); };
+    var rows = [{ l: '', w: '', h: '', kg: '', n: 1 }];
+    function rowHTML(r, i) {
+      function cell(k, label, ph) { return '<td data-label="' + label + '"><input data-f="' + k + '" inputmode="decimal" value="' + S.esc(r[k]) + '" placeholder="' + ph + '"></td>'; }
+      return '<tr data-i="' + i + '">' + cell('l', 'Length cm', '40') + cell('w', 'Width cm', '30') + cell('h', 'Height cm', '20') + cell('kg', 'Actual kg', '3') + cell('n', 'Boxes', '1') +
+        '<td class="del"><button type="button" class="row-del" aria-label="Remove">×</button></td></tr>';
+    }
+    function draw() { $('rows').innerHTML = rows.map(rowHTML).join(''); }
+    $('rows').addEventListener('input', function (e) { var tr = e.target.closest('tr'); rows[+tr.dataset.i][e.target.dataset.f] = e.target.value; calc(); });
+    $('rows').addEventListener('click', function (e) {
+      if (!e.target.closest('.row-del')) return;
+      rows.splice(+e.target.closest('tr').dataset.i, 1);
+      if (!rows.length) rows.push({ l: '', w: '', h: '', kg: '', n: 1 });
+      draw(); calc();
+    });
+    $('add').addEventListener('click', function () { rows.push({ l: '', w: '', h: '', kg: '', n: 1 }); draw(); $('rows').lastElementChild.querySelector('input').focus(); });
+    $('div').addEventListener('change', function () { $('custom-wrap').style.display = $('div').value === 'custom' ? '' : 'none'; calc(); });
+    $('custom').addEventListener('input', calc); $('slab').addEventListener('change', calc);
+
+    var last = null;
+    function roundUp(x, s) { return s ? Math.ceil(x / s - 1e-9) * s : x; }
+    function calc() {
+      var dv = $('div').value === 'custom' ? S.num($('custom')) : S.num($('div').value);
+      var slab = S.num($('slab').value);
+      var vol = 0, act = 0, boxes = 0, valid = 0;
+      rows.forEach(function (r) {
+        var n = Math.max(1, Math.floor(S.num(r.n) || 1)), v = S.num(r.l) * S.num(r.w) * S.num(r.h);
+        if (v > 0 && dv > 0) { vol += v / dv * n; valid++; }
+        act += S.num(r.kg) * n; boxes += n;
+      });
+      if (!valid) {
+        $('hero').textContent = '0 kg'; $('hero-note').textContent = 'Enter box dimensions';
+        $('lines').innerHTML = ''; $('tip').textContent = ''; last = null; return;
+      }
+      var charge = Math.max(vol, act), billed = roundUp(charge, slab);
+      $('hero').textContent = S.fmt(billed, 2) + ' kg';
+      $('hero-note').textContent = vol > act ? 'Charged on volume: your box is bigger than it needs to be' : 'Charged on actual weight';
+      var lines = [
+        ['Volumetric weight (÷' + S.fmt(dv, 0) + ')', S.fmt(vol, 3) + ' kg'],
+        ['Actual weight', S.fmt(act, 3) + ' kg'],
+        ['Chargeable weight', S.fmt(charge, 3) + ' kg'],
+        ['Billed weight' + (slab ? ' (rounded up)' : ''), S.fmt(billed, 2) + ' kg'],
+        ['Boxes', S.fmt(boxes, 0)]
+      ];
+      $('lines').innerHTML = lines.map(function (x, i) { return '<div class="r-line' + (i === 3 ? ' r-total' : '') + '"><span>' + x[0] + '</span><span>' + x[1] + '</span></div>'; }).join('');
+      $('tip').textContent = vol > act * 1.2 && act > 0
+        ? 'You are paying for ' + S.fmt(billed - roundUp(act, slab), 2) + ' kg of air. A smaller box or poly mailer could cut your shipping bill.'
+        : '';
+      last = lines;
+    }
+    function text() { return 'Volumetric weight\n' + last.map(function (l) { return l[0] + ': ' + l[1]; }).join('\n'); }
+    $('copy').addEventListener('click', function () { if (last) S.copy(text()); });
+    $('share').addEventListener('click', function () { if (last) S.shareWA(text()); });
+    draw(); calc();
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

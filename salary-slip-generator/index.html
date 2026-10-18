@@ -51,7 +51,7 @@
   <main class="t-main">
     <div class="container">
       <div class="seg seg-block t-tabs" id="view-tabs"><button data-v="edit" class="on">1. Fill details</button><button data-v="preview">2. Preview &amp; download</button></div>
-      <div class="t-grid" id="doc-grid" data-view="edit" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+      <div class="t-grid t-grid--doc" id="doc-grid" data-view="edit">
         <form class="edit-pane" id="slip-form" autocomplete="off" onsubmit="return false">
           <div class="card">
             <h2>Company</h2>
@@ -112,7 +112,7 @@
           </div>
         </form>
 
-        <div class="doc-pane" style="position:sticky;top:90px">
+        <div class="doc-pane">
           <div class="r-actions" style="margin:0 0 14px">
             <button class="btn btn-primary" id="btn-pdf">⬇ Download PDF</button>
           </div>
@@ -249,6 +249,7 @@ Net pay       = Gross earnings − Total deductions</span>
       h += '<div class="muted" style="margin-top:22px;font-size:11px">This is a computer-generated payslip and does not need a signature.</div>';
       h += '<div class="doc-credit">Made free with <b>solvvai.com/tools</b> · Payroll &amp; workflow automation for growing businesses</div>';
       $('doc').innerHTML = h;
+      S.fitDoc();
     }
 
     form.addEventListener('input', function (ev) {
@@ -292,7 +293,7 @@ Net pay       = Gross earnings − Total deductions</span>
       render();
       S.printOnce('payslip', 'salary slip', grid, function () { d = blank(); });
     });
-    S.seg($('view-tabs'), function (v) { grid.dataset.view = v; window.scrollTo({ top: grid.getBoundingClientRect().top + window.scrollY - 90 }); });
+    S.seg($('view-tabs'), function (v) { grid.dataset.view = v; S.fitDoc(); window.scrollTo({ top: grid.getBoundingClientRect().top + window.scrollY - 90 }); });
 
     fill(); renderRows(); showLogo(); render();
   })();

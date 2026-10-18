@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Construction Cost Calculator India — Cost per Sq Ft &amp; Materials | Solvv AI</title>
+  <meta name="description" content="Free house construction cost calculator for India. Estimate total building cost from built-up area and quality, with cost breakdown and quantities of cement, steel, sand, aggregate, bricks, paint and tiles.">
+  <link rel="canonical" href="https://solvvai.com/construction-cost-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free House Construction Cost Calculator | Solvv AI">
+  <meta property="og:description" content="Free house construction cost calculator for India. Estimate total building cost from built-up area and quality, with cost breakdown and quantities of cement, steel, sand, aggregate, bricks, paint and tiles.">
+  <meta property="og:url" content="https://solvvai.com/construction-cost-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Construction Cost Calculator", "url": "https://solvvai.com/construction-cost-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the construction cost per sq ft in India?", "acceptedAnswer": {"@type": "Answer", "text": "For a contractor-built house in 2026, expect roughly ₹1,600–1,900 per sq ft for basic finishes, ₹2,000–2,500 for standard, ₹2,600–3,300 for premium and ₹3,500+ for luxury. Rates vary by city, soil and design."}}, {"@type": "Question", "name": "How much cement and steel is needed per sq ft?", "acceptedAnswer": {"@type": "Answer", "text": "A common thumb rule is about 0.4 bags of cement and 3.5–4 kg of steel per sq ft of built-up area for an RCC framed house."}}, {"@type": "Question", "name": "What is included in construction cost?", "acceptedAnswer": {"@type": "Answer", "text": "Structure, masonry, plastering, flooring, painting, doors and windows, plumbing and electrical work. Land, approvals, interiors, furniture and compound walls are usually extra."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="construction-cost-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Construction cost calculator</div>
+      <h1>House Construction <em>Cost Calculator</em></h1>
+      <p class="lead">Estimate the cost of building a house in India from its built-up area and finish quality, with a cost breakdown and the materials you will need.</p>
+      <div class="t-badges"><span class="t-badge">✓ 2026 rates per sq ft</span><span class="t-badge">✓ Material quantities</span><span class="t-badge">✓ Cost breakdown</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+          <div class="f-row">
+            <div class="f"><label for="area">Total built-up area</label><div class="f-affix"><input id="area" class="has-suf" inputmode="decimal" placeholder="1,500"><span class="suf">sq ft</span></div><p class="f-hint">All floors combined. Not sure? Use our <a href="/square-feet-calculator/" style="color:var(--primary)">square feet calculator</a>.</p></div>
+            <div class="f"><label for="floors">Number of floors</label><select id="floors"><option value="1">Ground only</option><option value="2" selected>G + 1</option><option value="3">G + 2</option><option value="4">G + 3</option></select></div>
+          </div>
+          <div class="f" style="margin-top:20px">
+            <span class="f-label">Construction quality</span>
+            <div class="seg seg-block" id="quality">
+              <button data-v="1700">Basic</button>
+              <button data-v="2200" class="on">Standard</button>
+              <button data-v="2900">Premium</button>
+              <button data-v="4000">Luxury</button>
+            </div>
+            <p class="f-hint" id="q-desc"></p>
+          </div>
+          <div class="f-row" style="margin-top:16px">
+            <div class="f"><label for="rate">Rate per sq ft</label><div class="f-affix"><span class="pre">₹</span><input id="rate" class="has-pre" inputmode="decimal" value="2200"></div><p class="f-hint">Edit to match your contractor's quote</p></div>
+            <div class="f"><label for="extra">Extras (sump, compound wall, approvals)</label><div class="f-affix"><span class="pre">₹</span><input id="extra" class="has-pre" inputmode="decimal" placeholder="0"></div></div>
+          </div>
+        </div>
+
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label">Estimated construction cost</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Enter built-up area</div>
+          </div>
+          <div class="meter" id="meter" aria-hidden="true"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <h3 style="font-size:0.82rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;margin:18px 0 4px">Approx. materials needed</h3>
+            <div class="r-lines" id="mats"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy estimate</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>Construction cost per sq ft in India (2026)</h2>
+        <table>
+          <thead><tr><th>Quality</th><th>Typical rate</th><th>What you get</th></tr></thead>
+          <tbody>
+            <tr><td>Basic</td><td>₹1,600–1,900</td><td>Standard brick, vitrified tiles, basic sanitary ware, distemper paint</td></tr>
+            <tr><td>Standard</td><td>₹2,000–2,500</td><td>Good brands of cement and steel, branded fittings, emulsion paint, better tiles</td></tr>
+            <tr><td>Premium</td><td>₹2,600–3,300</td><td>Granite or premium tiles, teak doors, premium fittings, false ceiling</td></tr>
+            <tr><td>Luxury</td><td>₹3,500+</td><td>Italian marble, imported fittings, home automation, custom design</td></tr>
+          </tbody>
+        </table>
+        <p>Metro cities such as Mumbai, Bengaluru and Delhi NCR usually sit 10–20% above these ranges. Smaller towns may be lower.</p>
+
+        <h2>Material thumb rules per sq ft of built-up area</h2>
+        <table>
+          <thead><tr><th>Material</th><th>Quantity per sq ft</th></tr></thead>
+          <tbody>
+            <tr><td>Cement</td><td>0.4 bags (50 kg)</td></tr><tr><td>Steel</td><td>4 kg</td></tr><tr><td>Sand</td><td>1.8 cft</td></tr>
+            <tr><td>Aggregate</td><td>1.35 cft</td></tr><tr><td>Bricks</td><td>8 nos</td></tr><tr><td>Paint</td><td>0.18 litre</td></tr><tr><td>Flooring tiles</td><td>1.3 sq ft</td></tr>
+          </tbody>
+        </table>
+        <p>These are planning estimates for an RCC framed house. Your structural engineer's design gives the exact quantities.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>Is construction cost lower per sq ft for more floors?</summary><p>Usually, yes. The foundation and roof are shared, so a G+1 house often costs 5–10% less per sq ft than a single-storey house of the same total area.</p></details>
+          <details><summary>What is the labour cost share?</summary><p>Labour is typically 25–30% of total construction cost. With a turnkey contractor, labour and material are both included in the per-sq-ft rate.</p></details>
+          <details><summary>Does this include interiors?</summary><p>No. Modular kitchen, wardrobes, furniture and decor are usually ₹800–2,000 per sq ft extra depending on the finish.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, $ = function (id) { return document.getElementById(id); };
+    var DESC = { 1700: 'Basic finishes, local brands', 2200: 'Branded materials, good finishes', 2900: 'Premium flooring, fittings and doors', 4000: 'Marble, imported fittings, custom work' };
+    var quality = S.seg($('quality'), function (v) { $('rate').value = v; $('q-desc').textContent = DESC[v]; calc(); });
+    $('q-desc').textContent = DESC[2200];
+    ['area', 'floors', 'rate', 'extra'].forEach(function (id) { $(id).addEventListener('input', calc); $(id).addEventListener('change', calc); });
+    var SPLIT = [['Labour', 25, '#E8006A'], ['Steel', 18.45, '#7C3AED'], ['Fittings (doors, windows, plumbing, electrical)', 17.1, '#8B5CF6'],
+      ['Finishes (tiles, paint, plaster)', 12.375, '#a78bfa'], ['Cement', 12.3, '#c4b5fd'], ['Sand', 9.225, '#ddd6fe'], ['Aggregate', 5.55, '#ede9fe']];
+    var MATS = [['Cement', 0.4, 'bags'], ['Steel', 4, 'kg'], ['Sand', 1.8, 'cft'], ['Aggregate', 1.35, 'cft'], ['Bricks', 8, 'nos'], ['Paint', 0.18, 'litres'], ['Flooring tiles', 1.3, 'sq ft']];
+    var last = null;
+    function calc() {
+      var area = S.num($('area')), rate = S.num($('rate')), floors = S.num($('floors')), extra = S.num($('extra'));
+      if (area <= 0 || rate <= 0) {
+        $('hero').textContent = '₹0'; $('hero-note').textContent = 'Enter built-up area';
+        $('lines').innerHTML = ''; $('mats').innerHTML = ''; $('meter').innerHTML = ''; last = null; return;
+      }
+      /* Shared foundation and roof: about 3% saving per extra floor, capped */
+      var floorFactor = 1 - Math.min(0.09, (floors - 1) * 0.03);
+      var build = area * rate * floorFactor;
+      var total = build + extra;
+      $('hero').textContent = S.inr(Math.round(total / 1000) * 1000, 0);
+      $('hero-note').textContent = 'Range ' + S.inr(Math.round(total * 0.9 / 1000) * 1000, 0) + ' – ' + S.inr(Math.round(total * 1.1 / 1000) * 1000, 0) + ' · effective ₹' + S.fmt(build / area, 0) + '/sq ft';
+      $('meter').innerHTML = SPLIT.map(function (s) { return '<i title="' + s[0] + '" style="width:' + s[1] + '%;background:' + s[2] + '"></i>'; }).join('');
+      var lines = SPLIT.map(function (s) { return [s[0] + ' (' + S.fmt(s[1], 1) + '%)', S.inr(build * s[1] / 100, 0)]; });
+      if (extra) lines.push(['Extras', S.inr(extra, 0)]);
+      lines.push(['Total', S.inr(total, 0)]);
+      $('lines').innerHTML = lines.map(function (x, i) {
+        var col = SPLIT[i] ? '<i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:' + SPLIT[i][2] + ';margin-right:8px"></i>' : '';
+        return '<div class="r-line' + (i === lines.length - 1 ? ' r-total' : '') + '"><span>' + col + x[0] + '</span><span>' + x[1] + '</span></div>';
+      }).join('');
+      var mats = MATS.map(function (m) { return [m[0], S.fmt(Math.ceil(area * m[1]), 0) + ' ' + m[2]]; });
+      $('mats').innerHTML = mats.map(function (x) { return '<div class="r-line"><span>' + x[0] + '</span><span>' + x[1] + '</span></div>'; }).join('');
+      last = lines.concat([['— Materials —', '']], mats);
+    }
+    function text() { return 'House construction estimate (' + S.fmt(S.num($('area')), 0) + ' sq ft)\n' + last.map(function (l) { return l[0] + (l[1] ? ': ' + l[1] : ''); }).join('\n'); }
+    $('copy').addEventListener('click', function () { if (last) S.copy(text()); });
+    $('share').addEventListener('click', function () { if (last) S.shareWA(text()); });
+    calc();
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profit Margin Calculator — Margin, Markup &amp; Selling Price with GST | Solvv AI</title>
+  <meta name="description" content="Free profit margin calculator for Indian businesses. Find your margin, markup and profit per unit after GST and marketplace commission, or work out the selling price for a target margin.">
+  <link rel="canonical" href="https://solvvai.com/profit-margin-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Profit Margin Calculator with GST | Solvv AI">
+  <meta property="og:description" content="Free profit margin calculator for Indian businesses. Find your margin, markup and profit per unit after GST and marketplace commission, or work out the selling price for a target margin.">
+  <meta property="og:url" content="https://solvvai.com/profit-margin-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Profit Margin Calculator", "url": "https://solvvai.com/profit-margin-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between margin and markup?", "acceptedAnswer": {"@type": "Answer", "text": "Margin is profit as a percentage of the selling price. Markup is profit as a percentage of cost. Buying at ₹100 and selling at ₹150 is a 50% markup but a 33.3% margin."}}, {"@type": "Question", "name": "Should GST be included when calculating margin?", "acceptedAnswer": {"@type": "Answer", "text": "No. GST you collect goes to the government, so calculate margin on the selling price excluding GST."}}, {"@type": "Question", "name": "How do I find the selling price for a target margin?", "acceptedAnswer": {"@type": "Answer", "text": "Selling price = Cost ÷ (1 − target margin). For a ₹600 cost and 40% margin, the price before GST is 600 ÷ 0.6 = ₹1,000."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="profit-margin-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Profit margin calculator</div>
+      <h1>Profit <em>Margin</em> Calculator</h1>
+      <p class="lead">See what you really make on every sale after GST, packaging, shipping and marketplace commission. Or set the margin you want and get the right selling price.</p>
+      <div class="t-badges"><span class="t-badge">✓ GST-aware</span><span class="t-badge">✓ Marketplace commission</span><span class="t-badge">✓ Margin &amp; markup</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+          <div class="f">
+            <span class="f-label">What do you want to find?</span>
+            <div class="seg seg-block" id="mode">
+              <button data-v="margin" class="on">My profit &amp; margin</button>
+              <button data-v="price">The right selling price</button>
+            </div>
+          </div>
+          <div class="f-row" style="margin-top:20px">
+            <div class="f"><label for="cost">Cost price per unit</label><div class="f-affix"><span class="pre">₹</span><input id="cost" class="has-pre" inputmode="decimal" placeholder="600"></div><p class="f-hint">What you pay to make or buy it, excl. GST</p></div>
+            <div class="f"><label for="other">Other costs per unit</label><div class="f-affix"><span class="pre">₹</span><input id="other" class="has-pre" inputmode="decimal" placeholder="60"></div><p class="f-hint">Packaging, shipping, ads per order</p></div>
+          </div>
+          <div class="f-row" style="margin-top:16px">
+            <div class="f" id="price-wrap"><label for="price">Selling price per unit</label><div class="f-affix"><span class="pre">₹</span><input id="price" class="has-pre" inputmode="decimal" placeholder="1,180"></div></div>
+            <div class="f" id="target-wrap" style="display:none"><label for="target">Target margin</label><div class="f-affix"><input id="target" class="has-suf" inputmode="decimal" placeholder="30"><span class="suf">%</span></div></div>
+            <div class="f"><label for="comm">Marketplace commission</label><div class="f-affix"><input id="comm" class="has-suf" inputmode="decimal" placeholder="0"><span class="suf">%</span></div><p class="f-hint">Amazon, Flipkart, Swiggy… leave 0 if none</p></div>
+          </div>
+          <div class="f-row" style="margin-top:16px">
+            <div class="f"><label for="gst">GST rate on sale</label>
+              <select id="gst"><option value="0">No GST / exempt</option><option value="3">3%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option><option value="40">40%</option></select></div>
+            <div class="f"><label for="units">Units sold per month <span style="font-weight:400">(optional)</span></label><input id="units" inputmode="numeric" placeholder="200"></div>
+          </div>
+          <label style="display:flex;gap:8px;align-items:center;margin-top:16px;font-size:0.92rem"><input type="checkbox" id="incl" checked> Selling price includes GST (MRP-style)</label>
+        </div>
+
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Profit per unit</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Enter your cost and price</div>
+          </div>
+          <div class="meter" id="meter" aria-hidden="true"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="insight"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy breakdown</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>Profit margin formulas</h2>
+        <span class="formula">Price excl. GST  = Selling price ÷ (1 + GST%)      (if your price includes GST)
+Profit           = Price excl. GST − Cost − Other costs − Commission
+Margin %         = Profit ÷ Price excl. GST × 100
+Markup %         = Profit ÷ (Cost + Other costs) × 100
+Price for margin = Total cost ÷ (1 − Margin% − Commission%)</span>
+
+        <h2>Margin vs markup</h2>
+        <table>
+          <thead><tr><th>Markup on cost</th><th>Equals margin of</th></tr></thead>
+          <tbody>
+            <tr><td>25%</td><td>20%</td></tr><tr><td>50%</td><td>33.3%</td></tr><tr><td>100% (double the cost)</td><td>50%</td></tr><tr><td>200% (triple the cost)</td><td>66.7%</td></tr>
+          </tbody>
+        </table>
+        <p>Many sellers set a 50% markup and believe they have a 50% margin. They actually keep 33%, and less after commission and returns.</p>
+
+        <h2>Why marketplace commission changes everything</h2>
+        <p>Commission is charged on the <strong>selling price</strong>, not on your profit. A 20% commission on a product with a 30% margin wipes out two-thirds of your profit. Selling through your own website or WhatsApp keeps that money with you. That's why most growing brands move repeat customers to their own store.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          <details><summary>What is a good profit margin in India?</summary><p>It depends on the industry. Grocery and FMCG retail often run at 5–15% net, restaurants at 10–20%, apparel and D2C brands at 40–60% gross, and services and software can exceed 60%.</p></details>
+          <details><summary>Should I include GST in margin?</summary><p>No. GST collected is not your income. This calculator removes GST from the selling price before working out margin.</p></details>
+          <details><summary>What counts as "other costs"?</summary><p>Anything you spend per unit sold: packaging, shipping, payment gateway fees (about 2%), ad spend per order and return losses.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, $ = function (id) { return document.getElementById(id); };
+    var mode = S.seg($('mode'), function (v) {
+      $('price-wrap').style.display = v === 'margin' ? '' : 'none';
+      $('target-wrap').style.display = v === 'price' ? '' : 'none';
+      calc();
+    });
+    ['cost', 'other', 'price', 'target', 'comm', 'gst', 'units', 'incl'].forEach(function (id) { $(id).addEventListener('input', calc); $(id).addEventListener('change', calc); });
+    var last = null;
+
+    function calc() {
+      var cost = S.num($('cost')) + S.num($('other'));
+      var c = S.num($('comm')) / 100, g = S.num($('gst')) / 100, incl = $('incl').checked;
+      var P, ex;
+      if (mode.get() === 'margin') {
+        P = S.num($('price'));
+        if (P <= 0 || cost <= 0) return empty('Enter your cost and price');
+      } else {
+        var m = S.num($('target')) / 100;
+        if (cost <= 0 || m <= 0) return empty('Enter your cost and target margin');
+        var denom = (1 - m) / (incl ? 1 + g : 1) - c;
+        if (denom <= 0 || m >= 1) return empty('That margin is not possible with this commission');
+        P = cost / denom;
+      }
+      ex = incl ? P / (1 + g) : P;
+      var gstAmt = incl ? P - ex : P * g;
+      var customerPays = incl ? P : P * (1 + g);
+      var comm = c * P;
+      var profit = ex - comm - cost;
+      var margin = ex ? profit / ex * 100 : 0;
+      var markup = cost ? profit / cost * 100 : 0;
+      var units = S.num($('units'));
+
+      if (mode.get() === 'margin') {
+        $('hero-label').textContent = 'Profit per unit';
+        $('hero').textContent = S.inr(profit);
+        $('hero-note').textContent = 'Margin ' + S.pct(margin, 1) + ' · Markup ' + S.pct(markup, 1);
+      } else {
+        $('hero-label').textContent = incl ? 'Selling price (incl. GST)' : 'Selling price (excl. GST)';
+        $('hero').textContent = S.inr(Math.ceil(P));
+        $('hero-note').textContent = 'Profit ' + S.inr(profit) + ' per unit at ' + S.pct(margin, 1) + ' margin';
+      }
+
+      var parts = [[cost, '#7C3AED'], [comm, '#E8006A'], [gstAmt, '#c4b5fd'], [Math.max(profit, 0), '#059669']];
+      var tot = parts.reduce(function (s, p) { return s + p[0]; }, 0) || 1;
+      $('meter').innerHTML = parts.map(function (p) { return '<i style="width:' + (p[0] / tot * 100) + '%;background:' + p[1] + '"></i>'; }).join('');
+
+      var lines = [
+        ['Customer pays', S.inr(customerPays)],
+        ['GST @ ' + S.pct(g * 100, 2), S.inr(gstAmt)],
+        ['Price excl. GST', S.inr(ex)],
+        ['Cost + other costs', S.inr(cost)]
+      ];
+      if (comm) lines.push(['Marketplace commission (' + S.pct(c * 100, 1) + ')', S.inr(comm)]);
+      lines.push(['Profit per unit', S.inr(profit)]);
+      lines.push(['Margin', S.pct(margin, 2)]);
+      lines.push(['Markup', S.pct(markup, 2)]);
+      if (units) lines.push(['Monthly profit (' + S.fmt(units, 0) + ' units)', S.inr(profit * units)]);
+      $('lines').innerHTML = lines.map(function (l) {
+        var cls = l[0].indexOf('Profit') === 0 || l[0].indexOf('Monthly') === 0 ? (profit >= 0 ? ' r-good' : ' r-bad') : '';
+        return '<div class="r-line' + cls + '"><span>' + l[0] + '</span><span>' + l[1] + '</span></div>';
+      }).join('');
+      $('insight').textContent = comm
+        ? 'The marketplace takes ' + S.inr(comm) + ' per sale' + (units ? ' (' + S.inr(comm * units) + ' a month)' : '') + '. Selling on your own website keeps that with you.'
+        : (profit < 0 ? 'You are losing money on each sale. Raise the price or cut costs.' : '');
+      last = lines;
+    }
+    function empty(msg) {
+      $('hero').textContent = '₹0'; $('hero-note').textContent = msg;
+      $('lines').innerHTML = ''; $('insight').textContent = ''; $('meter').innerHTML = ''; last = null;
+    }
+    function text() { return 'Profit margin\n' + last.map(function (l) { return l[0] + ': ' + l[1]; }).join('\n'); }
+    $('copy').addEventListener('click', function () { if (last) S.copy(text()); });
+    $('share').addEventListener('click', function () { if (last) S.shareWA(text()); });
+    calc();
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>
