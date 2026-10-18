@@ -113,8 +113,8 @@
     width: 68px;
     height: 68px;
     border-radius: 18px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(22,17,42,0.04);
+    border: 1px solid rgba(22,17,42,0.08);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,7 +162,7 @@
     margin: 0 auto 56px;
     text-align: center;
   }
-  .problem-intro strong { color: var(--white); }
+  .problem-intro strong { color: var(--text); }
 
   .leaks-grid {
     display: grid;
@@ -182,12 +182,12 @@
   .leak-card:hover {
     transform: translateY(-5px);
     border-color: rgba(255,0,110,0.3);
-    box-shadow: 0 16px 44px rgba(0,0,0,0.4);
+    box-shadow: 0 16px 44px var(--shadow);
   }
   .leak-bg-num {
     font-family: var(--font-h);
     font-size: 5rem;
-    color: rgba(255,255,255,0.04);
+    color: rgba(22,17,42,0.032);
     position: absolute;
     top: 6px;
     right: 12px;
@@ -202,7 +202,7 @@
     font-weight: 400;
     letter-spacing: 0.04em;
     margin-bottom: 10px;
-    color: var(--white);
+    color: var(--text);
     line-height: 1.15;
   }
   .leak-card p { font-size: 0.88rem; color: var(--gray-l); line-height: 1.65; margin: 0; }
@@ -252,7 +252,7 @@
   .audit-card:hover {
     transform: translateY(-6px);
     border-color: rgba(124,58,237,0.3);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px var(--shadow);
   }
   .audit-num {
     font-family: var(--font-h);
@@ -268,7 +268,7 @@
     font-weight: 400;
     letter-spacing: 0.04em;
     margin-bottom: 14px;
-    color: var(--white);
+    color: var(--text);
     line-height: 1;
   }
   .audit-card p { font-size: 0.94rem; color: var(--gray-l); line-height: 1.7; margin-bottom: 20px; }
@@ -315,7 +315,7 @@
     font-weight: 400;
     letter-spacing: 0.05em;
     margin-bottom: 28px;
-    color: var(--white);
+    color: var(--text);
     line-height: 1.1;
   }
   .fit-list { display: flex; flex-direction: column; gap: 18px; }
@@ -367,7 +367,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--pink), var(--cyan));
+    background: linear-gradient(90deg, var(--primary), var(--pink));
     border-radius: 28px 28px 0 0;
   }
 

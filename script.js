@@ -116,10 +116,10 @@ mobileMenu.querySelectorAll('a').forEach(a => {
   /* Palette: [r,g,b] for glow colours */
   const PALETTE = [
     [124, 58,  237],   /* purple  */
-    [255,  0,  110],   /* pink    */
-    [  0, 212, 255],   /* cyan    */
-    [  0, 255, 136],   /* green   */
-    [200, 150, 255],   /* lavender*/
+    [232,  0,  106],   /* pink    */
+    [139, 92,  246],   /* violet  */
+    [236, 72,  153],   /* rose    */
+    [167, 139, 250],   /* lavender*/
   ];
 
   /* ── Star particles ── */
@@ -210,7 +210,7 @@ mobileMenu.querySelectorAll('a').forEach(a => {
       const tailY = this.y - this.vy * (this.len / 14);
       const grad  = ctx.createLinearGradient(tailX, tailY, this.x, this.y);
       grad.addColorStop(0, `rgba(${r},${g},${b},0)`);
-      grad.addColorStop(1, `rgba(255,255,255,${fade * 0.95})`);
+      grad.addColorStop(1, `rgba(${r},${g},${b},${fade * 0.95})`);
       ctx.save();
       ctx.shadowBlur  = 12;
       ctx.shadowColor = `rgba(${r},${g},${b},${fade})`;
@@ -465,7 +465,7 @@ const sectionObs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navLinks.forEach(link => {
-        link.style.color = link.getAttribute('href') === '#' + entry.target.id ? '#fff' : '';
+        link.style.color = link.getAttribute('href') === '#' + entry.target.id ? 'var(--primary)' : '';
       });
     }
   });
