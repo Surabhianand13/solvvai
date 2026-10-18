@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMI Calculator — Loan EMI for Home, Car, Personal &amp; Business Loans | Solvv AI</title>
+  <meta name="description" content="Free EMI calculator for India. Calculate the monthly EMI, total interest and year-wise repayment schedule for home, car, personal, business, education and bike loans.">
+  <link rel="canonical" href="https://solvvai.com/emi-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free EMI Calculator with Repayment Schedule | Solvv AI">
+  <meta property="og:description" content="Free EMI calculator for India. Calculate the monthly EMI, total interest and year-wise repayment schedule for home, car, personal, business, education and bike loans.">
+  <meta property="og:url" content="https://solvvai.com/emi-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "EMI Calculator", "url": "https://solvvai.com/emi-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is EMI calculated?", "acceptedAnswer": {"@type": "Answer", "text": "EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1), where P is the loan amount, r is the monthly interest rate (yearly rate ÷ 12 ÷ 100) and n is the number of monthly instalments."}}, {"@type": "Question", "name": "Does a longer tenure reduce EMI?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but it increases the total interest you pay. A 20-year home loan costs far more in interest than a 15-year loan at the same rate."}}, {"@type": "Question", "name": "What is a good EMI to income ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Lenders usually allow total EMIs of up to 40–50% of your monthly take-home income. Keeping it under 35% leaves room for savings and emergencies."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="emi-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / EMI calculator</div>
+      <h1>EMI <em>Calculator</em></h1>
+      <p class="lead">Work out the monthly EMI for any loan, see how much goes to interest, and get the year-wise repayment schedule.</p>
+      <div class="t-badges"><span class="t-badge">✓ Home, car, personal, business</span><span class="t-badge">✓ Repayment schedule</span><span class="t-badge">✓ Principal vs interest</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+          <div class="f"><span class="f-label">Loan type</span><div class="chips" id="types">
+            <button class="chip on" data-p="3000000" data-r="8.5" data-y="20">Home</button>
+            <button class="chip" data-p="800000" data-r="9.2" data-y="5">Car</button>
+            <button class="chip" data-p="500000" data-r="12" data-y="3">Personal</button>
+            <button class="chip" data-p="1000000" data-r="15" data-y="3">Business</button>
+            <button class="chip" data-p="1500000" data-r="10" data-y="7">Education</button>
+            <button class="chip" data-p="100000" data-r="13" data-y="2">Bike</button>
+          </div></div>
+<div class="f-row" style="margin-top:16px"><div class="f"><label for="amt">Loan amount</label><div class="f-affix"><span class="pre">₹</span><input id="amt" class="has-pre" inputmode="decimal" placeholder="" value="3000000"></div></div><div class="f"><label for="rate">Interest rate (yearly)</label><div class="f-affix"><input id="rate" class="has-suf" inputmode="decimal" placeholder="" value="8.5"><span class="suf">%</span></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="yrs">Tenure</label><div class="f-affix"><input id="yrs" class="has-suf" inputmode="decimal" placeholder="" value="20"><span class="suf">years</span></div><p class="f-hint">Up to 30 years</p></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Monthly EMI</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>EMI formula</h2>
+        <span class="formula">EMI = P × r × (1 + r)ⁿ ÷ ((1 + r)ⁿ − 1)
+P = loan amount · r = yearly rate ÷ 12 ÷ 100 · n = months</span>
+        <p>Example: ₹30 lakh for 20 years at 8.5% gives an EMI of <strong>₹26,035</strong>. Over 240 months you repay ₹62.48 lakh, of which ₹32.48 lakh is interest.</p>
+        <h2>Typical loan interest rates in India</h2>
+        <table><thead><tr><th>Loan</th><th>Typical rate</th><th>Typical tenure</th></tr></thead><tbody>
+        <tr><td>Home loan</td><td>8–9.5%</td><td>Up to 30 years</td></tr><tr><td>Car loan</td><td>8.5–11%</td><td>Up to 7 years</td></tr>
+        <tr><td>Personal loan</td><td>10.5–24%</td><td>1–5 years</td></tr><tr><td>Business loan</td><td>12–24%</td><td>1–5 years</td></tr>
+        <tr><td>Education loan</td><td>8.5–13%</td><td>Up to 15 years</td></tr><tr><td>Two-wheeler loan</td><td>10–18%</td><td>1–4 years</td></tr></tbody></table>
+        <p>Rates depend on your credit score, income and lender, and change with the RBI repo rate.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>How is EMI calculated?</summary><p>EMI = P × r × (1 + r)ⁿ ÷ ((1 + r)ⁿ − 1). This calculator does it for you and also shows how each year’s payments split between principal and interest.</p></details><details><summary>Why is most of my early EMI going to interest?</summary><p>Interest is charged on the outstanding balance, which is highest at the start. As you repay principal, the interest part of each EMI shrinks.</p></details><details><summary>Should I prepay my loan?</summary><p>Prepaying early in the tenure saves the most interest. Home loans on floating rates have no prepayment penalty for individuals.</p></details><details><summary>Does a longer tenure reduce EMI?</summary><p>Yes, but you pay much more interest overall. Choose the shortest tenure whose EMI you can comfortably afford.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    var fee = $('fee');
+    var chips = $('types');
+    if (chips) chips.addEventListener('click', function (e) {
+      var b = e.target.closest('.chip'); if (!b) return;
+      chips.querySelectorAll('.chip').forEach(function (c) { c.classList.toggle('on', c === b); });
+      $('amt').value = b.dataset.p; $('rate').value = b.dataset.r; $('yrs').value = b.dataset.y; run();
+    });
+    var run = F.wire({ ids: ['amt', 'rate', 'yrs', 'fee'], title: 'Loan EMI', calc: function () {
+      var P = S.num($('amt')), r = S.num($('rate')), n = Math.round(S.num($('yrs')) * 12);
+      if (P <= 0 || n <= 0) return empty();
+      var emi = F.emi(P, r, n), total = emi * n, interest = total - P;
+      var feeAmt = fee ? P * S.num(fee) / 100 : 0, feeGst = feeAmt * 0.18;
+      $('hero').textContent = S.inr(Math.round(emi), 0);
+      $('hero-note').textContent = 'per month for ' + S.fmt(n, 0) + ' months';
+      F.split($('split'), P, interest, 'Principal', 'Interest');
+      var lines = [['Monthly EMI', S.inr(emi)], ['Loan amount', S.inr(P, 0)], ['Total interest', S.inr(interest, 0)], ['Total repayment', S.inr(total, 0)]];
+      if (feeAmt) { lines.push(['Processing fee + 18% GST', S.inr(feeAmt + feeGst, 0)]); lines.push(['Total cost of loan', S.inr(interest + feeAmt + feeGst, 0)]); }
+      F.lines($('lines'), lines, [3]);
+      $('note').textContent = 'Interest is ' + S.fmt(interest / P * 100, 1) + '% of the amount you borrow.';
+      var yrs = F.amortYears(P, r, n), start = new Date().getFullYear();
+      F.table($('table'), ['Year', 'Principal paid', 'Interest paid', 'Balance'], yrs.map(function (y) {
+        return [String(start + y.year - 1), S.inr(y.principal, 0), S.inr(y.interest, 0), S.inr(y.balance, 0)];
+      }));
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

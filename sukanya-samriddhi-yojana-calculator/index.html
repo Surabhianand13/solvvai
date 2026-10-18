@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sukanya Samriddhi Yojana Calculator — SSY Maturity Amount | Solvv AI</title>
+  <meta name="description" content="Free Sukanya Samriddhi Yojana calculator. See how much your daughter’s SSY account will be worth at 21, with deposits for 15 years, yearly compounding and tax-free interest.">
+  <link rel="canonical" href="https://solvvai.com/sukanya-samriddhi-yojana-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Sukanya Samriddhi Yojana (SSY) Calculator | Solvv AI">
+  <meta property="og:description" content="Free Sukanya Samriddhi Yojana calculator. See how much your daughter’s SSY account will be worth at 21, with deposits for 15 years, yearly compounding and tax-free interest.">
+  <meta property="og:url" content="https://solvvai.com/sukanya-samriddhi-yojana-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Sukanya Samriddhi Yojana Calculator", "url": "https://solvvai.com/sukanya-samriddhi-yojana-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is Sukanya Samriddhi maturity calculated?", "acceptedAnswer": {"@type": "Answer", "text": "You deposit for the first 15 years. The balance keeps earning interest, compounded yearly, until the account matures 21 years after opening."}}, {"@type": "Question", "name": "What is the SSY interest rate?", "acceptedAnswer": {"@type": "Answer", "text": "The government sets it every quarter. It has been 8.2% a year recently; check the latest notified rate."}}, {"@type": "Question", "name": "Who can open an SSY account?", "acceptedAnswer": {"@type": "Answer", "text": "Parents or guardians of a girl child under 10 years, for up to two daughters (three in the case of twins or triplets)."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="sukanya-samriddhi-yojana-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Sukanya Samriddhi calculator</div>
+      <h1>Sukanya Samriddhi <em>Calculator</em></h1>
+      <p class="lead">Plan your daughter’s future. See what her Sukanya Samriddhi account will be worth when it matures at age 21.</p>
+      <div class="t-badges"><span class="t-badge">✓ Tax-free (EEE)</span><span class="t-badge">✓ Maturity at 21 years</span><span class="t-badge">✓ Year-wise balance</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+<div class="f-row" style="margin-top:16px"><div class="f"><label for="amt">Yearly deposit</label><div class="f-affix"><span class="pre">₹</span><input id="amt" class="has-pre" inputmode="decimal" placeholder="" value="150000"></div><p class="f-hint">₹250 to ₹1,50,000 a year</p></div><div class="f"><label for="rate">Interest rate</label><div class="f-affix"><input id="rate" class="has-suf" inputmode="decimal" placeholder="" value="8.2"><span class="suf">%</span></div><p class="f-hint">Check the latest notified rate</p></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="age">Daughter’s age today</label><div class="f-affix"><input id="age" class="has-suf" inputmode="decimal" placeholder="" value="2"><span class="suf">years</span></div><p class="f-hint">Must be under 10 to open</p></div><div class="f"><label for="start">Account opening year</label><div class="f-affix"><input id="start" class="has-suf" inputmode="decimal" placeholder="" value="2026"><span class="suf"></span></div></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Maturity value</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How Sukanya Samriddhi works</h2>
+        <ul><li>Deposit between <strong>₹250 and ₹1.5 lakh</strong> a year for the first <strong>15 years</strong>.</li><li>The account <strong>matures 21 years</strong> after opening, and keeps earning interest for the last 6 years with no deposits.</li><li>Interest is compounded yearly and is <strong>fully tax-free</strong>. Deposits qualify for Section 80C under the old regime.</li><li>Up to 50% can be withdrawn for higher education after she turns 18.</li></ul>
+        <p>Example: ₹1.5 lakh a year at 8.2% grows to about <strong>₹71.8 lakh</strong> at maturity: ₹22.5 lakh invested and ₹49.3 lakh tax-free interest.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>Where can I open an SSY account?</summary><p>At any post office or authorised bank, including SBI, HDFC, ICICI, Axis and most public sector banks.</p></details><details><summary>What if I miss a yearly deposit?</summary><p>The account becomes inactive. You can revive it by paying the minimum ₹250 for each missed year plus a ₹50 penalty per year.</p></details><details><summary>Can the account be closed early?</summary><p>Yes, for her marriage after age 18, or in cases of medical need or death of the account holder.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    F.wire({ ids: ['amt', 'rate', 'age', 'start'], title: 'Sukanya Samriddhi maturity', calc: function () {
+      var P = Math.min(150000, S.num($('amt'))), r = S.num($('rate')) / 100, age = S.num($('age')), y0 = Math.round(S.num($('start'))) || new Date().getFullYear();
+      if (P <= 0) return empty();
+      if (age >= 10) return empty('SSY can only be opened for a girl under 10');
+      var bal = 0, rows = [];
+      for (var y = 1; y <= 21; y++) {
+        var dep = y <= 15 ? P : 0;
+        bal = (bal + dep) * (1 + r);
+        rows.push([String(y0 + y - 1), String(Math.floor(age + y - 1)), dep ? S.inr(dep, 0) : '—', S.inr(bal, 0)]);
+      }
+      var invested = P * 15, interest = bal - invested;
+      $('hero').textContent = F.short(bal);
+      $('hero-note').textContent = 'in ' + (y0 + 21) + ' when she is about ' + Math.floor(age + 21);
+      F.split($('split'), invested, interest, 'Invested', 'Interest');
+      var lines = [['Yearly deposit (15 years)', S.inr(P, 0)], ['Total invested', S.inr(invested, 0)], ['Interest earned (tax-free)', S.inr(interest, 0)], ['Maturity value', S.inr(bal, 0)], ['Maturity year', String(y0 + 21)]];
+      F.lines($('lines'), lines, [3]);
+      $('note').textContent = 'You can withdraw up to 50% of the balance for her education once she turns 18.';
+      F.table($('table'), ['Year', 'Age', 'Deposit', 'Balance'], rows);
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

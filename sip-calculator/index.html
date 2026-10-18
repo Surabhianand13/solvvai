@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIP Calculator — Mutual Fund SIP Returns Calculator | Solvv AI</title>
+  <meta name="description" content="Free SIP calculator. Find the future value of your monthly mutual fund SIP, total invested and estimated returns, with a year-wise growth table and inflation-adjusted value.">
+  <link rel="canonical" href="https://solvvai.com/sip-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free SIP Calculator for Mutual Funds | Solvv AI">
+  <meta property="og:description" content="Free SIP calculator. Find the future value of your monthly mutual fund SIP, total invested and estimated returns, with a year-wise growth table and inflation-adjusted value.">
+  <meta property="og:url" content="https://solvvai.com/sip-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "SIP Calculator", "url": "https://solvvai.com/sip-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is SIP return calculated?", "acceptedAnswer": {"@type": "Answer", "text": "FV = P × [((1 + i)^n − 1) ÷ i] × (1 + i), where P is the monthly SIP, i is the monthly return rate and n is the number of months."}}, {"@type": "Question", "name": "What return should I assume for a SIP?", "acceptedAnswer": {"@type": "Answer", "text": "Equity mutual funds in India have historically returned 10–14% a year over long periods, but returns are not guaranteed. Debt funds are closer to 6–8%."}}, {"@type": "Question", "name": "How much should I invest in a SIP to make ₹1 crore?", "acceptedAnswer": {"@type": "Answer", "text": "At 12% a year, about ₹10,000 a month for 21 years grows to ₹1 crore."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="sip-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / SIP calculator</div>
+      <h1>SIP <em>Calculator</em></h1>
+      <p class="lead">See how much your monthly SIP could grow to, how much of it is returns, and what it is worth after inflation.</p>
+      <div class="t-badges"><span class="t-badge">✓ Mutual fund SIP</span><span class="t-badge">✓ Inflation-adjusted</span><span class="t-badge">✓ Year-wise growth</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+<div class="f-row" style="margin-top:16px"><div class="f"><label for="amt">Monthly SIP</label><div class="f-affix"><span class="pre">₹</span><input id="amt" class="has-pre" inputmode="decimal" placeholder="" value="10000"></div></div><div class="f"><label for="rate">Expected return (yearly)</label><div class="f-affix"><input id="rate" class="has-suf" inputmode="decimal" placeholder="" value="12"><span class="suf">%</span></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="yrs">Time period</label><div class="f-affix"><input id="yrs" class="has-suf" inputmode="decimal" placeholder="" value="20"><span class="suf">years</span></div></div><div class="f"><label for="inf">Inflation (optional)</label><div class="f-affix"><input id="inf" class="has-suf" inputmode="decimal" placeholder="" value="6"><span class="suf">%</span></div></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Estimated value</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>SIP formula</h2>
+        <span class="formula">FV = P × [((1 + i)ⁿ − 1) ÷ i] × (1 + i)
+P = monthly SIP · i = yearly return ÷ 12 ÷ 100 · n = months</span>
+        <p>Example: ₹10,000 a month for 20 years at 12% grows to about <strong>₹99.9 lakh</strong>. You invest ₹24 lakh; the rest is compounding.</p>
+        <h2>How long to reach ₹1 crore at 12%?</h2>
+        <table><thead><tr><th>Monthly SIP</th><th>Years to ₹1 crore</th></tr></thead><tbody><tr><td>₹5,000</td><td>~26 years</td></tr><tr><td>₹10,000</td><td>~21 years</td></tr><tr><td>₹25,000</td><td>~14 years</td></tr><tr><td>₹50,000</td><td>~10 years</td></tr></tbody></table>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>Are SIP returns guaranteed?</summary><p>No. Mutual fund returns depend on the market. The calculator shows what happens at a steady rate; real returns go up and down.</p></details><details><summary>How are SIP gains taxed?</summary><p>Equity fund gains held over 12 months are long-term and taxed at 12.5% above ₹1.25 lakh a year. Short-term gains are taxed at 20%.</p></details><details><summary>Can I stop or pause a SIP?</summary><p>Yes, anytime, without penalty. Units already bought stay invested.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    F.wire({ ids: ['amt', 'rate', 'yrs', 'inf'], title: 'SIP returns', calc: function () {
+      var P = S.num($('amt')), r = S.num($('rate')), y = Math.round(S.num($('yrs')));
+      if (P <= 0 || y <= 0) return empty();
+      var res = F.sip(P, r, y, 0), gain = res.value - res.invested, inf = S.num($('inf'));
+      $('hero').textContent = F.short(res.value);
+      $('hero-note').textContent = 'Invested ' + F.short(res.invested) + ' · Returns ' + F.short(gain);
+      F.split($('split'), res.invested, gain, 'Invested', 'Returns');
+      var lines = [['Monthly SIP', S.inr(P, 0)], ['Total invested', S.inr(res.invested, 0)], ['Estimated returns', S.inr(gain, 0)], ['Future value', S.inr(res.value, 0)]];
+      if (inf) lines.push(['Value in today’s money (' + S.pct(inf, 1) + ' inflation)', S.inr(res.value / Math.pow(1 + inf / 100, y), 0)]);
+      F.lines($('lines'), lines, [3]);
+      $('note').textContent = 'Try our step-up SIP calculator: raising your SIP 10% a year makes a big difference.';
+
+      F.table($('table'), ['Year', 'Monthly SIP', 'Invested', 'Value'], res.rows.map(function (x) { return ['Year ' + x.year, S.inr(x.monthly, 0), S.inr(x.invested, 0), S.inr(x.value, 0)]; }));
+
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FD Calculator — Fixed Deposit Maturity &amp; Interest Calculator | Solvv AI</title>
+  <meta name="description" content="Free FD calculator for India. Calculate fixed deposit maturity amount and interest for any tenure with quarterly, monthly, half-yearly or yearly compounding, or monthly/quarterly payout.">
+  <link rel="canonical" href="https://solvvai.com/fd-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free FD Calculator: Fixed Deposit Maturity | Solvv AI">
+  <meta property="og:description" content="Free FD calculator for India. Calculate fixed deposit maturity amount and interest for any tenure with quarterly, monthly, half-yearly or yearly compounding, or monthly/quarterly payout.">
+  <meta property="og:url" content="https://solvvai.com/fd-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "FD Calculator", "url": "https://solvvai.com/fd-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is FD interest calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Most Indian banks compound FD interest quarterly: Maturity = P × (1 + r/400)^(4 × years)."}}, {"@type": "Question", "name": "Is FD interest taxable?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. FD interest is added to your income and taxed at your slab rate. Banks deduct 10% TDS if interest crosses ₹50,000 a year (₹1 lakh for senior citizens) and you have not submitted Form 15G/15H."}}, {"@type": "Question", "name": "Do senior citizens get higher FD rates?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, usually 0.25–0.75% more than regular rates."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="fd-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / FD calculator</div>
+      <h1>FD <em>Calculator</em></h1>
+      <p class="lead">Find the maturity value of a fixed deposit and the interest you will earn, with the compounding your bank uses.</p>
+      <div class="t-badges"><span class="t-badge">✓ Quarterly compounding</span><span class="t-badge">✓ Payout options</span><span class="t-badge">✓ Year-wise growth</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+<div class="f-row" style="margin-top:16px"><div class="f"><label for="amt">Deposit amount</label><div class="f-affix"><span class="pre">₹</span><input id="amt" class="has-pre" inputmode="decimal" placeholder="" value="100000"></div></div><div class="f"><label for="rate">Interest rate (yearly)</label><div class="f-affix"><input id="rate" class="has-suf" inputmode="decimal" placeholder="" value="7"><span class="suf">%</span></div></div></div><div class="f-row f-row--keep" style="margin-top:16px"><div class="f"><label for="yrs">Years</label><div class="f-affix"><input id="yrs" class="has-suf" inputmode="decimal" placeholder="" value="5"><span class="suf">yrs</span></div></div><div class="f"><label for="mos">Extra months</label><div class="f-affix"><input id="mos" class="has-suf" inputmode="decimal" placeholder="" value="0"><span class="suf">mo</span></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="comp">Interest type</label><select id="comp"><option value="4" selected>Cumulative, compounded quarterly</option><option value="12">Cumulative, compounded monthly</option><option value="2">Cumulative, compounded half-yearly</option><option value="1">Cumulative, compounded yearly</option><option value="p12">Monthly payout</option><option value="p4">Quarterly payout</option></select></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Maturity amount</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>FD maturity formula</h2>
+        <span class="formula">Maturity = P × (1 + r ÷ (100 × n))^(n × t)
+P = deposit · r = yearly rate · n = compounding per year (4 = quarterly) · t = years</span>
+        <p>Example: ₹1 lakh for 5 years at 7%, compounded quarterly, grows to <strong>₹1,41,478</strong>, which is ₹41,478 interest and an effective yield of 7.19% a year.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>Is FD interest taxable?</summary><p>Yes, at your income tax slab rate. Banks deduct 10% TDS once yearly interest crosses ₹50,000 (₹1 lakh for senior citizens) unless you submit Form 15G/15H.</p></details><details><summary>What is a tax-saving FD?</summary><p>A 5-year lock-in FD whose deposit (up to ₹1.5 lakh) can be claimed under Section 80C in the old tax regime. Interest is still taxable.</p></details><details><summary>Are FDs safe?</summary><p>Deposits up to ₹5 lakh per bank (principal + interest) are insured by DICGC. Small finance banks pay more but check their ratings.</p></details><details><summary>Cumulative or payout FD?</summary><p>Cumulative FDs reinvest interest and earn more. Payout FDs give regular income, which suits retirees.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    F.wire({ ids: ['amt', 'rate', 'yrs', 'mos', 'comp'], title: 'FD maturity', calc: function () {
+      var P = S.num($('amt')), r = S.num($('rate')), t = S.num($('yrs')) + S.num($('mos')) / 12, c = $('comp').value;
+      if (P <= 0 || t <= 0) return empty();
+      var lines, mat, interest;
+      if (c.charAt(0) === 'p') {
+        var k = c === 'p12' ? 12 : 4;
+        var per = P * r / 100 / k;
+        interest = per * Math.round(t * k);
+        mat = P;
+        $('hero-label').textContent = (k === 12 ? 'Monthly' : 'Quarterly') + ' payout';
+        $('hero').textContent = S.inr(per);
+        $('hero-note').textContent = 'Principal ' + S.inr(P, 0) + ' returned at maturity';
+        lines = [['Payout per ' + (k === 12 ? 'month' : 'quarter'), S.inr(per)], ['Number of payouts', S.fmt(Math.round(t * k), 0)], ['Total interest', S.inr(interest, 0)], ['Principal back at maturity', S.inr(P, 0)]];
+        F.split($('split'), P, interest, 'Deposit', 'Interest');
+        F.lines($('lines'), lines, [2]);
+        $('note').textContent = k === 12 ? 'Some banks pay slightly less on monthly payout as it is discounted for early payment.' : '';
+        $('table').innerHTML = '<p class="r-empty">Payout FDs pay the same interest every period. The principal stays the same.</p>';
+        return lines;
+      }
+      var n = +c;
+      mat = P * Math.pow(1 + r / (100 * n), n * t); interest = mat - P;
+      $('hero-label').textContent = 'Maturity amount';
+      $('hero').textContent = S.inr(Math.round(mat), 0);
+      $('hero-note').textContent = 'Interest earned ' + S.inr(interest, 0);
+      F.split($('split'), P, interest, 'Deposit', 'Interest');
+      var eff = (Math.pow(1 + r / (100 * n), n) - 1) * 100;
+      lines = [['Deposit', S.inr(P, 0)], ['Interest earned', S.inr(interest, 0)], ['Maturity amount', S.inr(mat, 0)], ['Effective yearly yield', S.pct(eff, 2)]];
+      F.lines($('lines'), lines, [2]);
+      $('note').textContent = 'Interest is taxable at your slab rate. TDS applies above ₹50,000 a year (₹1 lakh for seniors).';
+      var rows = [], yrs = Math.ceil(t);
+      for (var y = 1; y <= yrs; y++) { var yy = Math.min(y, t); var v = P * Math.pow(1 + r / (100 * n), n * yy); rows.push(['Year ' + S.fmt(yy, 2), S.inr(v - P, 0), S.inr(v, 0)]); }
+      F.table($('table'), ['Period', 'Interest so far', 'Value'], rows);
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

@@ -77,6 +77,34 @@
         points: ['Listing pages with floor plans and enquiry forms', 'AI assistant that answers buyer questions 24/7', 'Leads delivered to WhatsApp and your CRM'],
         need: 'Property / interiors website' } }
   ];
+
+  var LOAN_PITCH = { kicker: 'For loan agents, DSAs & lenders', title: 'Get loan leads on your own website',
+    body: 'People who use this calculator are ready to borrow. We build websites for DSAs, NBFCs and lenders with calculators like this one that capture applicant details and send them to your WhatsApp.',
+    points: ['Your own EMI and eligibility calculators, branded for you', 'Applicant name, income and city captured with every calculation', 'Google Ads + SEO to bring in borrowers in your city'],
+    need: 'Loan / DSA lead-gen website' };
+  var INVEST_PITCH = { kicker: 'For mutual fund distributors & advisors', title: 'Turn calculator users into clients',
+    body: 'We build websites for MFDs, financial advisors and insurance agents with SIP, retirement and goal calculators that capture investor leads automatically.',
+    points: ['Your own SIP, retirement and goal calculators, branded for you', 'Every lead sent to your WhatsApp with their goal and amount', 'SEO and content so investors find you, not the big apps'],
+    need: 'Advisor / MFD website' };
+  function fin(slug, name, icon, group, blurb) {
+    return { slug: slug, name: name, icon: icon, group: group, blurb: blurb, pitch: group === 'Loans & EMI' ? LOAN_PITCH : INVEST_PITCH };
+  }
+  TOOLS.push(
+    fin('emi-calculator', 'EMI Calculator', '🧮', 'Loans & EMI', 'Monthly EMI, total interest and repayment schedule for any loan.'),
+    fin('home-loan-emi-calculator', 'Home Loan EMI Calculator', '🏠', 'Loans & EMI', 'Home loan EMI with year-wise principal and interest.'),
+    fin('home-loan-eligibility-calculator', 'Home Loan Eligibility Calculator', '✅', 'Loans & EMI', 'How much home loan you can get on your income.'),
+    fin('personal-loan-emi-calculator', 'Personal Loan EMI Calculator', '💳', 'Loans & EMI', 'Personal loan EMI including processing fee and GST.'),
+    fin('fd-calculator', 'FD Calculator', '🏦', 'Savings', 'Fixed deposit maturity and interest with any compounding.'),
+    fin('rd-calculator', 'RD Calculator', '🗓️', 'Savings', 'Recurring deposit maturity using the bank formula.'),
+    fin('ppf-calculator', 'PPF Calculator', '🛡️', 'Savings', 'PPF maturity over 15 years and extensions.'),
+    fin('sukanya-samriddhi-yojana-calculator', 'Sukanya Samriddhi Calculator', '👧', 'Savings', 'SSY maturity for your daughter at age 21.'),
+    fin('sip-calculator', 'SIP Calculator', '📊', 'Investing', 'Future value of a monthly SIP in mutual funds.'),
+    fin('step-up-sip-calculator', 'Step-up SIP Calculator', '📶', 'Investing', 'SIP that grows every year with your income.'),
+    fin('lumpsum-calculator', 'Lumpsum Calculator', '💰', 'Investing', 'Growth of a one-time mutual fund investment.'),
+    fin('swp-calculator', 'SWP Calculator', '🔁', 'Investing', 'Monthly withdrawals and how long your corpus lasts.'),
+    fin('nps-calculator', 'NPS Calculator', '🧓', 'Investing', 'NPS corpus, lump sum and monthly pension at 60.'),
+    fin('retirement-calculator', 'Retirement Calculator', '🌴', 'Investing', 'Corpus you need to retire and the SIP to get there.')
+  );
   var bySlug = {};
   TOOLS.forEach(function (t) { bySlug[t.slug] = t; });
 
@@ -288,11 +316,12 @@
         '<div class="footer-grid">' +
           '<div class="footer-brand"><div class="footer-logo">SOLVV<span>AI</span></div>' +
             '<p>Websites, AI agents and automations for growing businesses. Delivered in 7 days.</p></div>' +
-          '<div class="footer-col"><h4>Free tools</h4><ul>' +
-            TOOLS.slice(0, 6).map(function (t) { return '<li><a href="/' + t.slug + '/">' + S.esc(t.name) + '</a></li>'; }).join('') +
+          '<div class="footer-col"><h4>Business tools</h4><ul>' +
+            TOOLS.filter(function (t) { return ['Loans & EMI', 'Savings', 'Investing'].indexOf(t.group) === -1; }).slice(0, 7).map(function (t) { return '<li><a href="/' + t.slug + '/">' + S.esc(t.name) + '</a></li>'; }).join('') +
           '</ul></div>' +
-          '<div class="footer-col"><h4>More tools</h4><ul>' +
-            TOOLS.slice(6).map(function (t) { return '<li><a href="/' + t.slug + '/">' + S.esc(t.name) + '</a></li>'; }).join('') +
+          '<div class="footer-col"><h4>Money calculators</h4><ul>' +
+            ['emi-calculator', 'home-loan-emi-calculator', 'sip-calculator', 'fd-calculator', 'ppf-calculator', 'retirement-calculator'].map(function (k) { return '<li><a href="/' + k + '/">' + S.esc(bySlug[k].name) + '</a></li>'; }).join('') +
+            '<li><a href="/tools/"><b>All ' + TOOLS.length + ' free tools →</b></a></li>' +
           '</ul></div>' +
           '<div class="footer-col"><h4>Solvv AI</h4><ul>' +
             '<li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li>' +

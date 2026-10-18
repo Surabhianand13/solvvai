@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Loan Eligibility Calculator — How Much Loan Can I Get? | Solvv AI</title>
+  <meta name="description" content="Free home loan eligibility calculator for India. Find out how much home loan you can get on your monthly income, existing EMIs, interest rate and tenure, with RBI loan-to-value limits.">
+  <link rel="canonical" href="https://solvvai.com/home-loan-eligibility-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Home Loan Eligibility Calculator | Solvv AI">
+  <meta property="og:description" content="Free home loan eligibility calculator for India. Find out how much home loan you can get on your monthly income, existing EMIs, interest rate and tenure, with RBI loan-to-value limits.">
+  <meta property="og:url" content="https://solvvai.com/home-loan-eligibility-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Home Loan Eligibility Calculator", "url": "https://solvvai.com/home-loan-eligibility-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much home loan can I get on a ₹50,000 salary?", "acceptedAnswer": {"@type": "Answer", "text": "With no other EMIs, at 8.5% for 20 years and a 50% FOIR, you could get about ₹28.8 lakh. A longer tenure or a co-applicant increases this."}}, {"@type": "Question", "name": "What is FOIR?", "acceptedAnswer": {"@type": "Answer", "text": "Fixed Obligation to Income Ratio: the share of your monthly income that can go to all EMIs. Banks usually allow 40–60% depending on income."}}, {"@type": "Question", "name": "How much of the property value will the bank fund?", "acceptedAnswer": {"@type": "Answer", "text": "RBI caps loans at 90% of property value up to ₹30 lakh, 80% for ₹30–75 lakh, and 75% above ₹75 lakh."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="home-loan-eligibility-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Home loan eligibility calculator</div>
+      <h1>Home Loan <em>Eligibility</em> Calculator</h1>
+      <p class="lead">Find out how much home loan you can get on your income, and how much down payment you will need.</p>
+      <div class="t-badges"><span class="t-badge">✓ FOIR-based</span><span class="t-badge">✓ RBI LTV limits</span><span class="t-badge">✓ Down payment needed</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+<div class="f-row" style="margin-top:16px"><div class="f"><label for="inc">Your net monthly income</label><div class="f-affix"><span class="pre">₹</span><input id="inc" class="has-pre" inputmode="decimal" placeholder="80,000"></div><p class="f-hint">Take-home, after tax and PF</p></div><div class="f"><label for="co">Co-applicant income</label><div class="f-affix"><span class="pre">₹</span><input id="co" class="has-pre" inputmode="decimal" placeholder="0"></div><p class="f-hint">Spouse or parent (optional)</p></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="ex">Existing EMIs per month</label><div class="f-affix"><span class="pre">₹</span><input id="ex" class="has-pre" inputmode="decimal" placeholder="0"></div></div><div class="f"><label for="foir">Max share of income for EMIs</label><div class="f-affix"><input id="foir" class="has-suf" inputmode="decimal" placeholder="" value="50"><span class="suf">%</span></div><p class="f-hint">Banks allow 40–60%</p></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="rate">Interest rate</label><div class="f-affix"><input id="rate" class="has-suf" inputmode="decimal" placeholder="" value="8.5"><span class="suf">%</span></div></div><div class="f"><label for="yrs">Tenure</label><div class="f-affix"><input id="yrs" class="has-suf" inputmode="decimal" placeholder="" value="20"><span class="suf">years</span></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="prop">Property value</label><div class="f-affix"><span class="pre">₹</span><input id="prop" class="has-pre" inputmode="decimal" placeholder="75,00,000"></div><p class="f-hint">Optional, to check LTV and down payment</p></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">You can borrow up to</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How banks decide your home loan eligibility</h2>
+        <span class="formula">Max EMI       = Monthly income × FOIR − existing EMIs
+Eligible loan = Max EMI × ((1 + r)ⁿ − 1) ÷ (r × (1 + r)ⁿ)
+Final loan    = lower of (eligible loan, property value × LTV)</span>
+        <h2>RBI loan-to-value (LTV) limits</h2>
+        <table><thead><tr><th>Property value</th><th>Max loan</th><th>Min down payment</th></tr></thead><tbody>
+        <tr><td>Up to ₹30 lakh</td><td>90%</td><td>10%</td></tr><tr><td>₹30–75 lakh</td><td>80%</td><td>20%</td></tr><tr><td>Above ₹75 lakh</td><td>75%</td><td>25%</td></tr></tbody></table>
+        <h2>How to increase your eligibility</h2>
+        <ul><li>Add an earning <strong>co-applicant</strong> (spouse or parent).</li><li>Choose a <strong>longer tenure</strong>.</li><li><strong>Close small loans</strong> and credit card EMIs before applying.</li><li>Keep a <strong>CIBIL score above 750</strong> for better rates and higher FOIR.</li></ul>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>What is FOIR?</summary><p>Fixed Obligation to Income Ratio: the share of your net monthly income that can go towards all EMIs. Salaried applicants usually get 50%, higher earners up to 60–65%.</p></details><details><summary>Is stamp duty included in the home loan?</summary><p>No. Stamp duty, registration and interiors are not funded by the bank and must be paid from your own money.</p></details><details><summary>Do self-employed people get lower eligibility?</summary><p>Banks use your average profit from the last 2–3 years’ ITRs instead of salary, so eligibility depends on declared income.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    F.wire({ ids: ['inc', 'co', 'ex', 'foir', 'rate', 'yrs', 'prop'], title: 'Home loan eligibility', calc: function () {
+      var income = S.num($('inc')) + S.num($('co')), r = S.num($('rate')), n = Math.round(S.num($('yrs')) * 12);
+      if (income <= 0 || n <= 0) return empty('Enter your monthly income');
+      var maxEmi = income * S.num($('foir')) / 100 - S.num($('ex'));
+      if (maxEmi <= 0) return empty('Your existing EMIs already use your EMI limit');
+      var loan = F.loanForEmi(maxEmi, r, n);
+      var prop = S.num($('prop')), ltvLoan = Infinity, ltvPct = 0;
+      if (prop > 0) { ltvPct = prop <= 3000000 ? 90 : prop <= 7500000 ? 80 : 75; ltvLoan = prop * ltvPct / 100; }
+      var final = Math.min(loan, ltvLoan);
+      var emi = F.emi(final, r, n);
+      $('hero').textContent = F.short(Math.floor(final / 10000) * 10000);
+      $('hero-note').textContent = 'EMI ' + S.inr(Math.round(emi), 0) + ' a month for ' + S.fmt(n / 12, 0) + ' years';
+      var lines = [['Max EMI you can afford', S.inr(maxEmi, 0)], ['Loan on your income', S.inr(loan, 0)]];
+      if (prop > 0) {
+        lines.push(['Bank limit (' + ltvPct + '% of property)', S.inr(ltvLoan, 0)]);
+        lines.push(['Eligible loan', S.inr(final, 0)]);
+        lines.push(['Down payment needed', S.inr(prop - final, 0)]);
+      } else lines.push(['Eligible loan', S.inr(final, 0)]);
+      lines.push(['EMI on eligible loan', S.inr(emi, 0)]);
+      lines.push(['Total interest', S.inr(emi * n - final, 0)]);
+      F.lines($('lines'), lines, [prop > 0 ? 3 : 2]);
+      $('note').textContent = loan < ltvLoan && prop > 0 ? 'Your income is the limit. Adding a co-applicant or a longer tenure would raise it.' : (prop > 0 ? 'The bank’s loan-to-value cap is the limit, not your income.' : '');
+      var tenures = [10, 15, 20, 25, 30];
+      $('table-title').textContent = 'Eligibility by tenure';
+      F.table($('table'), ['Tenure', 'Eligible loan', 'EMI'], tenures.map(function (t) {
+        var l = Math.min(F.loanForEmi(maxEmi, r, t * 12), ltvLoan);
+        return [t + ' years', S.inr(l, 0), S.inr(F.emi(l, r, t * 12), 0)];
+      }));
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

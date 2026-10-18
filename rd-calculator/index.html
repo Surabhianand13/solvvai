@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RD Calculator — Recurring Deposit Maturity &amp; Interest | Solvv AI</title>
+  <meta name="description" content="Free RD calculator for India. Calculate the maturity value and interest on a recurring deposit using the quarterly compounding formula banks and post offices use.">
+  <link rel="canonical" href="https://solvvai.com/rd-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free RD Calculator: Recurring Deposit Maturity | Solvv AI">
+  <meta property="og:description" content="Free RD calculator for India. Calculate the maturity value and interest on a recurring deposit using the quarterly compounding formula banks and post offices use.">
+  <meta property="og:url" content="https://solvvai.com/rd-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "RD Calculator", "url": "https://solvvai.com/rd-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is RD maturity calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Each monthly instalment earns interest compounded quarterly for the months it stays deposited. The total of all instalments with interest is the maturity value."}}, {"@type": "Question", "name": "Is RD interest taxable?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, RD interest is taxed at your slab rate and TDS applies like an FD."}}, {"@type": "Question", "name": "What happens if I miss an RD instalment?", "acceptedAnswer": {"@type": "Answer", "text": "Banks usually charge a small penalty per ₹100 per month of delay. Missing several instalments can lead to early closure."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="rd-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / RD calculator</div>
+      <h1>RD <em>Calculator</em></h1>
+      <p class="lead">Work out how much your recurring deposit will be worth at maturity, with interest compounded quarterly the way banks calculate it.</p>
+      <div class="t-badges"><span class="t-badge">✓ Bank & post office RD</span><span class="t-badge">✓ Quarterly compounding</span><span class="t-badge">✓ Month-wise accurate</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+<div class="f-row" style="margin-top:16px"><div class="f"><label for="amt">Monthly deposit</label><div class="f-affix"><span class="pre">₹</span><input id="amt" class="has-pre" inputmode="decimal" placeholder="" value="5000"></div></div><div class="f"><label for="rate">Interest rate (yearly)</label><div class="f-affix"><input id="rate" class="has-suf" inputmode="decimal" placeholder="" value="6.8"><span class="suf">%</span></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="mos">Tenure</label><div class="f-affix"><input id="mos" class="has-suf" inputmode="decimal" placeholder="" value="60"><span class="suf">months</span></div><p class="f-hint">6 months to 10 years</p></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Maturity amount</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>RD maturity formula</h2>
+        <span class="formula">Maturity = Σ R × (1 + r ÷ 400)^(months remaining ÷ 3)
+R = monthly deposit · r = yearly rate · interest compounded quarterly</span>
+        <p>Example: ₹5,000 a month for 5 years at 6.8% grows to about <strong>₹3.57 lakh</strong>: ₹3 lakh deposited plus about ₹57,000 interest.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>RD or SIP: which is better?</summary><p>RDs give guaranteed returns with no market risk. SIPs in equity funds have historically earned more over 5+ years but can fall in the short term.</p></details><details><summary>Is RD interest taxable?</summary><p>Yes, at your slab rate, with TDS like an FD.</p></details><details><summary>Can I break an RD early?</summary><p>Yes, usually with a 0.5–1% lower interest rate for the period it ran.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    F.wire({ ids: ['amt', 'rate', 'mos'], title: 'RD maturity', calc: function () {
+      var R = S.num($('amt')), r = S.num($('rate')), N = Math.round(S.num($('mos')));
+      if (R <= 0 || N <= 0) return empty();
+      function valueAt(months) {
+        var v = 0;
+        for (var k = 1; k <= months; k++) v += R * Math.pow(1 + r / 400, (months - k + 1) / 3);
+        return v;
+      }
+      var mat = valueAt(N), dep = R * N, interest = mat - dep;
+      $('hero').textContent = S.inr(Math.round(mat), 0);
+      $('hero-note').textContent = 'Interest earned ' + S.inr(interest, 0);
+      F.split($('split'), dep, interest, 'Deposits', 'Interest');
+      var lines = [['Monthly deposit', S.inr(R, 0)], ['Total deposited', S.inr(dep, 0)], ['Interest earned', S.inr(interest, 0)], ['Maturity amount', S.inr(mat, 0)]];
+      F.lines($('lines'), lines, [3]);
+      $('note').textContent = 'Interest is taxable at your slab rate.';
+      var rows = [];
+      for (var y = 12; y < N + 12; y += 12) { var m = Math.min(y, N); var v = valueAt(m); rows.push(['Month ' + m, S.inr(R * m, 0), S.inr(v, 0)]); }
+      F.table($('table'), ['After', 'Deposited', 'Value'], rows);
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Calculator India — Corpus Needed &amp; Monthly SIP | Solvv AI</title>
+  <meta name="description" content="Free retirement calculator for India. Find how much money you need to retire, adjusted for inflation, and the monthly SIP required to build that corpus from today.">
+  <link rel="canonical" href="https://solvvai.com/retirement-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Retirement Planning Calculator | Solvv AI">
+  <meta property="og:description" content="Free retirement calculator for India. Find how much money you need to retire, adjusted for inflation, and the monthly SIP required to build that corpus from today.">
+  <meta property="og:url" content="https://solvvai.com/retirement-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Retirement Calculator", "url": "https://solvvai.com/retirement-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much money do I need to retire in India?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your expenses, inflation and how long retirement lasts. A common rule is 25–30 times your yearly expenses at retirement, adjusted for inflation."}}, {"@type": "Question", "name": "What inflation should I assume?", "acceptedAnswer": {"@type": "Answer", "text": "6–7% a year is a reasonable long-term assumption for household expenses in India. Healthcare costs often rise faster."}}, {"@type": "Question", "name": "How is the monthly SIP calculated?", "acceptedAnswer": {"@type": "Answer", "text": "The calculator finds the corpus needed at retirement, subtracts what your current savings will grow to, and works out the SIP that fills the gap."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="retirement-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Retirement calculator</div>
+      <h1>Retirement <em>Calculator</em></h1>
+      <p class="lead">Find out how big a corpus you need to retire comfortably, and how much to invest every month from today to get there.</p>
+      <div class="t-badges"><span class="t-badge">✓ Inflation-adjusted</span><span class="t-badge">✓ Corpus needed</span><span class="t-badge">✓ Monthly SIP required</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+<div class="f-row f-row--keep" style="margin-top:16px"><div class="f"><label for="age">Your age today</label><div class="f-affix"><input id="age" class="has-suf" inputmode="decimal" placeholder="" value="30"><span class="suf">years</span></div></div><div class="f"><label for="ret">Retire at</label><div class="f-affix"><input id="ret" class="has-suf" inputmode="decimal" placeholder="" value="60"><span class="suf">years</span></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="life">Plan until age</label><div class="f-affix"><input id="life" class="has-suf" inputmode="decimal" placeholder="" value="85"><span class="suf">years</span></div></div><div class="f"><label for="exp">Monthly expenses today</label><div class="f-affix"><span class="pre">₹</span><input id="exp" class="has-pre" inputmode="decimal" placeholder="" value="50000"></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="inf">Inflation</label><div class="f-affix"><input id="inf" class="has-suf" inputmode="decimal" placeholder="" value="6"><span class="suf">%</span></div></div><div class="f"><label for="sav">Savings already invested</label><div class="f-affix"><span class="pre">₹</span><input id="sav" class="has-pre" inputmode="decimal" placeholder="" value="500000"></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="pre">Return before retirement</label><div class="f-affix"><input id="pre" class="has-suf" inputmode="decimal" placeholder="" value="11"><span class="suf">%</span></div></div><div class="f"><label for="post">Return after retirement</label><div class="f-affix"><input id="post" class="has-suf" inputmode="decimal" placeholder="" value="7"><span class="suf">%</span></div></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Corpus you need</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How the retirement corpus is calculated</h2>
+        <span class="formula">Expenses at retirement = Today's expenses × (1 + inflation)^years to retire
+Corpus needed = present value of those expenses, rising with inflation, until your plan-until age
+Monthly SIP   = SIP that grows to (Corpus − future value of current savings)</span>
+        <p>Example: a 30-year-old spending ₹50,000 a month today will need about ₹2.87 lakh a month at 60 (6% inflation). To fund that until 85 at 7% returns, the corpus needed is about <strong>₹7.7 crore</strong>.</p>
+        <h2>Tips for retirement planning</h2>
+        <ul><li><strong>Start early.</strong> Ten extra years of compounding can halve the SIP you need.</li><li><strong>Increase your SIP every year</strong> with your salary.</li><li><strong>Keep health insurance</strong> separate from your corpus; medical costs rise faster than inflation.</li><li><strong>Use EPF, PPF and NPS</strong> as part of the plan; they count towards your corpus.</li></ul>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>What is the 4% rule?</summary><p>Withdrawing about 4% of your corpus in the first year and increasing it with inflation has historically lasted 30 years. In India, with higher inflation, many planners use 3–3.5%.</p></details><details><summary>Should I include EPF in savings?</summary><p>Yes. Add your EPF, PPF, NPS and other retirement savings under "Savings already invested".</p></details><details><summary>What return should I assume?</summary><p>Before retirement, 10–12% for an equity-heavy portfolio. After retirement, 6–8% for a safer mix.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    F.wire({ ids: ['age', 'ret', 'life', 'exp', 'inf', 'sav', 'pre', 'post'], title: 'Retirement plan', calc: function () {
+      var age = S.num($('age')), ret = S.num($('ret')), life = S.num($('life')), exp = S.num($('exp'));
+      var inf = S.num($('inf')) / 100, pre = S.num($('pre')) / 100, post = S.num($('post')) / 100, sav = S.num($('sav'));
+      var yrs = Math.round(ret - age), n = Math.round(life - ret);
+      if (exp <= 0 || yrs <= 0 || n <= 0) return empty('Check your ages and expenses');
+      var expRet = exp * 12 * Math.pow(1 + inf, yrs);          /* first-year expense at retirement */
+      var real = (1 + post) / (1 + inf) - 1;                     /* expenses grow with inflation in retirement */
+      var corpus = Math.abs(real) < 1e-9 ? expRet * n : expRet * (1 - Math.pow(1 + real, -n)) / real * (1 + real);
+      var savFV = sav * Math.pow(1 + pre, yrs);
+      var gap = Math.max(0, corpus - savFV);
+      var i = pre / 12, m = yrs * 12;
+      var sip = gap > 0 ? gap / ((Math.pow(1 + i, m) - 1) / i * (1 + i)) : 0;
+      $('hero').textContent = F.short(corpus);
+      $('hero-note').textContent = sip > 0 ? 'Invest about ' + S.inr(Math.ceil(sip / 100) * 100, 0) + ' a month from today' : 'Your current savings are on track';
+      F.split($('split'), Math.min(savFV, corpus), gap, 'From current savings', 'From new SIP');
+      var lines = [['Monthly expenses at retirement', S.inr(expRet / 12, 0)], ['Corpus needed at ' + S.fmt(ret, 0), S.inr(corpus, 0)], ['Current savings will grow to', S.inr(savFV, 0)], ['Shortfall to build', S.inr(gap, 0)], ['Monthly SIP needed', S.inr(sip, 0)]];
+      F.lines($('lines'), lines, [1, 4]);
+      $('note').textContent = 'Today’s ' + S.inr(exp, 0) + ' a month will cost ' + S.inr(expRet / 12, 0) + ' a month in ' + yrs + ' years at ' + S.pct(inf * 100, 1) + ' inflation.';
+      $('table-title').textContent = 'Corpus through retirement';
+      var bal = corpus, e = expRet, rows = [];
+      for (var k = 1; k <= n; k++) { bal = (bal - e) * (1 + post); rows.push(['Age ' + S.fmt(ret + k - 1, 0), S.inr(e / 12, 0), S.inr(Math.max(bal, 0), 0)]); e *= (1 + inf); }
+      F.table($('table'), ['Age', 'Monthly expense', 'Balance at year end'], rows);
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPF Calculator — Public Provident Fund Maturity &amp; Interest | Solvv AI</title>
+  <meta name="description" content="Free PPF calculator. Find the maturity value of your Public Provident Fund after 15 years and with 5-year extensions, with year-wise balance and tax-free interest.">
+  <link rel="canonical" href="https://solvvai.com/ppf-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free PPF Calculator: 15-Year Maturity | Solvv AI">
+  <meta property="og:description" content="Free PPF calculator. Find the maturity value of your Public Provident Fund after 15 years and with 5-year extensions, with year-wise balance and tax-free interest.">
+  <meta property="og:url" content="https://solvvai.com/ppf-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "PPF Calculator", "url": "https://solvvai.com/ppf-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the PPF interest rate?", "acceptedAnswer": {"@type": "Answer", "text": "The government sets the PPF rate every quarter. It has been 7.1% a year, compounded yearly, for a long time; check the latest notified rate."}}, {"@type": "Question", "name": "How much can I invest in PPF?", "acceptedAnswer": {"@type": "Answer", "text": "Minimum ₹500 and maximum ₹1.5 lakh per financial year."}}, {"@type": "Question", "name": "Is PPF tax-free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. PPF is EEE: deposits qualify for Section 80C (old regime), and interest and maturity are tax-free."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="ppf-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / PPF calculator</div>
+      <h1>PPF <em>Calculator</em></h1>
+      <p class="lead">See what your Public Provident Fund will be worth after 15 years, or longer with 5-year extensions. All interest is tax-free.</p>
+      <div class="t-badges"><span class="t-badge">✓ Tax-free (EEE)</span><span class="t-badge">✓ 15 years + extensions</span><span class="t-badge">✓ Year-wise balance</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+<div class="f-row" style="margin-top:16px"><div class="f"><label for="amt">Yearly investment</label><div class="f-affix"><span class="pre">₹</span><input id="amt" class="has-pre" inputmode="decimal" placeholder="" value="150000"></div><p class="f-hint">₹500 to ₹1,50,000 a year</p></div><div class="f"><label for="rate">Interest rate</label><div class="f-affix"><input id="rate" class="has-suf" inputmode="decimal" placeholder="" value="7.1"><span class="suf">%</span></div><p class="f-hint">Check the latest notified rate</p></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="yrs">Tenure</label><select id="yrs"><option value="15" selected>15 years</option><option value="20">20 years (1 extension)</option><option value="25">25 years (2 extensions)</option><option value="30">30 years (3 extensions)</option></select></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Maturity value</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How PPF interest is calculated</h2>
+        <span class="formula">Balance each year = (Previous balance + Deposit) × (1 + rate)</span>
+        <p>Interest is calculated monthly on the lowest balance between the 5th and the end of each month, and credited once a year on 31 March. Depositing before 5 April earns the most.</p>
+        <p>Example: ₹1.5 lakh a year for 15 years at 7.1% grows to about <strong>₹40.68 lakh</strong>: ₹22.5 lakh invested and ₹18.18 lakh tax-free interest.</p>
+        <h2>PPF rules at a glance</h2>
+        <table><tbody><tr><td>Minimum / maximum deposit</td><td>₹500 / ₹1.5 lakh per year</td></tr><tr><td>Lock-in</td><td>15 years, extendable in 5-year blocks</td></tr><tr><td>Partial withdrawal</td><td>From the 7th year</td></tr><tr><td>Loan against PPF</td><td>Years 3 to 6</td></tr><tr><td>Tax</td><td>EEE: deposit, interest and maturity all tax-free</td></tr></tbody></table>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>Can I extend PPF after 15 years?</summary><p>Yes, in blocks of 5 years, with or without fresh deposits. Submit Form H within a year of maturity to continue contributing.</p></details><details><summary>Can NRIs open a PPF account?</summary><p>No new accounts, but an account opened while resident can continue until maturity.</p></details><details><summary>PPF or ELSS?</summary><p>PPF is guaranteed and tax-free but locked for 15 years. ELSS mutual funds have a 3-year lock-in and higher potential returns, with market risk.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    F.wire({ ids: ['amt', 'rate', 'yrs'], title: 'PPF maturity', calc: function () {
+      var P = Math.min(150000, S.num($('amt'))), r = S.num($('rate')) / 100, n = +$('yrs').value;
+      if (P <= 0) return empty();
+      var bal = 0, rows = [], start = new Date().getFullYear();
+      for (var y = 1; y <= n; y++) { bal = (bal + P) * (1 + r); rows.push([String(start + y - 1) + '-' + String(start + y).slice(2), S.inr(P * y, 0), S.inr(bal - P * y, 0), S.inr(bal, 0)]); }
+      var dep = P * n, interest = bal - dep;
+      $('hero').textContent = F.short(bal);
+      $('hero-note').textContent = 'after ' + n + ' years · all tax-free';
+      F.split($('split'), dep, interest, 'Invested', 'Interest');
+      var lines = [['Yearly investment', S.inr(P, 0)], ['Total invested', S.inr(dep, 0)], ['Interest earned (tax-free)', S.inr(interest, 0)], ['Maturity value', S.inr(bal, 0)]];
+      F.lines($('lines'), lines, [3]);
+      $('note').textContent = S.num($('amt')) > 150000 ? 'PPF allows at most ₹1.5 lakh a year, so the calculation uses ₹1,50,000.' : 'Deposit before 5th April each year to earn interest for the full year.';
+      F.table($('table'), ['Year', 'Invested', 'Interest', 'Balance'], rows);
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

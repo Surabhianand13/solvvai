@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NPS Calculator — National Pension System Corpus &amp; Pension | Solvv AI</title>
+  <meta name="description" content="Free NPS calculator. Estimate your National Pension System corpus at 60, the tax-free lump sum you can withdraw, and your monthly pension from the annuity.">
+  <link rel="canonical" href="https://solvvai.com/nps-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free NPS Calculator: Pension &amp; Lump Sum | Solvv AI">
+  <meta property="og:description" content="Free NPS calculator. Estimate your National Pension System corpus at 60, the tax-free lump sum you can withdraw, and your monthly pension from the annuity.">
+  <meta property="og:url" content="https://solvvai.com/nps-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "NPS Calculator", "url": "https://solvvai.com/nps-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is NPS pension calculated?", "acceptedAnswer": {"@type": "Answer", "text": "At 60, at least 40% of your corpus must buy an annuity. Your monthly pension = annuity amount × annuity rate ÷ 12. The rest can be withdrawn as a tax-free lump sum."}}, {"@type": "Question", "name": "What return does NPS give?", "acceptedAnswer": {"@type": "Answer", "text": "NPS equity funds have historically returned around 9–12% a year, and government bond funds around 8–9%, but returns are not guaranteed."}}, {"@type": "Question", "name": "What tax benefits does NPS give?", "acceptedAnswer": {"@type": "Answer", "text": "Under the old regime, up to ₹1.5 lakh under 80C plus an extra ₹50,000 under 80CCD(1B). Employer contributions are deductible under 80CCD(2) in both regimes."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="nps-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / NPS calculator</div>
+      <h1>NPS <em>Calculator</em></h1>
+      <p class="lead">Estimate your NPS corpus at retirement, how much you can take out tax-free, and the monthly pension you will get.</p>
+      <div class="t-badges"><span class="t-badge">✓ Corpus at 60</span><span class="t-badge">✓ Lump sum + pension</span><span class="t-badge">✓ Yearly step-up</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+<div class="f-row" style="margin-top:16px"><div class="f"><label for="amt">Monthly contribution</label><div class="f-affix"><span class="pre">₹</span><input id="amt" class="has-pre" inputmode="decimal" placeholder="" value="5000"></div></div><div class="f"><label for="step">Increase every year</label><div class="f-affix"><input id="step" class="has-suf" inputmode="decimal" placeholder="" value="0"><span class="suf">%</span></div></div></div><div class="f-row f-row--keep" style="margin-top:16px"><div class="f"><label for="age">Your age today</label><div class="f-affix"><input id="age" class="has-suf" inputmode="decimal" placeholder="" value="30"><span class="suf">years</span></div></div><div class="f"><label for="ret">Retirement age</label><div class="f-affix"><input id="ret" class="has-suf" inputmode="decimal" placeholder="" value="60"><span class="suf">years</span></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="rate">Expected return</label><div class="f-affix"><input id="rate" class="has-suf" inputmode="decimal" placeholder="" value="10"><span class="suf">%</span></div></div><div class="f"><label for="ann">Annuity share</label><div class="f-affix"><input id="ann" class="has-suf" inputmode="decimal" placeholder="" value="40"><span class="suf">%</span></div><p class="f-hint">Minimum 40%</p></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="arate">Annuity rate</label><div class="f-affix"><input id="arate" class="has-suf" inputmode="decimal" placeholder="" value="6"><span class="suf">%</span></div><p class="f-hint">Pension rate from insurer</p></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Corpus at retirement</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>How NPS works at retirement</h2>
+        <ul><li>You contribute every month until 60. Your money is invested in equity, corporate bonds and government securities.</li><li>At 60, you can withdraw up to <strong>60% as a tax-free lump sum</strong>.</li><li>At least <strong>40% must buy an annuity</strong>, which pays you a monthly pension for life.</li></ul>
+        <p>Example: ₹5,000 a month from age 30 to 60 at 10% builds about <strong>₹1.14 crore</strong>. You can take ₹68 lakh tax-free; ₹45.6 lakh in an annuity at 6% pays about ₹22,800 a month.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>Can I withdraw from NPS before 60?</summary><p>Partial withdrawals of up to 25% of your own contributions are allowed after 3 years for specific needs such as children’s education, marriage, a house or illness.</p></details><details><summary>What are NPS Tier 1 and Tier 2?</summary><p>Tier 1 is the pension account with tax benefits and withdrawal limits. Tier 2 is an optional savings account you can withdraw from anytime, without the tax benefits.</p></details><details><summary>Is NPS better than PPF?</summary><p>NPS can earn more because part of it is in equity, and has an extra ₹50,000 deduction. PPF is guaranteed and fully tax-free but returns are lower.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    F.wire({ ids: ['amt', 'step', 'age', 'ret', 'rate', 'ann', 'arate'], title: 'NPS estimate', calc: function () {
+      var P = S.num($('amt')), y = Math.round(S.num($('ret')) - S.num($('age')));
+      if (P <= 0 || y <= 0) return empty('Check your age and retirement age');
+      var res = F.sip(P, S.num($('rate')), y, S.num($('step')));
+      var annPct = Math.max(40, Math.min(100, S.num($('ann')))) / 100;
+      var annuity = res.value * annPct, lump = res.value - annuity, pension = annuity * S.num($('arate')) / 1200;
+      $('hero').textContent = F.short(res.value);
+      $('hero-note').textContent = 'Pension about ' + S.inr(pension, 0) + ' a month';
+      F.split($('split'), lump, annuity, 'Lump sum', 'Annuity');
+      var lines = [['Total contributed', S.inr(res.invested, 0)], ['Returns', S.inr(res.value - res.invested, 0)], ['Corpus at ' + S.fmt(S.num($('ret')), 0), S.inr(res.value, 0)], ['Tax-free lump sum (' + S.pct((1 - annPct) * 100, 0) + ')', S.inr(lump, 0)], ['Used for annuity (' + S.pct(annPct * 100, 0) + ')', S.inr(annuity, 0)], ['Monthly pension', S.inr(pension, 0)]];
+      F.lines($('lines'), lines, [2, 5]);
+      $('note').textContent = 'Pension from the annuity is taxable as income.';
+
+      F.table($('table'), ['Year', 'Monthly contribution', 'Invested', 'Value'], res.rows.map(function (x) { return ['Year ' + x.year, S.inr(x.monthly, 0), S.inr(x.invested, 0), S.inr(x.value, 0)]; }));
+
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

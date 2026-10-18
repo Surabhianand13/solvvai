@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Loan EMI Calculator — EMI, Interest &amp; Processing Fee | Solvv AI</title>
+  <meta name="description" content="Free personal loan EMI calculator. Find your monthly EMI, total interest and the true cost of the loan including processing fee and 18% GST, with a year-wise repayment schedule.">
+  <link rel="canonical" href="https://solvvai.com/personal-loan-emi-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Personal Loan EMI Calculator | Solvv AI">
+  <meta property="og:description" content="Free personal loan EMI calculator. Find your monthly EMI, total interest and the true cost of the loan including processing fee and 18% GST, with a year-wise repayment schedule.">
+  <meta property="og:url" content="https://solvvai.com/personal-loan-emi-calculator/">
+  <meta property="og:image" content="https://solvvai.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Personal Loan EMI Calculator", "url": "https://solvvai.com/personal-loan-emi-calculator/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "provider": {"@type": "Organization", "name": "Solvv AI", "url": "https://solvvai.com"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the EMI on a ₹5 lakh personal loan?", "acceptedAnswer": {"@type": "Answer", "text": "At 12% for 3 years the EMI is about ₹16,607. At 15% it rises to about ₹17,333."}}, {"@type": "Question", "name": "Is GST charged on personal loan processing fees?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. 18% GST is charged on the processing fee, which is usually 1–3% of the loan amount."}}, {"@type": "Question", "name": "Can I prepay a personal loan?", "acceptedAnswer": {"@type": "Answer", "text": "Most lenders allow it after 6–12 EMIs, often with a foreclosure charge of 2–5% of the outstanding amount."}}]}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17812098070"></script>
+  <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
+</head>
+<body data-tool="personal-loan-emi-calculator">
+  <div id="t-nav"></div>
+  <header class="t-head">
+    <div class="container">
+      <div class="t-crumbs"><a href="/tools/">Free tools</a> / Personal loan EMI calculator</div>
+      <h1>Personal Loan <em>EMI</em> Calculator</h1>
+      <p class="lead">See your monthly EMI and the real cost of a personal loan, including the processing fee and GST that lenders add on.</p>
+      <div class="t-badges"><span class="t-badge">✓ Processing fee + GST</span><span class="t-badge">✓ True cost of loan</span><span class="t-badge">✓ Repayment schedule</span></div>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div class="container">
+      <div class="t-grid">
+        <div class="card">
+<div class="f-row" style="margin-top:16px"><div class="f"><label for="amt">Loan amount</label><div class="f-affix"><span class="pre">₹</span><input id="amt" class="has-pre" inputmode="decimal" placeholder="" value="500000"></div></div><div class="f"><label for="rate">Interest rate (yearly)</label><div class="f-affix"><input id="rate" class="has-suf" inputmode="decimal" placeholder="" value="12"><span class="suf">%</span></div></div></div><div class="f-row" style="margin-top:16px"><div class="f"><label for="yrs">Tenure</label><div class="f-affix"><input id="yrs" class="has-suf" inputmode="decimal" placeholder="" value="3"><span class="suf">years</span></div><p class="f-hint">Up to 7 years</p></div><div class="f"><label for="fee">Processing fee</label><div class="f-affix"><input id="fee" class="has-suf" inputmode="decimal" placeholder="" value="2"><span class="suf">%</span></div><p class="f-hint">Usually 1–3% + GST</p></div></div>
+        </div>
+        <div class="card result-card" aria-live="polite">
+          <div class="r-hero">
+            <div class="r-label" id="hero-label">Monthly EMI</div>
+            <div class="r-value" id="hero">₹0</div>
+            <div class="r-note" id="hero-note">Fill in the details</div>
+          </div>
+          <div id="split"></div>
+          <div class="gated">
+            <div class="r-lines" id="lines"></div>
+            <div class="r-words" id="note"></div>
+          </div>
+          <div class="r-actions">
+            <button class="btn btn-soft" id="copy">Copy results</button>
+            <button class="btn btn-wa" id="share">Share on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <div class="gated" style="margin-top:20px"><div class="card"><h2 id="table-title">Year-wise breakdown</h2><div id="table"><p class="r-empty">Fill in the details to see the year-wise breakdown.</p></div></div></div>
+    </div>
+  </main>
+
+  <div id="t-pitch"></div>
+
+  <section class="t-content">
+    <div class="container">
+      <div class="prose">
+        <h2>The real cost of a personal loan</h2>
+        <p>Lenders advertise the interest rate, but you also pay a <strong>processing fee</strong> (1–3% of the loan) plus <strong>18% GST</strong> on that fee, deducted from the amount you receive. This calculator adds both, so you see the full cost.</p>
+        <span class="formula">Total cost = Total interest + Processing fee + 18% GST on fee</span>
+        <p>Example: ₹5 lakh at 12% for 3 years has an EMI of ₹16,607 and total interest of ₹97,858. A 2% fee adds ₹11,800 including GST, so the true cost is <strong>₹1,09,658</strong>.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>What credit score do I need?</summary><p>Most lenders want a CIBIL score of 700+. 750+ gets you the lowest rates.</p></details><details><summary>Can I prepay a personal loan?</summary><p>Usually after 6–12 EMIs, with a foreclosure charge of 2–5% plus GST. Check your loan agreement.</p></details><details><summary>Flat rate vs reducing rate?</summary><p>Some lenders quote a flat rate, which looks lower but is charged on the full original amount. A 10% flat rate is roughly an 18% reducing rate. This calculator uses the reducing-balance method.</p></details></div>
+        <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="t-related"></div>
+  <div id="t-footer"></div>
+
+  <script src="/tools/tools.js?v=20261019c"></script>
+  <script src="/tools/fin.js?v=20261019c"></script>
+  <script>
+  (function () {
+    var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
+    function empty(msg) { $('hero').textContent = '₹0'; $('hero-note').textContent = msg || 'Fill in the details'; $('lines').innerHTML = ''; $('note').textContent = ''; $('split').innerHTML = ''; var t = $('table'); if (t) t.innerHTML = '<p class="r-empty">Fill in the details to see the year-wise breakdown.</p>'; return null; }
+
+    var fee = $('fee');
+    var chips = $('types');
+    if (chips) chips.addEventListener('click', function (e) {
+      var b = e.target.closest('.chip'); if (!b) return;
+      chips.querySelectorAll('.chip').forEach(function (c) { c.classList.toggle('on', c === b); });
+      $('amt').value = b.dataset.p; $('rate').value = b.dataset.r; $('yrs').value = b.dataset.y; run();
+    });
+    var run = F.wire({ ids: ['amt', 'rate', 'yrs', 'fee'], title: 'Personal loan EMI', calc: function () {
+      var P = S.num($('amt')), r = S.num($('rate')), n = Math.round(S.num($('yrs')) * 12);
+      if (P <= 0 || n <= 0) return empty();
+      var emi = F.emi(P, r, n), total = emi * n, interest = total - P;
+      var feeAmt = fee ? P * S.num(fee) / 100 : 0, feeGst = feeAmt * 0.18;
+      $('hero').textContent = S.inr(Math.round(emi), 0);
+      $('hero-note').textContent = 'per month for ' + S.fmt(n, 0) + ' months';
+      F.split($('split'), P, interest, 'Principal', 'Interest');
+      var lines = [['Monthly EMI', S.inr(emi)], ['Loan amount', S.inr(P, 0)], ['Total interest', S.inr(interest, 0)], ['Total repayment', S.inr(total, 0)]];
+      if (feeAmt) { lines.push(['Processing fee + 18% GST', S.inr(feeAmt + feeGst, 0)]); lines.push(['Total cost of loan', S.inr(interest + feeAmt + feeGst, 0)]); }
+      F.lines($('lines'), lines, [3]);
+      $('note').textContent = 'Interest is ' + S.fmt(interest / P * 100, 1) + '% of the amount you borrow.';
+      var yrs = F.amortYears(P, r, n), start = new Date().getFullYear();
+      F.table($('table'), ['Year', 'Principal paid', 'Interest paid', 'Balance'], yrs.map(function (y) {
+        return [String(start + y.year - 1), S.inr(y.principal, 0), S.inr(y.interest, 0), S.inr(y.balance, 0)];
+      }));
+      return lines;
+    } });
+
+  })();
+  </script>
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>
