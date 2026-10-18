@@ -459,7 +459,11 @@
         '</form>' +
       '</div>';
     document.body.appendChild(gateEl);
-    gateEl.addEventListener('click', function (e) { if (e.target === gateEl || e.target.closest('.gate-x')) closeGate(); });
+    gateEl.addEventListener('click', function (e) {
+      if (e.target.closest('.gate-x')) { closeGate(); return; }
+      /* Backdrop click closes, but not in the first moments after opening (double-clicks) */
+      if (e.target === gateEl && Date.now() - (gateEl._openedAt || 0) > 500) closeGate();
+    });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && gateEl.classList.contains('open')) closeGate(); });
     wireForm(document.getElementById('gate-form'), document.getElementById('gate-msg'), {
       extra: function () { return { source: 'unlock', action: gateEl.dataset.reason || '' }; },
@@ -475,21 +479,32 @@
 
   /* S.gate(reason, cb): run cb now if details were shared, otherwise ask first */
   S.gate = function (reason, cb) {
-    if (S.lead) { cb && cb(); return; }
-    if (!gateEl) buildGate();
-    gateCb = cb; gateEl.dataset.reason = reason || '';
-    gateEl.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    S.track('tool_gate_shown', { tool: slug, reason: reason });
-    setTimeout(function () { document.getElementById('g-name').focus(); }, 50);
+    if (S.lead && document.body.classList.contains('lead-ok')) { if (cb) cb(); return; }
+    try {
+      if (!gateEl) buildGate();
+      gateCb = cb; gateEl.dataset.reason = reason || '';
+      gateEl._openedAt = Date.now();
+      gateEl.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () { var n = document.getElementById('g-name'); if (n) n.focus(); }, 60);
+    } catch (err) {
+      if (window.console) console.error('Solvv gate failed', err);
+      S.toast('Something went wrong. Please refresh the page and try again.');
+    }
+    try { S.track('tool_gate_shown', { tool: slug, reason: reason }); } catch (e) {}
   };
 
   /* Gated breakdowns: <div class="gated"> blurs until unlocked */
   document.querySelectorAll('.gated').forEach(function (g) {
     var b = document.createElement('button');
     b.type = 'button'; b.className = 'btn btn-primary gate-unlock'; b.textContent = '🔓 Show full breakdown';
-    b.addEventListener('click', function () { S.gate('breakdown'); });
     g.appendChild(b);
+  });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.gate-unlock');
+    if (!b) return;
+    e.preventDefault();
+    S.gate('breakdown');
   });
 
   /* ─── FREE LIMIT: one document per device; nothing about the document is stored ─── */
