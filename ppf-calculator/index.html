@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/logo.svg">
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261020a">
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -30,7 +30,7 @@
   <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
 </head>
 <body data-tool="ppf-calculator">
-  <div id="t-nav"></div>
+  <!--t-nav--><nav class="nav" id="nav"><div class="nav-inner"><a href="/" class="nav-logo"><img src="/logo.svg" alt="Solvv AI logo" class="nav-logo-img">SOLVV<span>AI</span></a><ul class="nav-links"><li><a href="/tools/">Free Tools</a></li><li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/blog/">Blog</a></li></ul><a href="#get-website" class="btn btn-primary nav-cta" data-cta="nav">Get a website →</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav><div class="mobile-menu" id="mobile-menu"><ul><li><a href="/tools/">Free Tools</a></li><li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="#get-website">Get a website</a></li></ul></div><!--/t-nav-->
   <header class="t-head">
     <div class="container">
       <div class="t-crumbs"><a href="/tools/">Free tools</a> / PPF calculator</div>
@@ -67,7 +67,7 @@
     </div>
   </main>
 
-  <div id="t-pitch"></div>
+  <!--t-pitch--><section class="pitch" id="get-website"><div class="container"><div class="pitch-box"><div><div class="pitch-kicker">For mutual fund distributors &amp; advisors</div><h2>Turn calculator users into clients</h2><p>We build websites for MFDs, financial advisors and insurance agents with SIP, retirement and goal calculators that capture investor leads automatically.</p><ul class="pitch-points"><li>Your own SIP, retirement and goal calculators, branded for you</li><li>Every lead sent to your WhatsApp with their goal and amount</li><li>SEO and content so investors find you, not the big apps</li></ul></div><form class="lead-form" id="lead-form" novalidate><h3>Get a free consultation</h3><p>Tell us about your business. We reply on WhatsApp within a few hours.</p><input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off"><div class="f"><label for="lf-name">Your name</label><input id="lf-name" name="name" required autocomplete="name"></div><div class="f"><label for="lf-phone">Mobile number (WhatsApp)</label><input id="lf-phone" name="phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="98765 43210"></div><div class="f"><label for="lf-email">Email</label><input id="lf-email" name="email" type="email" required autocomplete="email" placeholder="you@business.in"></div><div class="f"><label for="lf-city">City</label><input id="lf-city" name="city" required autocomplete="address-level2" placeholder="e.g. Pune"></div><div class="f"><label for="lf-biz">Business name &amp; type</label><input id="lf-biz" name="business" placeholder="e.g. Sharma Sweets, bakery"></div><div class="f"><label for="lf-need">What do you need?</label><select id="lf-need" name="need"><option selected>Advisor / MFD website</option><option>Business website</option><option>Online store / D2C website</option><option>Website with online payments</option><option>Billing / invoice automation</option><option>AI workflow automation</option><option>WhatsApp / AI chatbot</option><option>Google &amp; Meta ads</option><option>Not sure yet</option></select></div><button type="submit" class="btn btn-primary">Get my free consultation →</button><div class="lead-msg" id="lead-msg" role="status"></div><div class="lead-or">or <a href="https://wa.me/919535076475?text=Hi%20Solvv%20AI%2C%20I%20used%20your%20free%20PPF%20Calculator%20and%20want%20to%20know%20more%20about%20advisor%20%2F%20mfd%20website." target="_blank" rel="noopener" data-cta="pitch-wa">chat on WhatsApp</a></div></form></div></div></section><!--/t-pitch-->
 
   <section class="t-content">
     <div class="container">
@@ -78,18 +78,44 @@
         <p>Example: ₹1.5 lakh a year for 15 years at 7.1% grows to about <strong>₹40.68 lakh</strong>: ₹22.5 lakh invested and ₹18.18 lakh tax-free interest.</p>
         <h2>PPF rules at a glance</h2>
         <table><tbody><tr><td>Minimum / maximum deposit</td><td>₹500 / ₹1.5 lakh per year</td></tr><tr><td>Lock-in</td><td>15 years, extendable in 5-year blocks</td></tr><tr><td>Partial withdrawal</td><td>From the 7th year</td></tr><tr><td>Loan against PPF</td><td>Years 3 to 6</td></tr><tr><td>Tax</td><td>EEE: deposit, interest and maturity all tax-free</td></tr></tbody></table>
-<h2>Frequently asked questions</h2>
-<div class="faq-list"><details><summary>Can I extend PPF after 15 years?</summary><p>Yes, in blocks of 5 years, with or without fresh deposits. Submit Form H within a year of maturity to continue contributing.</p></details><details><summary>Can NRIs open a PPF account?</summary><p>No new accounts, but an account opened while resident can continue until maturity.</p></details><details><summary>PPF or ELSS?</summary><p>PPF is guaranteed and tax-free but locked for 15 years. ELSS mutual funds have a 3-year lock-in and higher potential returns, with market risk.</p></details></div>
+<!--expanded--><h2>PPF maturity table at 7.1%</h2>
+        <table><thead><tr><th>Yearly deposit</th><th>15 years</th><th>20 years</th><th>25 years</th></tr></thead><tbody>
+          <tr><td>₹50,000</td><td>₹13.56 lakh</td><td>₹22.19 lakh</td><td>₹34.36 lakh</td></tr>
+          <tr><td>₹1,00,000</td><td>₹27.12 lakh</td><td>₹44.39 lakh</td><td>₹68.72 lakh</td></tr>
+          <tr><td>₹1,50,000</td><td>₹40.68 lakh</td><td>₹66.58 lakh</td><td>₹1.03 crore</td></tr>
+        </tbody></table>
+        <p>Maxing out PPF for 25 years can build a tax-free crore from ₹37.5 lakh of deposits.</p>
+
+        <h2>Withdrawals and loans from PPF</h2>
+        <ul>
+          <li><strong>Partial withdrawal:</strong> once a year from the 7th financial year, up to 50% of the balance at the end of the 4th preceding year or the preceding year, whichever is lower.</li>
+          <li><strong>Loan against PPF:</strong> from the 3rd to the 6th financial year, up to 25% of the balance at the end of the second preceding year, at 1% above the PPF rate.</li>
+          <li><strong>Premature closure:</strong> allowed after 5 years for serious illness, higher education or a change in residency status, with 1% lower interest.</li>
+        </ul>
+
+        <h2>PPF vs EPF vs NPS vs ELSS</h2>
+        <table><thead><tr><th></th><th>PPF</th><th>EPF</th><th>NPS</th><th>ELSS</th></tr></thead><tbody>
+          <tr><td>Returns</td><td>Fixed by government</td><td>Fixed yearly by EPFO</td><td>Market-linked</td><td>Market-linked</td></tr>
+          <tr><td>Lock-in</td><td>15 years</td><td>Till retirement/job exit</td><td>Till 60</td><td>3 years</td></tr>
+          <tr><td>Tax on maturity</td><td>Tax-free</td><td>Tax-free (conditions apply)</td><td>60% tax-free, annuity taxable</td><td>12.5% LTCG above ₹1.25 lakh</td></tr>
+          <tr><td>Who can invest</td><td>Any resident</td><td>Salaried employees</td><td>Any citizen 18–70</td><td>Anyone</td></tr>
+        </tbody></table>
+
+        <h2>How to open a PPF account</h2>
+        <p>Open it at any post office or at most banks, including SBI, HDFC, ICICI and Axis, often online through net banking. You need PAN, Aadhaar, a photo and a minimum ₹500 deposit. Each person can have only one PPF account; you can open another for a minor child.</p>
+
+        <h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>Can I extend PPF after 15 years?</summary><p>Yes, in blocks of 5 years, with or without fresh deposits. Submit Form H within a year of maturity to continue contributing.</p></details><details><summary>Can NRIs open a PPF account?</summary><p>No new accounts, but an account opened while resident can continue until maturity.</p></details><details><summary>PPF or ELSS?</summary><p>PPF is guaranteed and tax-free but locked for 15 years. ELSS mutual funds have a 3-year lock-in and higher potential returns, with market risk.</p></details><details><summary>Can I deposit more than ₹1.5 lakh in PPF?</summary><p>No. Deposits above ₹1.5 lakh in a financial year (across your own and your minor child’s account) earn no interest and are not tax-deductible.</p></details><details><summary>What happens if I miss a yearly PPF deposit?</summary><p>The account becomes discontinued. You can revive it by paying ₹500 for each missed year plus a ₹50 penalty per year.</p></details><details><summary>Is PPF better than an FD?</summary><p>For long-term savers in higher tax brackets, yes: PPF interest is tax-free while FD interest is taxed at your slab rate. FDs are more flexible.</p></details></div>
         <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
       </div>
     </div>
   </section>
 
-  <div id="t-related"></div>
-  <div id="t-footer"></div>
+  <!--t-related--><section class="related"><div class="container"><h2>More free tools for your business</h2><div class="tool-grid"><a class="tool-card" href="/fd-calculator/"><span class="ti">🏦</span><strong>FD Calculator</strong><span>Fixed deposit maturity and interest with any compounding.</span></a><a class="tool-card" href="/rd-calculator/"><span class="ti">🗓️</span><strong>RD Calculator</strong><span>Recurring deposit maturity using the bank formula.</span></a><a class="tool-card" href="/sukanya-samriddhi-yojana-calculator/"><span class="ti">👧</span><strong>Sukanya Samriddhi Calculator</strong><span>SSY maturity for your daughter at age 21.</span></a><a class="tool-card" href="/gst-calculator/"><span class="ti">🧾</span><strong>GST Calculator</strong><span>Add or remove GST, with CGST, SGST and IGST split.</span></a><a class="tool-card" href="/gst-invoice-generator/"><span class="ti">📄</span><strong>GST Invoice Generator</strong><span>Make a GST invoice with your logo and download it as a PDF.</span></a><a class="tool-card" href="/quotation-maker/"><span class="ti">📝</span><strong>Quotation Maker</strong><span>Create a professional quotation and share it as a PDF.</span></a><a class="tool-card" href="/salary-slip-generator/"><span class="ti">💼</span><strong>Salary Slip Generator</strong><span>Make payslips with PF, ESI, PT and TDS. Prints to PDF.</span></a><a class="tool-card" href="/profit-margin-calculator/"><span class="ti">📈</span><strong>Profit Margin Calculator</strong><span>Margin, markup, selling price and net profit, with GST.</span></a></div></div></section><!--/t-related-->
+  <!--t-footer--><footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo">SOLVV<span>AI</span></div><p>Websites, AI agents and automations for growing businesses. Delivered in 7 days.</p></div><div class="footer-col"><h4>Business tools</h4><ul><li><a href="/gst-calculator/">GST Calculator</a></li><li><a href="/gst-invoice-generator/">GST Invoice Generator</a></li><li><a href="/quotation-maker/">Quotation Maker</a></li><li><a href="/salary-slip-generator/">Salary Slip Generator</a></li><li><a href="/profit-margin-calculator/">Profit Margin Calculator</a></li><li><a href="/gold-price-calculator/">Gold Price Calculator</a></li><li><a href="/cbm-calculator/">CBM Calculator</a></li></ul></div><div class="footer-col"><h4>Money calculators</h4><ul><li><a href="/emi-calculator/">EMI Calculator</a></li><li><a href="/home-loan-emi-calculator/">Home Loan EMI Calculator</a></li><li><a href="/sip-calculator/">SIP Calculator</a></li><li><a href="/fd-calculator/">FD Calculator</a></li><li><a href="/ppf-calculator/">PPF Calculator</a></li><li><a href="/retirement-calculator/">Retirement Calculator</a></li><li><a href="/tools/"><b>All 25 free tools →</b></a></li></ul></div><div class="footer-col"><h4>Solvv AI</h4><ul><li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#contact">Contact</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 Solvv AI. Free tools are for estimates only. Check figures with your CA before filing.</p><div class="footer-links-bottom"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div></div></footer><a href="https://wa.me/919535076475?text=Hi%20Solvv%20AI%2C%20I%20came%20from%20your%20free%20PPF%20Calculator%20page." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp" data-cta="wa-float"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="wa-label">Questions? Chat with us →</span></a><!--/t-footer-->
 
-  <script src="/tools/tools.js?v=20261019c"></script>
-  <script src="/tools/fin.js?v=20261019c"></script>
+  <script src="/tools/tools.js?v=20261020a"></script>
+  <script src="/tools/fin.js?v=20261020a"></script>
   <script>
   (function () {
     var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };

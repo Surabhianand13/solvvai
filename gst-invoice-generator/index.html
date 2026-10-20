@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/logo.svg">
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261020a">
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -37,7 +37,7 @@
   <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
 </head>
 <body data-tool="gst-invoice-generator">
-  <div id="t-nav"></div>
+  <!--t-nav--><nav class="nav" id="nav"><div class="nav-inner"><a href="/" class="nav-logo"><img src="/logo.svg" alt="Solvv AI logo" class="nav-logo-img">SOLVV<span>AI</span></a><ul class="nav-links"><li><a href="/tools/">Free Tools</a></li><li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/blog/">Blog</a></li></ul><a href="#get-website" class="btn btn-primary nav-cta" data-cta="nav">Get a website →</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav><div class="mobile-menu" id="mobile-menu"><ul><li><a href="/tools/">Free Tools</a></li><li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="#get-website">Get a website</a></li></ul></div><!--/t-nav-->
 
   <header class="t-head">
     <div class="container">
@@ -132,7 +132,7 @@
     </div>
   </main>
 
-  <div id="t-pitch"></div>
+  <!--t-pitch--><section class="pitch" id="get-website"><div class="container"><div class="pitch-box"><div><div class="pitch-kicker">Making invoices one by one?</div><h2>Automate your invoicing</h2><p>We set up billing that creates the invoice, sends it on WhatsApp and email, and follows up on unpaid bills automatically.</p><ul class="pitch-points"><li>Auto-generated GST invoices from orders or payments</li><li>WhatsApp + email delivery with payment link</li><li>Payment reminders without chasing anyone</li></ul></div><form class="lead-form" id="lead-form" novalidate><h3>Get a free consultation</h3><p>Tell us about your business. We reply on WhatsApp within a few hours.</p><input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off"><div class="f"><label for="lf-name">Your name</label><input id="lf-name" name="name" required autocomplete="name"></div><div class="f"><label for="lf-phone">Mobile number (WhatsApp)</label><input id="lf-phone" name="phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="98765 43210"></div><div class="f"><label for="lf-email">Email</label><input id="lf-email" name="email" type="email" required autocomplete="email" placeholder="you@business.in"></div><div class="f"><label for="lf-city">City</label><input id="lf-city" name="city" required autocomplete="address-level2" placeholder="e.g. Pune"></div><div class="f"><label for="lf-biz">Business name &amp; type</label><input id="lf-biz" name="business" placeholder="e.g. Sharma Sweets, bakery"></div><div class="f"><label for="lf-need">What do you need?</label><select id="lf-need" name="need"><option>Business website</option><option>Online store / D2C website</option><option>Website with online payments</option><option selected>Billing / invoice automation</option><option>AI workflow automation</option><option>WhatsApp / AI chatbot</option><option>Google &amp; Meta ads</option><option>Not sure yet</option></select></div><button type="submit" class="btn btn-primary">Get my free consultation →</button><div class="lead-msg" id="lead-msg" role="status"></div><div class="lead-or">or <a href="https://wa.me/919535076475?text=Hi%20Solvv%20AI%2C%20I%20used%20your%20free%20GST%20Invoice%20Generator%20and%20want%20to%20know%20more%20about%20billing%20%2F%20invoice%20automation." target="_blank" rel="noopener" data-cta="pitch-wa">chat on WhatsApp</a></div></form></div></div></section><!--/t-pitch-->
 
   <section class="t-content">
     <div class="container">
@@ -154,6 +154,41 @@
         <h2>Tax invoice or bill of supply?</h2>
         <p>Registered businesses charging GST issue a <strong>tax invoice</strong>. Businesses under the composition scheme, or selling only exempt goods, issue a <strong>bill of supply</strong> without GST. Untick "Charge GST" above to make one.</p>
 
+        <!--expanded--><h2>How to create a GST invoice in 2 minutes</h2>
+        <ol>
+          <li><strong>Add your business details</strong>: name, address, GSTIN and state. Upload your logo if you have one.</li>
+          <li><strong>Add the customer</strong> and their GSTIN if they are registered. The place of supply sets IGST or CGST + SGST automatically.</li>
+          <li><strong>Add items</strong> with HSN/SAC code, quantity, rate, discount and GST rate.</li>
+          <li><strong>Add payment details and terms</strong>, such as bank account, UPI ID and due date.</li>
+          <li>Click <strong>Download PDF</strong> and send it to your customer on WhatsApp or email.</li>
+        </ol>
+
+        <h2>Invoice numbering rules</h2>
+        <ul>
+          <li>Up to <strong>16 characters</strong>, using letters, numbers, hyphen (-) and slash (/).</li>
+          <li><strong>Unique for each financial year</strong>, in one or more series, e.g. INV/26-27/001.</li>
+          <li>No gaps or duplicates. Cancelled invoices should be recorded, not reused.</li>
+        </ul>
+
+        <h2>When to issue the invoice</h2>
+        <table><thead><tr><th>Supply</th><th>Time limit</th></tr></thead><tbody>
+          <tr><td>Goods</td><td>On or before removal or delivery of goods</td></tr>
+          <tr><td>Services</td><td>Within 30 days of providing the service (45 days for banks and NBFCs)</td></tr>
+          <tr><td>Continuous supply</td><td>On or before the due date of payment, or as per the contract</td></tr>
+        </tbody></table>
+
+        <h2>Copies of a GST invoice</h2>
+        <p>For goods: <strong>original</strong> for the buyer, <strong>duplicate</strong> for the transporter, and <strong>triplicate</strong> for your records. For services: original for the buyer and duplicate for you. A PDF from this generator works for all of these.</p>
+
+        <h2>Other GST documents</h2>
+        <table><thead><tr><th>Document</th><th>When to use it</th></tr></thead><tbody>
+          <tr><td>Bill of supply</td><td>Composition dealers, or exempt goods and services (no GST charged)</td></tr>
+          <tr><td>Credit note</td><td>To reduce an invoice: returns, discounts after sale, overbilling</td></tr>
+          <tr><td>Debit note</td><td>To increase an invoice: underbilling or extra charges</td></tr>
+          <tr><td>Delivery challan</td><td>Moving goods without a sale, e.g. job work or samples</td></tr>
+          <tr><td>Proforma invoice</td><td>A quote or advance request; not a tax document</td></tr>
+        </tbody></table>
+
         <h2>Frequently asked questions</h2>
         <div class="faq-list">
           <details><summary>Is this invoice generator free?</summary><p>Yes. Your first invoice PDF is free. Share your contact details once to download it. Need invoices every day? We can set up automated billing for your business.</p></details>
@@ -161,16 +196,16 @@
           <details><summary>How do I save the invoice as a PDF?</summary><p>Click <strong>Download PDF</strong> and choose <strong>Save as PDF</strong> as the printer. On Android or iPhone, use Print → Save as PDF, or share it straight to WhatsApp.</p></details>
           <details><summary>Do I need an e-invoice (IRN)?</summary><p>E-invoicing on the government IRP portal applies to businesses with aggregate turnover above ₹5 crore in any year since 2017-18. Smaller businesses can use a regular tax invoice like this one.</p></details>
           <details><summary>Can I make a quotation instead?</summary><p>Yes. Use our free <a href="/quotation-maker/">quotation maker</a>. It has the same layout with validity dates and quotation terms.</p></details>
-        </div>
+        <details><summary>Is HSN code mandatory on invoices?</summary><p>Yes, for most businesses. Turnover up to ₹5 crore must show 4-digit HSN/SAC on B2B invoices; above ₹5 crore, 6 digits on all invoices.</p></details><details><summary>Can I issue an invoice without GST?</summary><p>Yes, if you are not registered or under the composition scheme. Untick "Charge GST" to create a plain invoice or bill of supply.</p></details><details><summary>Do I need a signature on a PDF invoice?</summary><p>A GST invoice needs the supplier’s signature or digital signature. E-invoices with an IRN do not need a separate signature.</p></details></div>
       </div>
     </div>
   </section>
 
-  <div id="t-related"></div>
-  <div id="t-footer"></div>
+  <!--t-related--><section class="related"><div class="container"><h2>More free tools for your business</h2><div class="tool-grid"><a class="tool-card" href="/gst-calculator/"><span class="ti">🧾</span><strong>GST Calculator</strong><span>Add or remove GST, with CGST, SGST and IGST split.</span></a><a class="tool-card" href="/quotation-maker/"><span class="ti">📝</span><strong>Quotation Maker</strong><span>Create a professional quotation and share it as a PDF.</span></a><a class="tool-card" href="/salary-slip-generator/"><span class="ti">💼</span><strong>Salary Slip Generator</strong><span>Make payslips with PF, ESI, PT and TDS. Prints to PDF.</span></a><a class="tool-card" href="/profit-margin-calculator/"><span class="ti">📈</span><strong>Profit Margin Calculator</strong><span>Margin, markup, selling price and net profit, with GST.</span></a><a class="tool-card" href="/gold-price-calculator/"><span class="ti">💍</span><strong>Gold Price Calculator</strong><span>Jewellery price with purity, making charges, wastage and 3% GST.</span></a><a class="tool-card" href="/cbm-calculator/"><span class="ti">📦</span><strong>CBM Calculator</strong><span>Carton CBM, CFT and how many fit in a 20ft or 40ft container.</span></a><a class="tool-card" href="/volumetric-weight-calculator/"><span class="ti">⚖️</span><strong>Volumetric Weight Calculator</strong><span>Chargeable weight for courier, air cargo and marketplaces.</span></a><a class="tool-card" href="/import-duty-calculator/"><span class="ti">🚢</span><strong>Import Duty Calculator</strong><span>Customs duty, SWS and IGST on goods imported into India.</span></a></div></div></section><!--/t-related-->
+  <!--t-footer--><footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo">SOLVV<span>AI</span></div><p>Websites, AI agents and automations for growing businesses. Delivered in 7 days.</p></div><div class="footer-col"><h4>Business tools</h4><ul><li><a href="/gst-calculator/">GST Calculator</a></li><li><a href="/gst-invoice-generator/">GST Invoice Generator</a></li><li><a href="/quotation-maker/">Quotation Maker</a></li><li><a href="/salary-slip-generator/">Salary Slip Generator</a></li><li><a href="/profit-margin-calculator/">Profit Margin Calculator</a></li><li><a href="/gold-price-calculator/">Gold Price Calculator</a></li><li><a href="/cbm-calculator/">CBM Calculator</a></li></ul></div><div class="footer-col"><h4>Money calculators</h4><ul><li><a href="/emi-calculator/">EMI Calculator</a></li><li><a href="/home-loan-emi-calculator/">Home Loan EMI Calculator</a></li><li><a href="/sip-calculator/">SIP Calculator</a></li><li><a href="/fd-calculator/">FD Calculator</a></li><li><a href="/ppf-calculator/">PPF Calculator</a></li><li><a href="/retirement-calculator/">Retirement Calculator</a></li><li><a href="/tools/"><b>All 25 free tools →</b></a></li></ul></div><div class="footer-col"><h4>Solvv AI</h4><ul><li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#contact">Contact</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 Solvv AI. Free tools are for estimates only. Check figures with your CA before filing.</p><div class="footer-links-bottom"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div></div></footer><a href="https://wa.me/919535076475?text=Hi%20Solvv%20AI%2C%20I%20came%20from%20your%20free%20GST%20Invoice%20Generator%20page." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp" data-cta="wa-float"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="wa-label">Questions? Chat with us →</span></a><!--/t-footer-->
 
-  <script src="/tools/tools.js?v=20261019c"></script>
-  <script src="/tools/doc-builder.js?v=20261019c"></script>
+  <script src="/tools/tools.js?v=20261020a"></script>
+  <script src="/tools/doc-builder.js?v=20261020a"></script>
   <script>SolvvDoc.init({ kind: 'invoice' });</script>
   <script src="/cookie-consent.js"></script>
 </body>

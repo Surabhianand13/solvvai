@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/logo.svg">
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/tools/tools.css?v=20261019c">
+  <link rel="stylesheet" href="/tools/tools.css?v=20261020a">
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -30,7 +30,7 @@
   <script>gtag('js', new Date()); gtag('config', 'AW-17812098070');</script>
 </head>
 <body data-tool="fd-calculator">
-  <div id="t-nav"></div>
+  <!--t-nav--><nav class="nav" id="nav"><div class="nav-inner"><a href="/" class="nav-logo"><img src="/logo.svg" alt="Solvv AI logo" class="nav-logo-img">SOLVV<span>AI</span></a><ul class="nav-links"><li><a href="/tools/">Free Tools</a></li><li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/blog/">Blog</a></li></ul><a href="#get-website" class="btn btn-primary nav-cta" data-cta="nav">Get a website →</a><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav><div class="mobile-menu" id="mobile-menu"><ul><li><a href="/tools/">Free Tools</a></li><li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="#get-website">Get a website</a></li></ul></div><!--/t-nav-->
   <header class="t-head">
     <div class="container">
       <div class="t-crumbs"><a href="/tools/">Free tools</a> / FD calculator</div>
@@ -67,7 +67,7 @@
     </div>
   </main>
 
-  <div id="t-pitch"></div>
+  <!--t-pitch--><section class="pitch" id="get-website"><div class="container"><div class="pitch-box"><div><div class="pitch-kicker">For mutual fund distributors &amp; advisors</div><h2>Turn calculator users into clients</h2><p>We build websites for MFDs, financial advisors and insurance agents with SIP, retirement and goal calculators that capture investor leads automatically.</p><ul class="pitch-points"><li>Your own SIP, retirement and goal calculators, branded for you</li><li>Every lead sent to your WhatsApp with their goal and amount</li><li>SEO and content so investors find you, not the big apps</li></ul></div><form class="lead-form" id="lead-form" novalidate><h3>Get a free consultation</h3><p>Tell us about your business. We reply on WhatsApp within a few hours.</p><input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off"><div class="f"><label for="lf-name">Your name</label><input id="lf-name" name="name" required autocomplete="name"></div><div class="f"><label for="lf-phone">Mobile number (WhatsApp)</label><input id="lf-phone" name="phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="98765 43210"></div><div class="f"><label for="lf-email">Email</label><input id="lf-email" name="email" type="email" required autocomplete="email" placeholder="you@business.in"></div><div class="f"><label for="lf-city">City</label><input id="lf-city" name="city" required autocomplete="address-level2" placeholder="e.g. Pune"></div><div class="f"><label for="lf-biz">Business name &amp; type</label><input id="lf-biz" name="business" placeholder="e.g. Sharma Sweets, bakery"></div><div class="f"><label for="lf-need">What do you need?</label><select id="lf-need" name="need"><option selected>Advisor / MFD website</option><option>Business website</option><option>Online store / D2C website</option><option>Website with online payments</option><option>Billing / invoice automation</option><option>AI workflow automation</option><option>WhatsApp / AI chatbot</option><option>Google &amp; Meta ads</option><option>Not sure yet</option></select></div><button type="submit" class="btn btn-primary">Get my free consultation →</button><div class="lead-msg" id="lead-msg" role="status"></div><div class="lead-or">or <a href="https://wa.me/919535076475?text=Hi%20Solvv%20AI%2C%20I%20used%20your%20free%20FD%20Calculator%20and%20want%20to%20know%20more%20about%20advisor%20%2F%20mfd%20website." target="_blank" rel="noopener" data-cta="pitch-wa">chat on WhatsApp</a></div></form></div></div></section><!--/t-pitch-->
 
   <section class="t-content">
     <div class="container">
@@ -76,18 +76,48 @@
         <span class="formula">Maturity = P × (1 + r ÷ (100 × n))^(n × t)
 P = deposit · r = yearly rate · n = compounding per year (4 = quarterly) · t = years</span>
         <p>Example: ₹1 lakh for 5 years at 7%, compounded quarterly, grows to <strong>₹1,41,478</strong>, which is ₹41,478 interest and an effective yield of 7.19% a year.</p>
-<h2>Frequently asked questions</h2>
-<div class="faq-list"><details><summary>Is FD interest taxable?</summary><p>Yes, at your income tax slab rate. Banks deduct 10% TDS once yearly interest crosses ₹50,000 (₹1 lakh for senior citizens) unless you submit Form 15G/15H.</p></details><details><summary>What is a tax-saving FD?</summary><p>A 5-year lock-in FD whose deposit (up to ₹1.5 lakh) can be claimed under Section 80C in the old tax regime. Interest is still taxable.</p></details><details><summary>Are FDs safe?</summary><p>Deposits up to ₹5 lakh per bank (principal + interest) are insured by DICGC. Small finance banks pay more but check their ratings.</p></details><details><summary>Cumulative or payout FD?</summary><p>Cumulative FDs reinvest interest and earn more. Payout FDs give regular income, which suits retirees.</p></details></div>
+<!--expanded--><h2>How compounding frequency changes your FD</h2>
+        <p>₹1 lakh for 5 years at 7%:</p>
+        <table><thead><tr><th>Compounding</th><th>Maturity</th><th>Interest</th></tr></thead><tbody>
+          <tr><td>Simple interest (payout)</td><td>₹1,35,000</td><td>₹35,000</td></tr>
+          <tr><td>Yearly</td><td>₹1,40,255</td><td>₹40,255</td></tr>
+          <tr><td>Half-yearly</td><td>₹1,41,060</td><td>₹41,060</td></tr>
+          <tr><td>Quarterly (most banks)</td><td>₹1,41,478</td><td>₹41,478</td></tr>
+          <tr><td>Monthly</td><td>₹1,41,763</td><td>₹41,763</td></tr>
+        </tbody></table>
+        <p>Cumulative FDs earn more because interest earns interest. Payout FDs suit people who need regular income.</p>
+
+        <h2>Typical FD rates by type of bank</h2>
+        <table><thead><tr><th>Bank type</th><th>Typical rate range</th><th>Things to know</th></tr></thead><tbody>
+          <tr><td>Large public and private banks</td><td>6–7.5%</td><td>Most stable; the best rates are usually for 1–3 years</td></tr>
+          <tr><td>Small finance banks</td><td>7.5–9%</td><td>Higher rates; also DICGC-insured up to ₹5 lakh</td></tr>
+          <tr><td>Corporate FDs / NBFCs</td><td>7.5–9%+</td><td>Not DICGC-insured; check the credit rating (AAA/AA)</td></tr>
+          <tr><td>Post Office Time Deposit</td><td>Set quarterly by government</td><td>Government-backed; 1, 2, 3 and 5-year terms</td></tr>
+        </tbody></table>
+        <p>Senior citizens usually get 0.25–0.75% more. Rates change often, so check the bank’s website before you book.</p>
+
+        <h2>TDS on FD interest and Form 15G/15H</h2>
+        <ul>
+          <li>Banks deduct <strong>10% TDS</strong> when your FD interest at that bank crosses <strong>₹50,000</strong> in a year (₹1 lakh for senior citizens). Without a PAN, TDS is 20%.</li>
+          <li>If your total income is below the taxable limit, submit <strong>Form 15G</strong> (below 60) or <strong>Form 15H</strong> (60 and above) at the start of the year to avoid TDS.</li>
+          <li>TDS is not the final tax. FD interest is added to your income and taxed at your slab rate when you file your return.</li>
+        </ul>
+
+        <h2>FD laddering: a simple strategy</h2>
+        <p>Instead of one big FD, split your money across 1, 2, 3, 4 and 5-year FDs. Each year one matures, giving you liquidity, and you can reinvest it at the 5-year rate. You lock in long-term rates without tying up everything.</p>
+
+        <h2>Frequently asked questions</h2>
+<div class="faq-list"><details><summary>Is FD interest taxable?</summary><p>Yes, at your income tax slab rate. Banks deduct 10% TDS once yearly interest crosses ₹50,000 (₹1 lakh for senior citizens) unless you submit Form 15G/15H.</p></details><details><summary>What is a tax-saving FD?</summary><p>A 5-year lock-in FD whose deposit (up to ₹1.5 lakh) can be claimed under Section 80C in the old tax regime. Interest is still taxable.</p></details><details><summary>Are FDs safe?</summary><p>Deposits up to ₹5 lakh per bank (principal + interest) are insured by DICGC. Small finance banks pay more but check their ratings.</p></details><details><summary>Cumulative or payout FD?</summary><p>Cumulative FDs reinvest interest and earn more. Payout FDs give regular income, which suits retirees.</p></details><details><summary>Which is better: FD or RD?</summary><p>An FD invests a lump sum at once; an RD builds savings monthly. With the same rate, an FD earns more because the full amount earns interest from day one. See our <a href="/rd-calculator/">RD calculator</a>.</p></details><details><summary>Can I break an FD early?</summary><p>Yes. Most banks allow premature withdrawal with a penalty of 0.5–1% on the rate applicable for the period the FD actually ran.</p></details><details><summary>How is FD maturity calculated?</summary><p>Maturity = P × (1 + r/400)^(4 × years) for quarterly compounding. The calculator above handles every compounding option.</p></details></div>
         <p style="font-size:0.85rem;color:var(--gray);margin-top:28px">These figures are estimates for planning only and are not financial advice. Actual returns, rates and charges depend on your bank, fund or scheme. Check the latest rates before you invest or borrow.</p>
       </div>
     </div>
   </section>
 
-  <div id="t-related"></div>
-  <div id="t-footer"></div>
+  <!--t-related--><section class="related"><div class="container"><h2>More free tools for your business</h2><div class="tool-grid"><a class="tool-card" href="/rd-calculator/"><span class="ti">🗓️</span><strong>RD Calculator</strong><span>Recurring deposit maturity using the bank formula.</span></a><a class="tool-card" href="/ppf-calculator/"><span class="ti">🛡️</span><strong>PPF Calculator</strong><span>PPF maturity over 15 years and extensions.</span></a><a class="tool-card" href="/sukanya-samriddhi-yojana-calculator/"><span class="ti">👧</span><strong>Sukanya Samriddhi Calculator</strong><span>SSY maturity for your daughter at age 21.</span></a><a class="tool-card" href="/gst-calculator/"><span class="ti">🧾</span><strong>GST Calculator</strong><span>Add or remove GST, with CGST, SGST and IGST split.</span></a><a class="tool-card" href="/gst-invoice-generator/"><span class="ti">📄</span><strong>GST Invoice Generator</strong><span>Make a GST invoice with your logo and download it as a PDF.</span></a><a class="tool-card" href="/quotation-maker/"><span class="ti">📝</span><strong>Quotation Maker</strong><span>Create a professional quotation and share it as a PDF.</span></a><a class="tool-card" href="/salary-slip-generator/"><span class="ti">💼</span><strong>Salary Slip Generator</strong><span>Make payslips with PF, ESI, PT and TDS. Prints to PDF.</span></a><a class="tool-card" href="/profit-margin-calculator/"><span class="ti">📈</span><strong>Profit Margin Calculator</strong><span>Margin, markup, selling price and net profit, with GST.</span></a></div></div></section><!--/t-related-->
+  <!--t-footer--><footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo">SOLVV<span>AI</span></div><p>Websites, AI agents and automations for growing businesses. Delivered in 7 days.</p></div><div class="footer-col"><h4>Business tools</h4><ul><li><a href="/gst-calculator/">GST Calculator</a></li><li><a href="/gst-invoice-generator/">GST Invoice Generator</a></li><li><a href="/quotation-maker/">Quotation Maker</a></li><li><a href="/salary-slip-generator/">Salary Slip Generator</a></li><li><a href="/profit-margin-calculator/">Profit Margin Calculator</a></li><li><a href="/gold-price-calculator/">Gold Price Calculator</a></li><li><a href="/cbm-calculator/">CBM Calculator</a></li></ul></div><div class="footer-col"><h4>Money calculators</h4><ul><li><a href="/emi-calculator/">EMI Calculator</a></li><li><a href="/home-loan-emi-calculator/">Home Loan EMI Calculator</a></li><li><a href="/sip-calculator/">SIP Calculator</a></li><li><a href="/fd-calculator/">FD Calculator</a></li><li><a href="/ppf-calculator/">PPF Calculator</a></li><li><a href="/retirement-calculator/">Retirement Calculator</a></li><li><a href="/tools/"><b>All 25 free tools →</b></a></li></ul></div><div class="footer-col"><h4>Solvv AI</h4><ul><li><a href="/#services">Services</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#contact">Contact</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 Solvv AI. Free tools are for estimates only. Check figures with your CA before filing.</p><div class="footer-links-bottom"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div></div></footer><a href="https://wa.me/919535076475?text=Hi%20Solvv%20AI%2C%20I%20came%20from%20your%20free%20FD%20Calculator%20page." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp" data-cta="wa-float"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="wa-label">Questions? Chat with us →</span></a><!--/t-footer-->
 
-  <script src="/tools/tools.js?v=20261019c"></script>
-  <script src="/tools/fin.js?v=20261019c"></script>
+  <script src="/tools/tools.js?v=20261020a"></script>
+  <script src="/tools/fin.js?v=20261020a"></script>
   <script>
   (function () {
     var S = window.Solvv, F = window.SolvvFin, $ = function (id) { return document.getElementById(id); };
